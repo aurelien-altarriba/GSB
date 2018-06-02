@@ -141,7 +141,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
-            this.visiteEtProduit = new System.Windows.Forms.TabPage();
+            this.visite = new System.Windows.Forms.TabPage();
             this.ac = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox24 = new System.Windows.Forms.TextBox();
@@ -176,30 +176,9 @@
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.textBox33 = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.btAjouterProduit = new System.Windows.Forms.Button();
-            this.btModifierProduit = new System.Windows.Forms.Button();
             this.label68 = new System.Windows.Forms.Label();
-            this.listeProduit = new System.Windows.Forms.ListBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.nbProduits = new System.Windows.Forms.Label();
+            this.listeProduits2 = new System.Windows.Forms.ListBox();
             this.label70 = new System.Windows.Forms.Label();
-            this.nbVisites = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.listeVisiteurs2 = new System.Windows.Forms.ListBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -218,8 +197,6 @@
             this.listePraticiens2 = new System.Windows.Forms.ListBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.listeResponsableRégion = new System.Windows.Forms.ListBox();
             this.label81 = new System.Windows.Forms.Label();
             this.listeDemandeAC = new System.Windows.Forms.ListBox();
             this.button8 = new System.Windows.Forms.Button();
@@ -243,6 +220,36 @@
             this.label88 = new System.Windows.Forms.Label();
             this.label89 = new System.Windows.Forms.Label();
             this.nbPraticiens = new System.Windows.Forms.Label();
+            this.produit = new System.Windows.Forms.TabPage();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.listeProduits = new System.Windows.Forms.ListBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.textBox47 = new System.Windows.Forms.TextBox();
+            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.label101 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.textBox50 = new System.Windows.Forms.TextBox();
+            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.textBox52 = new System.Windows.Forms.TextBox();
+            this.textBox53 = new System.Windows.Forms.TextBox();
+            this.btSupprimerProduit = new System.Windows.Forms.Button();
+            this.label60 = new System.Windows.Forms.Label();
+            this.listeVisites = new System.Windows.Forms.ListBox();
+            this.nbVisites = new System.Windows.Forms.Label();
+            this.listeResponsableRégion = new System.Windows.Forms.ListBox();
+            this.label80 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -255,14 +262,15 @@
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.visiteEtProduit.SuspendLayout();
+            this.visite.SuspendLayout();
             this.ac.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.praticien.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            this.produit.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -273,9 +281,10 @@
             this.menu.Controls.Add(this.personnel);
             this.menu.Controls.Add(this.materiel);
             this.menu.Controls.Add(this.incident);
-            this.menu.Controls.Add(this.visiteEtProduit);
+            this.menu.Controls.Add(this.visite);
             this.menu.Controls.Add(this.ac);
             this.menu.Controls.Add(this.praticien);
+            this.menu.Controls.Add(this.produit);
             this.menu.Location = new System.Drawing.Point(12, 12);
             this.menu.Name = "menu";
             this.menu.SelectedIndex = 0;
@@ -1377,29 +1386,31 @@
             this.textBox21.Size = new System.Drawing.Size(284, 20);
             this.textBox21.TabIndex = 0;
             // 
-            // visiteEtProduit
+            // visite
             // 
-            this.visiteEtProduit.Controls.Add(this.nbVisites);
-            this.visiteEtProduit.Controls.Add(this.label70);
-            this.visiteEtProduit.Controls.Add(this.nbProduits);
-            this.visiteEtProduit.Controls.Add(this.label69);
-            this.visiteEtProduit.Controls.Add(this.listeProduit);
-            this.visiteEtProduit.Controls.Add(this.label68);
-            this.visiteEtProduit.Controls.Add(this.groupBox9);
-            this.visiteEtProduit.Controls.Add(this.listePraticiens);
-            this.visiteEtProduit.Controls.Add(this.label53);
-            this.visiteEtProduit.Controls.Add(this.listeVisiteursMédicaux);
-            this.visiteEtProduit.Controls.Add(this.label52);
-            this.visiteEtProduit.Controls.Add(this.groupBox8);
-            this.visiteEtProduit.Location = new System.Drawing.Point(4, 22);
-            this.visiteEtProduit.Name = "visiteEtProduit";
-            this.visiteEtProduit.Size = new System.Drawing.Size(752, 511);
-            this.visiteEtProduit.TabIndex = 3;
-            this.visiteEtProduit.Text = "Visite et produit";
-            this.visiteEtProduit.UseVisualStyleBackColor = true;
+            this.visite.Controls.Add(this.nbVisites);
+            this.visite.Controls.Add(this.listeVisites);
+            this.visite.Controls.Add(this.label60);
+            this.visite.Controls.Add(this.label70);
+            this.visite.Controls.Add(this.listeProduits2);
+            this.visite.Controls.Add(this.label68);
+            this.visite.Controls.Add(this.listePraticiens);
+            this.visite.Controls.Add(this.label53);
+            this.visite.Controls.Add(this.listeVisiteursMédicaux);
+            this.visite.Controls.Add(this.label52);
+            this.visite.Controls.Add(this.groupBox8);
+            this.visite.Location = new System.Drawing.Point(4, 22);
+            this.visite.Name = "visite";
+            this.visite.Size = new System.Drawing.Size(752, 511);
+            this.visite.TabIndex = 3;
+            this.visite.Text = "Visite";
+            this.visite.UseVisualStyleBackColor = true;
+            this.visite.Click += new System.EventHandler(this.visite_Click);
             // 
             // ac
             // 
+            this.ac.Controls.Add(this.listeResponsableRégion);
+            this.ac.Controls.Add(this.label80);
             this.ac.Controls.Add(this.nbACRefusé);
             this.ac.Controls.Add(this.nbACAccordé);
             this.ac.Controls.Add(this.label85);
@@ -1407,8 +1418,6 @@
             this.ac.Controls.Add(this.label83);
             this.ac.Controls.Add(this.listeDemandeAC);
             this.ac.Controls.Add(this.label81);
-            this.ac.Controls.Add(this.listeResponsableRégion);
-            this.ac.Controls.Add(this.label80);
             this.ac.Controls.Add(this.groupBox11);
             this.ac.Controls.Add(this.listePraticiens2);
             this.ac.Controls.Add(this.label78);
@@ -1424,7 +1433,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(9, 19);
+            this.button5.Location = new System.Drawing.Point(11, 71);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(285, 34);
             this.button5.TabIndex = 0;
@@ -1434,14 +1443,14 @@
             // 
             // textBox24
             // 
-            this.textBox24.Location = new System.Drawing.Point(70, 59);
+            this.textBox24.Location = new System.Drawing.Point(66, 19);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(70, 20);
             this.textBox24.TabIndex = 1;
             // 
             // textBox25
             // 
-            this.textBox25.Location = new System.Drawing.Point(70, 85);
+            this.textBox25.Location = new System.Drawing.Point(66, 45);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(70, 20);
             this.textBox25.TabIndex = 2;
@@ -1449,7 +1458,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(4, 62);
+            this.label44.Location = new System.Drawing.Point(0, 22);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(60, 13);
             this.label44.TabIndex = 3;
@@ -1458,7 +1467,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(20, 88);
+            this.label45.Location = new System.Drawing.Point(16, 48);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(44, 13);
             this.label45.TabIndex = 4;
@@ -1467,7 +1476,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(152, 62);
+            this.label46.Location = new System.Drawing.Point(148, 22);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(66, 13);
             this.label46.TabIndex = 5;
@@ -1476,7 +1485,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(168, 88);
+            this.label47.Location = new System.Drawing.Point(164, 48);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(50, 13);
             this.label47.TabIndex = 6;
@@ -1484,14 +1493,14 @@
             // 
             // textBox26
             // 
-            this.textBox26.Location = new System.Drawing.Point(224, 59);
+            this.textBox26.Location = new System.Drawing.Point(220, 19);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(70, 20);
             this.textBox26.TabIndex = 7;
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(224, 85);
+            this.textBox27.Location = new System.Drawing.Point(220, 45);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(70, 20);
             this.textBox27.TabIndex = 8;
@@ -1712,225 +1721,31 @@
             this.textBox33.Size = new System.Drawing.Size(268, 20);
             this.textBox33.TabIndex = 13;
             // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.btModifierProduit);
-            this.groupBox9.Controls.Add(this.btAjouterProduit);
-            this.groupBox9.Controls.Add(this.label67);
-            this.groupBox9.Controls.Add(this.label66);
-            this.groupBox9.Controls.Add(this.label65);
-            this.groupBox9.Controls.Add(this.label64);
-            this.groupBox9.Controls.Add(this.label63);
-            this.groupBox9.Controls.Add(this.label62);
-            this.groupBox9.Controls.Add(this.textBox40);
-            this.groupBox9.Controls.Add(this.textBox37);
-            this.groupBox9.Controls.Add(this.label61);
-            this.groupBox9.Controls.Add(this.label60);
-            this.groupBox9.Controls.Add(this.textBox39);
-            this.groupBox9.Controls.Add(this.textBox36);
-            this.groupBox9.Controls.Add(this.textBox35);
-            this.groupBox9.Controls.Add(this.textBox34);
-            this.groupBox9.Controls.Add(this.textBox38);
-            this.groupBox9.Location = new System.Drawing.Point(3, 289);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(331, 219);
-            this.groupBox9.TabIndex = 5;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Ajouter/modifier un produit";
-            // 
-            // textBox34
-            // 
-            this.textBox34.Location = new System.Drawing.Point(109, 19);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(215, 20);
-            this.textBox34.TabIndex = 0;
-            // 
-            // textBox35
-            // 
-            this.textBox35.Location = new System.Drawing.Point(109, 45);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(215, 20);
-            this.textBox35.TabIndex = 1;
-            // 
-            // textBox36
-            // 
-            this.textBox36.Location = new System.Drawing.Point(109, 71);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(215, 20);
-            this.textBox36.TabIndex = 2;
-            // 
-            // textBox37
-            // 
-            this.textBox37.Location = new System.Drawing.Point(6, 140);
-            this.textBox37.Multiline = true;
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(318, 20);
-            this.textBox37.TabIndex = 3;
-            // 
-            // textBox38
-            // 
-            this.textBox38.Location = new System.Drawing.Point(211, 167);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(113, 20);
-            this.textBox38.TabIndex = 4;
-            // 
-            // textBox39
-            // 
-            this.textBox39.Location = new System.Drawing.Point(109, 97);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(215, 20);
-            this.textBox39.TabIndex = 5;
-            this.textBox39.TextChanged += new System.EventHandler(this.textBox39_TextChanged);
-            // 
-            // textBox40
-            // 
-            this.textBox40.Location = new System.Drawing.Point(41, 167);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(81, 20);
-            this.textBox40.TabIndex = 6;
-            this.textBox40.TextChanged += new System.EventHandler(this.textBox40_TextChanged);
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(74, 22);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(29, 13);
-            this.label60.TabIndex = 8;
-            this.label60.Text = "Nom";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(6, 48);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(97, 13);
-            this.label61.TabIndex = 9;
-            this.label61.Text = "Effet thérapeutique";
-            this.label61.Click += new System.EventHandler(this.label61_Click);
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(17, 74);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(86, 13);
-            this.label62.TabIndex = 10;
-            this.label62.Text = "Contre-indication";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(6, 124);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(70, 13);
-            this.label63.TabIndex = 11;
-            this.label63.Text = "Composition :";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(152, 170);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(53, 13);
-            this.label64.TabIndex = 12;
-            this.label64.Text = "Posologie";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(368, 22);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(0, 13);
-            this.label65.TabIndex = 13;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(64, 100);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(39, 13);
-            this.label66.TabIndex = 14;
-            this.label66.Text = "Famille";
-            this.label66.Click += new System.EventHandler(this.label66_Click);
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(6, 170);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(29, 13);
-            this.label67.TabIndex = 15;
-            this.label67.Text = "Coût";
-            // 
-            // btAjouterProduit
-            // 
-            this.btAjouterProduit.Location = new System.Drawing.Point(3, 190);
-            this.btAjouterProduit.Name = "btAjouterProduit";
-            this.btAjouterProduit.Size = new System.Drawing.Size(132, 23);
-            this.btAjouterProduit.TabIndex = 16;
-            this.btAjouterProduit.Text = "Ajouter le produit";
-            this.btAjouterProduit.UseVisualStyleBackColor = true;
-            // 
-            // btModifierProduit
-            // 
-            this.btModifierProduit.Location = new System.Drawing.Point(141, 190);
-            this.btModifierProduit.Name = "btModifierProduit";
-            this.btModifierProduit.Size = new System.Drawing.Size(183, 23);
-            this.btModifierProduit.TabIndex = 17;
-            this.btModifierProduit.Text = "Modifier le produit sélectionné";
-            this.btModifierProduit.UseVisualStyleBackColor = true;
-            // 
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(487, 289);
+            this.label68.Location = new System.Drawing.Point(98, 287);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(89, 13);
             this.label68.TabIndex = 6;
             this.label68.Text = "Liste des produits";
             // 
-            // listeProduit
+            // listeProduits2
             // 
-            this.listeProduit.FormattingEnabled = true;
-            this.listeProduit.Location = new System.Drawing.Point(340, 305);
-            this.listeProduit.Name = "listeProduit";
-            this.listeProduit.Size = new System.Drawing.Size(399, 186);
-            this.listeProduit.TabIndex = 7;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(340, 494);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(105, 13);
-            this.label69.TabIndex = 8;
-            this.label69.Text = "Nombre de produits :";
-            // 
-            // nbProduits
-            // 
-            this.nbProduits.AutoSize = true;
-            this.nbProduits.Location = new System.Drawing.Point(451, 494);
-            this.nbProduits.Name = "nbProduits";
-            this.nbProduits.Size = new System.Drawing.Size(0, 13);
-            this.nbProduits.TabIndex = 9;
+            this.listeProduits2.FormattingEnabled = true;
+            this.listeProduits2.Location = new System.Drawing.Point(3, 303);
+            this.listeProduits2.Name = "listeProduits2";
+            this.listeProduits2.Size = new System.Drawing.Size(284, 199);
+            this.listeProduits2.TabIndex = 7;
             // 
             // label70
             // 
             this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(535, 494);
+            this.label70.Location = new System.Drawing.Point(462, 492);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(97, 13);
             this.label70.TabIndex = 10;
             this.label70.Text = "Nombre de visites :";
-            // 
-            // nbVisites
-            // 
-            this.nbVisites.AutoSize = true;
-            this.nbVisites.Location = new System.Drawing.Point(638, 494);
-            this.nbVisites.Name = "nbVisites";
-            this.nbVisites.Size = new System.Drawing.Size(0, 13);
-            this.nbVisites.TabIndex = 11;
             // 
             // label71
             // 
@@ -2090,9 +1905,9 @@
             this.groupBox11.Controls.Add(this.button9);
             this.groupBox11.Controls.Add(this.button8);
             this.groupBox11.Controls.Add(this.label79);
-            this.groupBox11.Location = new System.Drawing.Point(3, 270);
+            this.groupBox11.Location = new System.Drawing.Point(244, 276);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(235, 181);
+            this.groupBox11.Size = new System.Drawing.Size(244, 181);
             this.groupBox11.TabIndex = 5;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Accord pour l\'activité complémentaire";
@@ -2102,27 +1917,10 @@
             this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label79.Location = new System.Drawing.Point(6, 25);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(223, 28);
+            this.label79.Size = new System.Drawing.Size(232, 28);
             this.label79.TabIndex = 6;
             this.label79.Text = "Sélectionnez votre identité dans la liste des responsables de région";
             this.label79.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(286, 260);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(161, 13);
-            this.label80.TabIndex = 6;
-            this.label80.Text = "Liste des responsables de région";
-            // 
-            // listeResponsableRégion
-            // 
-            this.listeResponsableRégion.FormattingEnabled = true;
-            this.listeResponsableRégion.Location = new System.Drawing.Point(244, 276);
-            this.listeResponsableRégion.Name = "listeResponsableRégion";
-            this.listeResponsableRégion.Size = new System.Drawing.Size(244, 225);
-            this.listeResponsableRégion.TabIndex = 7;
             // 
             // label81
             // 
@@ -2145,7 +1943,7 @@
             // 
             this.button8.Location = new System.Drawing.Point(6, 98);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(223, 35);
+            this.button8.Size = new System.Drawing.Size(232, 35);
             this.button8.TabIndex = 7;
             this.button8.Text = "Donner un accord pour l\'activité complémentaire sélectionnée";
             this.button8.UseVisualStyleBackColor = true;
@@ -2154,7 +1952,7 @@
             // 
             this.button9.Location = new System.Drawing.Point(6, 139);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(223, 35);
+            this.button9.Size = new System.Drawing.Size(232, 35);
             this.button9.TabIndex = 8;
             this.button9.Text = "Donner un refus pour l\'activité complémentaire sélectionnée";
             this.button9.UseVisualStyleBackColor = true;
@@ -2164,7 +1962,7 @@
             this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label82.Location = new System.Drawing.Point(6, 63);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(223, 28);
+            this.label82.Size = new System.Drawing.Size(232, 28);
             this.label82.TabIndex = 9;
             this.label82.Text = "Sélectionnez l\'activité complémentaire concernée dans la liste des demandes d\'AC";
             this.label82.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2172,7 +1970,7 @@
             // label83
             // 
             this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(3, 454);
+            this.label83.Location = new System.Drawing.Point(244, 460);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(142, 13);
             this.label83.TabIndex = 10;
@@ -2181,7 +1979,7 @@
             // label84
             // 
             this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(18, 479);
+            this.label84.Location = new System.Drawing.Point(259, 485);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(59, 13);
             this.label84.TabIndex = 11;
@@ -2190,7 +1988,7 @@
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(134, 479);
+            this.label85.Location = new System.Drawing.Point(375, 485);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(53, 13);
             this.label85.TabIndex = 12;
@@ -2199,7 +1997,7 @@
             // nbACAccordé
             // 
             this.nbACAccordé.AutoSize = true;
-            this.nbACAccordé.Location = new System.Drawing.Point(83, 479);
+            this.nbACAccordé.Location = new System.Drawing.Point(324, 485);
             this.nbACAccordé.Name = "nbACAccordé";
             this.nbACAccordé.Size = new System.Drawing.Size(0, 13);
             this.nbACAccordé.TabIndex = 13;
@@ -2207,7 +2005,7 @@
             // nbACRefusé
             // 
             this.nbACRefusé.AutoSize = true;
-            this.nbACRefusé.Location = new System.Drawing.Point(191, 479);
+            this.nbACRefusé.Location = new System.Drawing.Point(432, 485);
             this.nbACRefusé.Name = "nbACRefusé";
             this.nbACRefusé.Size = new System.Drawing.Size(0, 13);
             this.nbACRefusé.TabIndex = 14;
@@ -2322,7 +2120,7 @@
             // label89
             // 
             this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(17, 270);
+            this.label89.Location = new System.Drawing.Point(382, 260);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(113, 13);
             this.label89.TabIndex = 3;
@@ -2331,10 +2129,284 @@
             // nbPraticiens
             // 
             this.nbPraticiens.AutoSize = true;
-            this.nbPraticiens.Location = new System.Drawing.Point(136, 270);
+            this.nbPraticiens.Location = new System.Drawing.Point(501, 260);
             this.nbPraticiens.Name = "nbPraticiens";
             this.nbPraticiens.Size = new System.Drawing.Size(0, 13);
             this.nbPraticiens.TabIndex = 4;
+            // 
+            // produit
+            // 
+            this.produit.Controls.Add(this.label90);
+            this.produit.Controls.Add(this.label92);
+            this.produit.Controls.Add(this.label93);
+            this.produit.Controls.Add(this.listeProduits);
+            this.produit.Controls.Add(this.label94);
+            this.produit.Controls.Add(this.groupBox13);
+            this.produit.Location = new System.Drawing.Point(4, 22);
+            this.produit.Name = "produit";
+            this.produit.Size = new System.Drawing.Size(752, 511);
+            this.produit.TabIndex = 6;
+            this.produit.Text = "Produit";
+            this.produit.UseVisualStyleBackColor = true;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(638, 208);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(0, 13);
+            this.label90.TabIndex = 18;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(598, 302);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(0, 13);
+            this.label92.TabIndex = 16;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(487, 302);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(105, 13);
+            this.label93.TabIndex = 15;
+            this.label93.Text = "Nombre de produits :";
+            // 
+            // listeProduits
+            // 
+            this.listeProduits.FormattingEnabled = true;
+            this.listeProduits.Location = new System.Drawing.Point(340, 22);
+            this.listeProduits.Name = "listeProduits";
+            this.listeProduits.Size = new System.Drawing.Size(399, 277);
+            this.listeProduits.TabIndex = 14;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(487, 3);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(89, 13);
+            this.label94.TabIndex = 13;
+            this.label94.Text = "Liste des produits";
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.btSupprimerProduit);
+            this.groupBox13.Controls.Add(this.button13);
+            this.groupBox13.Controls.Add(this.button14);
+            this.groupBox13.Controls.Add(this.label95);
+            this.groupBox13.Controls.Add(this.label96);
+            this.groupBox13.Controls.Add(this.label98);
+            this.groupBox13.Controls.Add(this.label97);
+            this.groupBox13.Controls.Add(this.label99);
+            this.groupBox13.Controls.Add(this.label100);
+            this.groupBox13.Controls.Add(this.textBox48);
+            this.groupBox13.Controls.Add(this.label101);
+            this.groupBox13.Controls.Add(this.textBox53);
+            this.groupBox13.Controls.Add(this.label102);
+            this.groupBox13.Controls.Add(this.textBox47);
+            this.groupBox13.Controls.Add(this.textBox49);
+            this.groupBox13.Controls.Add(this.textBox50);
+            this.groupBox13.Controls.Add(this.textBox51);
+            this.groupBox13.Controls.Add(this.textBox52);
+            this.groupBox13.Location = new System.Drawing.Point(3, 3);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(331, 296);
+            this.groupBox13.TabIndex = 12;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Ajouter/modifier un produit";
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(141, 230);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(183, 23);
+            this.button13.TabIndex = 17;
+            this.button13.Text = "Modifier le produit sélectionné";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(3, 230);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(132, 23);
+            this.button14.TabIndex = 16;
+            this.button14.Text = "Ajouter le produit";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(74, 152);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(29, 13);
+            this.label95.TabIndex = 15;
+            this.label95.Text = "Coût";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(64, 100);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(39, 13);
+            this.label96.TabIndex = 14;
+            this.label96.Text = "Famille";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(368, 22);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(0, 13);
+            this.label97.TabIndex = 13;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(50, 126);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(53, 13);
+            this.label98.TabIndex = 12;
+            this.label98.Text = "Posologie";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(6, 182);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(70, 13);
+            this.label99.TabIndex = 11;
+            this.label99.Text = "Composition :";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(17, 74);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(86, 13);
+            this.label100.TabIndex = 10;
+            this.label100.Text = "Contre-indication";
+            // 
+            // textBox47
+            // 
+            this.textBox47.Location = new System.Drawing.Point(109, 123);
+            this.textBox47.Name = "textBox47";
+            this.textBox47.Size = new System.Drawing.Size(216, 20);
+            this.textBox47.TabIndex = 6;
+            // 
+            // textBox48
+            // 
+            this.textBox48.Location = new System.Drawing.Point(6, 198);
+            this.textBox48.Multiline = true;
+            this.textBox48.Name = "textBox48";
+            this.textBox48.Size = new System.Drawing.Size(318, 20);
+            this.textBox48.TabIndex = 3;
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(6, 48);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(97, 13);
+            this.label101.TabIndex = 9;
+            this.label101.Text = "Effet thérapeutique";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(74, 22);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(29, 13);
+            this.label102.TabIndex = 8;
+            this.label102.Text = "Nom";
+            // 
+            // textBox49
+            // 
+            this.textBox49.Location = new System.Drawing.Point(109, 97);
+            this.textBox49.Name = "textBox49";
+            this.textBox49.Size = new System.Drawing.Size(215, 20);
+            this.textBox49.TabIndex = 5;
+            // 
+            // textBox50
+            // 
+            this.textBox50.Location = new System.Drawing.Point(109, 71);
+            this.textBox50.Name = "textBox50";
+            this.textBox50.Size = new System.Drawing.Size(215, 20);
+            this.textBox50.TabIndex = 2;
+            // 
+            // textBox51
+            // 
+            this.textBox51.Location = new System.Drawing.Point(109, 45);
+            this.textBox51.Name = "textBox51";
+            this.textBox51.Size = new System.Drawing.Size(215, 20);
+            this.textBox51.TabIndex = 1;
+            // 
+            // textBox52
+            // 
+            this.textBox52.Location = new System.Drawing.Point(109, 19);
+            this.textBox52.Name = "textBox52";
+            this.textBox52.Size = new System.Drawing.Size(215, 20);
+            this.textBox52.TabIndex = 0;
+            // 
+            // textBox53
+            // 
+            this.textBox53.Location = new System.Drawing.Point(109, 149);
+            this.textBox53.Name = "textBox53";
+            this.textBox53.Size = new System.Drawing.Size(216, 20);
+            this.textBox53.TabIndex = 4;
+            // 
+            // btSupprimerProduit
+            // 
+            this.btSupprimerProduit.Location = new System.Drawing.Point(67, 259);
+            this.btSupprimerProduit.Name = "btSupprimerProduit";
+            this.btSupprimerProduit.Size = new System.Drawing.Size(187, 23);
+            this.btSupprimerProduit.TabIndex = 18;
+            this.btSupprimerProduit.Text = "Supprimer le produit sélectionné";
+            this.btSupprimerProduit.UseVisualStyleBackColor = true;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(478, 287);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(81, 13);
+            this.label60.TabIndex = 11;
+            this.label60.Text = "Liste des visites";
+            // 
+            // listeVisites
+            // 
+            this.listeVisites.FormattingEnabled = true;
+            this.listeVisites.Location = new System.Drawing.Point(293, 303);
+            this.listeVisites.Name = "listeVisites";
+            this.listeVisites.Size = new System.Drawing.Size(446, 186);
+            this.listeVisites.TabIndex = 12;
+            // 
+            // nbVisites
+            // 
+            this.nbVisites.AutoSize = true;
+            this.nbVisites.Location = new System.Drawing.Point(565, 492);
+            this.nbVisites.Name = "nbVisites";
+            this.nbVisites.Size = new System.Drawing.Size(0, 13);
+            this.nbVisites.TabIndex = 13;
+            // 
+            // listeResponsableRégion
+            // 
+            this.listeResponsableRégion.FormattingEnabled = true;
+            this.listeResponsableRégion.Location = new System.Drawing.Point(3, 276);
+            this.listeResponsableRégion.Name = "listeResponsableRégion";
+            this.listeResponsableRégion.Size = new System.Drawing.Size(235, 225);
+            this.listeResponsableRégion.TabIndex = 16;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(45, 260);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(161, 13);
+            this.label80.TabIndex = 15;
+            this.label80.Text = "Liste des responsables de région";
             // 
             // Interface
             // 
@@ -2370,14 +2442,12 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.visiteEtProduit.ResumeLayout(false);
-            this.visiteEtProduit.PerformLayout();
+            this.visite.ResumeLayout(false);
+            this.visite.PerformLayout();
             this.ac.ResumeLayout(false);
             this.ac.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -2385,6 +2455,10 @@
             this.praticien.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            this.produit.ResumeLayout(false);
+            this.produit.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2394,7 +2468,7 @@
         private System.Windows.Forms.TabPage personnel;
         private System.Windows.Forms.TabPage materiel;
         private System.Windows.Forms.TabPage incident;
-        private System.Windows.Forms.TabPage visiteEtProduit;
+        private System.Windows.Forms.TabPage visite;
         private System.Windows.Forms.TabPage ac;
         private System.Windows.Forms.GroupBox groupBoxAjouterPersonnel;
         private System.Windows.Forms.TextBox textBox3;
@@ -2538,30 +2612,9 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox34;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.Button btModifierProduit;
-        private System.Windows.Forms.Button btAjouterProduit;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.ListBox listeProduit;
+        private System.Windows.Forms.ListBox listeProduits2;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label nbVisites;
         private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label nbProduits;
-        private System.Windows.Forms.Label label69;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.ListBox listeVisiteurs2;
         private System.Windows.Forms.Label label71;
@@ -2585,8 +2638,6 @@
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.ListBox listeDemandeAC;
         private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.ListBox listeResponsableRégion;
-        private System.Windows.Forms.Label label80;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Button button9;
@@ -2605,6 +2656,36 @@
         private System.Windows.Forms.TextBox textBox46;
         private System.Windows.Forms.TextBox textBox45;
         private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TabPage produit;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.ListBox listeProduits;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Button btSupprimerProduit;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.TextBox textBox53;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.TextBox textBox47;
+        private System.Windows.Forms.TextBox textBox49;
+        private System.Windows.Forms.TextBox textBox50;
+        private System.Windows.Forms.TextBox textBox51;
+        private System.Windows.Forms.TextBox textBox52;
+        private System.Windows.Forms.ListBox listeVisites;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label nbVisites;
+        private System.Windows.Forms.ListBox listeResponsableRégion;
+        private System.Windows.Forms.Label label80;
     }
 }
 

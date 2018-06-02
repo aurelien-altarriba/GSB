@@ -106,5 +106,10 @@ namespace GSB
         {
 
         }
+
+        private void visite_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
