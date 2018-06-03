@@ -13,7 +13,7 @@ namespace GSB
         string avantages;
         int budget;
 
-        public Visiteur(string unObjectif, int unePrime, string desAvantages, int unBudget, string unNom, string unPrenom, string uneDate_embauche, string uneRegion_carriere, string unMail) : base(unNom, unPrenom, uneDate_embauche, uneRegion_carriere, unMail)
+        public Visiteur(string unObjectif, int unePrime, string desAvantages, int unBudget, string unNom, string unPrenom, string uneDate_embauche, string uneRegion_carriere, string unMail, string unRole) : base(unNom, unPrenom, uneDate_embauche, uneRegion_carriere, unMail, unRole)
         {
             objectif = unObjectif;
             prime = unePrime;

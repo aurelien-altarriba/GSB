@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace GSB
 {
     public partial class Interface : System.Windows.Forms.Form
     {
+        BDD BDD;
         Personnel unPersonnel;
         List<Personnel> lesPersonnels;
         Visiteur unVisiteur;
@@ -129,7 +131,7 @@ namespace GSB
             lesTechniciens = new List<Technicien>();
         }
 
-        public void actualiserListePersonnelOngletPersonnel()
+        private void actualiserListePersonnelOngletPersonnel()
         {
             listePersonnel.Items.Clear();
 
@@ -149,27 +151,109 @@ namespace GSB
             }
         }
 
+        private void majStatsPersonnel()
+        {
+            int VisiteurMédical = 0;
+            int DéléguéRégional = 0;
+            int ResponsableRégion = 0;
+            int Technicien = 0;
+            int TechnicienSupérieur = 0;
+            int Autre = 0;
+
+            foreach (Personnel Per in lesPersonnels)
+            {
+                if (Per.Role == "Responsable région")
+                {
+                    ResponsableRégion++;
+                }
+                else
+                {
+                    Autre++;
+                }
+            }
+
+            foreach (Visiteur Vis in lesVisiteurs)
+            {
+                if (Vis.Role == "Visiteur médical")
+                {
+                    VisiteurMédical++;
+                }
+                else
+                {
+                    DéléguéRégional++;
+                }
+            }
+
+            foreach (Technicien Tec in lesTechniciens)
+            {
+                if (Tec.Role == "Technicien")
+                {
+                    Technicien++;
+                }
+                else
+                {
+                    TechnicienSupérieur++;
+                }
+            }
+
+            nbVisiteurMédical.Text = VisiteurMédical.ToString();
+            nbDéléguéRégional.Text = DéléguéRégional.ToString();
+            nbResponsableRégion.Text = ResponsableRégion.ToString();
+            nbTechnicien.Text = Technicien.ToString();
+            nbTechnicienSupérieur.Text = TechnicienSupérieur.ToString();
+            nbAutre.Text = Autre.ToString();  
+        }
+
         private void btAjouterPersonnel_Click(object sender, EventArgs e)
         {
-            if (rbVisiteur.Checked || rbDéléguéRégional.Checked)
+            if (rbVisiteur.Checked)
             {
-                unVisiteur = new Visiteur(tbObjectifVisiteur.Text, Convert.ToInt32(tbPrimeVisiteur.Text), tbAvantagesVisiteur.Text, Convert.ToInt32(tbBudgetVisiteur.Text), tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text);
+                unVisiteur = new Visiteur(tbObjectifVisiteur.Text, Convert.ToInt32(tbPrimeVisiteur.Text), tbAvantagesVisiteur.Text, Convert.ToInt32(tbBudgetVisiteur.Text), tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Visiteur médical");
                 lesVisiteurs.Add(unVisiteur);
             }
 
-            else if (rbTechnicien.Checked || rbTechnicienSupérieur.Checked)
+            else if (rbDéléguéRégional.Checked)
             {
-                unTechnicien = new Technicien(Convert.ToInt32(tbNiveauInterventionTechnicien.Text), tbFormationTechnicien.Text, tbCompetencesTechnicien.Text, tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text);
+                unVisiteur = new Visiteur(tbObjectifVisiteur.Text, Convert.ToInt32(tbPrimeVisiteur.Text), tbAvantagesVisiteur.Text, Convert.ToInt32(tbBudgetVisiteur.Text), tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Délégué régional");
+                lesVisiteurs.Add(unVisiteur);
+            }
+
+            else if (rbTechnicien.Checked)
+            {
+                unTechnicien = new Technicien(Convert.ToInt32(tbNiveauInterventionTechnicien.Text), tbFormationTechnicien.Text, tbCompetencesTechnicien.Text, tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Technicien");
                 lesTechniciens.Add(unTechnicien);
+            }
+
+            else if (rbTechnicienSupérieur.Checked)
+            {
+                unTechnicien = new Technicien(Convert.ToInt32(tbNiveauInterventionTechnicien.Text), tbFormationTechnicien.Text, tbCompetencesTechnicien.Text, tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Technicien supérieur");
+                lesTechniciens.Add(unTechnicien);
+            }
+
+            else if (rbResponsableRégion.Checked)
+            {
+                unPersonnel = new Personnel(tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Responsable région");
+                lesPersonnels.Add(unPersonnel);
             }
 
             else
             {
-                unPersonnel = new Personnel(tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text);
+                unPersonnel = new Personnel(tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Autre");
                 lesPersonnels.Add(unPersonnel);
+
+                BDD.ouvrirConnexion();
+
+                string requete = "INSERT INTO Personnel (nom, prenom, date_embauche, region_carriere, mail)" +
+                    " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "');";
+                MySqlCommand cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                BDD.fermerConnexion();
+
             }
 
             actualiserListePersonnelOngletPersonnel();
+            majStatsPersonnel();
         }
 
         private void btModifierPersonnel_Click(object sender, EventArgs e)
@@ -184,7 +268,10 @@ namespace GSB
                     Per.Nom = tbNomPersonnel.Text;
                     Per.Prenom = tbPrénomPersonnel.Text;
                     Per.Date_embauche = tbDateEmbauchePersonnel.Text;
-                    Per.Region_carriere = Per.Region_carriere + " - " + tbRégionPersonnel.Text;
+                    if (Per.Region_carriere != tbRégionPersonnel.Text)
+                    {
+                        Per.Region_carriere = Per.Region_carriere + " - " + tbRégionPersonnel.Text;
+                    }
                     Per.Mail = tbMailPersonnel.Text + "@swiss-galaxy.com";
 
                     trouvé = true;
@@ -200,7 +287,10 @@ namespace GSB
                         Vis.Nom = tbNomPersonnel.Text;
                         Vis.Prenom = tbPrénomPersonnel.Text;
                         Vis.Date_embauche = tbDateEmbauchePersonnel.Text;
-                        Vis.Region_carriere = Vis.Region_carriere + " - " + tbRégionPersonnel.Text;
+                        if (Vis.Region_carriere != tbRégionPersonnel.Text)
+                        {
+                            Vis.Region_carriere = Vis.Region_carriere + " - " + tbRégionPersonnel.Text;
+                        }
                         Vis.Mail = tbMailPersonnel.Text + "@swiss-galaxy.com";
                         Vis.Objectif = tbObjectifVisiteur.Text;
                         Vis.Prime = Convert.ToInt32(tbPrimeVisiteur.Text);
@@ -221,7 +311,10 @@ namespace GSB
                         Tec.Nom = tbNomPersonnel.Text;
                         Tec.Prenom = tbPrénomPersonnel.Text;
                         Tec.Date_embauche = tbDateEmbauchePersonnel.Text;
-                        Tec.Region_carriere = Tec.Region_carriere + " - " + tbRégionPersonnel.Text;
+                        if (Tec.Region_carriere != tbRégionPersonnel.Text)
+                        {
+                            Tec.Region_carriere =Tec.Region_carriere + " - " + tbRégionPersonnel.Text;
+                        }
                         Tec.Mail = tbMailPersonnel.Text + "@swiss-galaxy.com";
                         Tec.Niveau_intervention = Convert.ToInt32(tbNiveauInterventionTechnicien.Text);
                         Tec.Formation = tbFormationTechnicien.Text;
@@ -239,8 +332,9 @@ namespace GSB
             else
             {
                 actualiserListePersonnelOngletPersonnel();
+                majStatsPersonnel();
 
-                MessageBox.Show("Personnel " + tbIDPersonnelModifier + " modifié avec succés");
+                MessageBox.Show("Personnel " + tbIDPersonnelModifier.Text + " modifié avec succés");
             }
         }
 
@@ -308,8 +402,9 @@ namespace GSB
             else
             {
                 actualiserListePersonnelOngletPersonnel();
+                majStatsPersonnel();
 
-                MessageBox.Show("Personnel " + tbIDPersonnelSupprimer + " supprimé avec succés");
+                MessageBox.Show("Personnel " + tbIDPersonnelSupprimer.Text + " supprimé avec succés");
             }
         }
     }

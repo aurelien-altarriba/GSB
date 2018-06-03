@@ -12,7 +12,7 @@ namespace GSB
         string formation;
         string competences;
 
-        public Technicien(int unNiveau_intervention, string uneFormation, string desCompetences, string unNom, string unPrenom, string uneDate_embauche, string uneRegion_carriere, string unMail) : base(unNom, unPrenom, uneDate_embauche, uneRegion_carriere, unMail)
+        public Technicien(int unNiveau_intervention, string uneFormation, string desCompetences, string unNom, string unPrenom, string uneDate_embauche, string uneRegion_carriere, string unMail, string unRole) : base(unNom, unPrenom, uneDate_embauche, uneRegion_carriere, unMail, unRole)
         {
             niveau_intervention = unNiveau_intervention;
             formation = uneFormation;

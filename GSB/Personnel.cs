@@ -15,10 +15,12 @@ namespace GSB
         string date_embauche;
         string region_carriere;
         string mail;
+        string role;
 
+        // Pour donner un identifiant unique comme en BDD en attendant d'avoir la connexion
         static int num_id_personnel = 0;
 
-        public Personnel(string unNom, string unPrenom, string uneDate_embauche, string uneRegion_carriere, string unMail)
+        public Personnel(string unNom, string unPrenom, string uneDate_embauche, string uneRegion_carriere, string unMail, string unRole)
         {
             num_id_personnel = num_id_personnel + 1;
             id_personnel = num_id_personnel;
@@ -28,6 +30,7 @@ namespace GSB
             date_embauche = uneDate_embauche;
             region_carriere = region_carriere + " - " + uneRegion_carriere;
             mail = unMail + "@swiss-galaxy.com";
+            role = unRole;
         }
 
         public string infos()
@@ -123,6 +126,19 @@ namespace GSB
             set
             {
                 mail = value;
+            }
+        }
+
+        public string Role
+        {
+            get
+            {
+                return role;
+            }
+
+            set
+            {
+                role = value;
             }
         }
     }
