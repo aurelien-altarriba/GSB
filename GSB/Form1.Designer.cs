@@ -100,25 +100,13 @@
             this.label32 = new System.Windows.Forms.Label();
             this.listeMatériel = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.btModifierMatériel = new System.Windows.Forms.Button();
             this.btAjouterMatériel = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.tbFournisseurMatériel = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.tbNomMatériel = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.incident = new System.Windows.Forms.TabPage();
             this.nbTicketCloturé = new System.Windows.Forms.Label();
@@ -255,6 +243,17 @@
             this.textBox50 = new System.Windows.Forms.TextBox();
             this.textBox51 = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tbIdMatérielModifier = new System.Windows.Forms.TextBox();
+            this.tbDatePossessionMatériel = new System.Windows.Forms.DateTimePicker();
+            this.tbDateGarantieMatériel = new System.Windows.Forms.DateTimePicker();
+            this.tbIdMatérielSupprimer = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.tbIdMatérielAffecter = new System.Windows.Forms.TextBox();
+            this.tbIdPersonnelMatérielAffecter = new System.Windows.Forms.TextBox();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -877,11 +876,12 @@
             // 
             // materiel
             // 
+            this.materiel.Controls.Add(this.label26);
+            this.materiel.Controls.Add(this.tbIdMatérielSupprimer);
             this.materiel.Controls.Add(this.nbMatérielAffecté);
             this.materiel.Controls.Add(this.label36);
             this.materiel.Controls.Add(this.nbMatériel);
             this.materiel.Controls.Add(this.label35);
-            this.materiel.Controls.Add(this.btAffecterMatériel);
             this.materiel.Controls.Add(this.btSupprimerMatériel);
             this.materiel.Controls.Add(this.listePersonnelMatériel);
             this.materiel.Controls.Add(this.label33);
@@ -899,7 +899,7 @@
             // nbMatérielAffecté
             // 
             this.nbMatérielAffecté.AutoSize = true;
-            this.nbMatérielAffecté.Location = new System.Drawing.Point(318, 473);
+            this.nbMatérielAffecté.Location = new System.Drawing.Point(693, 481);
             this.nbMatérielAffecté.Name = "nbMatérielAffecté";
             this.nbMatérielAffecté.Size = new System.Drawing.Size(0, 13);
             this.nbMatérielAffecté.TabIndex = 10;
@@ -907,7 +907,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(172, 473);
+            this.label36.Location = new System.Drawing.Point(547, 481);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(140, 13);
             this.label36.TabIndex = 9;
@@ -916,7 +916,7 @@
             // nbMatériel
             // 
             this.nbMatériel.AutoSize = true;
-            this.nbMatériel.Location = new System.Drawing.Point(132, 473);
+            this.nbMatériel.Location = new System.Drawing.Point(507, 481);
             this.nbMatériel.Name = "nbMatériel";
             this.nbMatériel.Size = new System.Drawing.Size(0, 13);
             this.nbMatériel.TabIndex = 8;
@@ -924,7 +924,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(22, 473);
+            this.label35.Location = new System.Drawing.Point(397, 481);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(104, 13);
             this.label35.TabIndex = 7;
@@ -932,26 +932,28 @@
             // 
             // btAffecterMatériel
             // 
-            this.btAffecterMatériel.Location = new System.Drawing.Point(413, 467);
+            this.btAffecterMatériel.Location = new System.Drawing.Point(36, 412);
             this.btAffecterMatériel.Name = "btAffecterMatériel";
-            this.btAffecterMatériel.Size = new System.Drawing.Size(279, 37);
+            this.btAffecterMatériel.Size = new System.Drawing.Size(259, 23);
             this.btAffecterMatériel.TabIndex = 6;
-            this.btAffecterMatériel.Text = "Affecter le matériel sélectionné dans la liste au personnel sélectionné dans l\'au" +
-    "tre liste";
+            this.btAffecterMatériel.Text = "Affecter le matériel au personnel";
             this.btAffecterMatériel.UseVisualStyleBackColor = true;
+            this.btAffecterMatériel.Click += new System.EventHandler(this.btAffecterMatériel_Click);
             // 
             // btSupprimerMatériel
             // 
-            this.btSupprimerMatériel.Location = new System.Drawing.Point(413, 438);
+            this.btSupprimerMatériel.Location = new System.Drawing.Point(351, 439);
             this.btSupprimerMatériel.Name = "btSupprimerMatériel";
-            this.btSupprimerMatériel.Size = new System.Drawing.Size(279, 23);
+            this.btSupprimerMatériel.Size = new System.Drawing.Size(217, 23);
             this.btSupprimerMatériel.TabIndex = 5;
-            this.btSupprimerMatériel.Text = "Supprimer le matériel sélectionné dans la liste";
+            this.btSupprimerMatériel.Text = "Supprimer le matériel correspondant à l\'ID";
             this.btSupprimerMatériel.UseVisualStyleBackColor = true;
+            this.btSupprimerMatériel.Click += new System.EventHandler(this.btSupprimerMatériel_Click);
             // 
             // listePersonnelMatériel
             // 
             this.listePersonnelMatériel.FormattingEnabled = true;
+            this.listePersonnelMatériel.HorizontalScrollbar = true;
             this.listePersonnelMatériel.Location = new System.Drawing.Point(351, 237);
             this.listePersonnelMatériel.Name = "listePersonnelMatériel";
             this.listePersonnelMatériel.Size = new System.Drawing.Size(395, 186);
@@ -979,6 +981,7 @@
             // listeMatériel
             // 
             this.listeMatériel.FormattingEnabled = true;
+            this.listeMatériel.HorizontalScrollbar = true;
             this.listeMatériel.Location = new System.Drawing.Point(351, 22);
             this.listeMatériel.Name = "listeMatériel";
             this.listeMatériel.Size = new System.Drawing.Size(395, 186);
@@ -986,198 +989,102 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label34);
-            this.groupBox1.Controls.Add(this.btModifierMatériel);
-            this.groupBox1.Controls.Add(this.btAjouterMatériel);
-            this.groupBox1.Controls.Add(this.label31);
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.label30);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.tbIdPersonnelMatérielAffecter);
+            this.groupBox1.Controls.Add(this.tbIdMatérielAffecter);
             this.groupBox1.Controls.Add(this.label29);
             this.groupBox1.Controls.Add(this.label28);
-            this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.tbDateGarantieMatériel);
+            this.groupBox1.Controls.Add(this.tbDatePossessionMatériel);
+            this.groupBox1.Controls.Add(this.tbIdMatérielModifier);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.btModifierMatériel);
+            this.groupBox1.Controls.Add(this.btAffecterMatériel);
+            this.groupBox1.Controls.Add(this.btAjouterMatériel);
+            this.groupBox1.Controls.Add(this.label31);
+            this.groupBox1.Controls.Add(this.tbFournisseurMatériel);
+            this.groupBox1.Controls.Add(this.label30);
+            this.groupBox1.Controls.Add(this.tbNomMatériel);
+            this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 444);
+            this.groupBox1.Size = new System.Drawing.Size(326, 499);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ajouter/Modifier un matériel";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(80, 141);
-            this.label34.Name = "label34";
-            this.label34.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label34.Size = new System.Drawing.Size(240, 13);
-            this.label34.TabIndex = 19;
-            this.label34.Text = "* Veuillez ne remplir qu\'une des 4 cases ci-dessus";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btModifierMatériel
             // 
-            this.btModifierMatériel.Location = new System.Drawing.Point(36, 383);
+            this.btModifierMatériel.Location = new System.Drawing.Point(36, 299);
             this.btModifierMatériel.Name = "btModifierMatériel";
             this.btModifierMatériel.Size = new System.Drawing.Size(259, 44);
             this.btModifierMatériel.TabIndex = 18;
-            this.btModifierMatériel.Text = "Modifier le matériel sélectionné dans la liste avec les informations ci-dessus";
+            this.btModifierMatériel.Text = "Modifier le matériel correspondant à l\'ID avec les  informations ci-dessus";
             this.btModifierMatériel.UseVisualStyleBackColor = true;
+            this.btModifierMatériel.Click += new System.EventHandler(this.btModifierMatériel_Click);
             // 
             // btAjouterMatériel
             // 
-            this.btAjouterMatériel.Location = new System.Drawing.Point(36, 354);
+            this.btAjouterMatériel.Location = new System.Drawing.Point(36, 270);
             this.btAjouterMatériel.Name = "btAjouterMatériel";
             this.btAjouterMatériel.Size = new System.Drawing.Size(259, 23);
             this.btAjouterMatériel.TabIndex = 17;
             this.btAjouterMatériel.Text = "Ajouter ce nouveau matériel";
             this.btAjouterMatériel.UseVisualStyleBackColor = true;
+            this.btAjouterMatériel.Click += new System.EventHandler(this.btAjouterMatériel_Click);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(40, 313);
+            this.label31.Location = new System.Drawing.Point(6, 215);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(61, 13);
+            this.label31.Size = new System.Drawing.Size(67, 13);
             this.label31.TabIndex = 16;
-            this.label31.Text = "Fournisseur";
+            this.label31.Text = "Fournisseur :";
             // 
-            // textBox13
+            // tbFournisseurMatériel
             // 
-            this.textBox13.Location = new System.Drawing.Point(107, 310);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(213, 20);
-            this.textBox13.TabIndex = 7;
+            this.tbFournisseurMatériel.Location = new System.Drawing.Point(9, 231);
+            this.tbFournisseurMatériel.Name = "tbFournisseurMatériel";
+            this.tbFournisseurMatériel.Size = new System.Drawing.Size(311, 20);
+            this.tbFournisseurMatériel.TabIndex = 7;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(54, 284);
+            this.label30.Location = new System.Drawing.Point(6, 152);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(47, 13);
+            this.label30.Size = new System.Drawing.Size(121, 13);
             this.label30.TabIndex = 15;
-            this.label30.Text = "Garantie";
+            this.label30.Text = "Date de fin de garantie :";
             // 
-            // textBox12
+            // tbNomMatériel
             // 
-            this.textBox12.Location = new System.Drawing.Point(107, 281);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(213, 20);
-            this.textBox12.TabIndex = 6;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(107, 45);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(213, 20);
-            this.textBox7.TabIndex = 1;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(107, 224);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(213, 20);
-            this.textBox11.TabIndex = 5;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(107, 72);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(213, 20);
-            this.textBox8.TabIndex = 2;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(107, 182);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(213, 20);
-            this.textBox10.TabIndex = 4;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(107, 98);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(213, 20);
-            this.textBox9.TabIndex = 3;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(107, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(213, 20);
-            this.textBox6.TabIndex = 0;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(16, 227);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(85, 13);
-            this.label29.TabIndex = 14;
-            this.label29.Text = "Date de location";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(196, 205);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(23, 13);
-            this.label28.TabIndex = 13;
-            this.label28.Text = "OU";
+            this.tbNomMatériel.Location = new System.Drawing.Point(9, 55);
+            this.tbNomMatériel.Name = "tbNomMatériel";
+            this.tbNomMatériel.Size = new System.Drawing.Size(311, 20);
+            this.tbNomMatériel.TabIndex = 0;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(33, 185);
+            this.label27.Location = new System.Drawing.Point(6, 97);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(68, 13);
+            this.label27.Size = new System.Drawing.Size(198, 13);
             this.label27.TabIndex = 12;
-            this.label27.Text = "Date d\'achat";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(51, 101);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(50, 13);
-            this.label26.TabIndex = 11;
-            this.label26.Text = "* Logiciel";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(54, 75);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(47, 13);
-            this.label25.TabIndex = 10;
-            this.label25.Text = "* Disque";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(47, 48);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(54, 13);
-            this.label24.TabIndex = 9;
-            this.label24.Text = "* Mémoire";
+            this.label27.Text = "Date d\'achat ou de location du matériel :";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(34, 22);
+            this.label23.Location = new System.Drawing.Point(6, 26);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(67, 13);
+            this.label23.Size = new System.Drawing.Size(89, 13);
             this.label23.TabIndex = 8;
-            this.label23.Text = "* Processeur";
+            this.label23.Text = "Nom du matériel :";
             // 
             // incident
             // 
@@ -2467,6 +2374,98 @@
             this.textBox52.Size = new System.Drawing.Size(215, 20);
             this.textBox52.TabIndex = 0;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(6, 39);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(241, 13);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "Processeur, disque, mémoire ou logiciel à préciser";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(93, 356);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(78, 13);
+            this.label25.TabIndex = 20;
+            this.label25.Text = "ID du matériel :";
+            // 
+            // tbIdMatérielModifier
+            // 
+            this.tbIdMatérielModifier.Location = new System.Drawing.Point(177, 353);
+            this.tbIdMatérielModifier.Name = "tbIdMatérielModifier";
+            this.tbIdMatérielModifier.Size = new System.Drawing.Size(48, 20);
+            this.tbIdMatérielModifier.TabIndex = 21;
+            // 
+            // tbDatePossessionMatériel
+            // 
+            this.tbDatePossessionMatériel.CustomFormat = "yyyy-MM-dd";
+            this.tbDatePossessionMatériel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDatePossessionMatériel.Location = new System.Drawing.Point(9, 113);
+            this.tbDatePossessionMatériel.Name = "tbDatePossessionMatériel";
+            this.tbDatePossessionMatériel.Size = new System.Drawing.Size(311, 20);
+            this.tbDatePossessionMatériel.TabIndex = 22;
+            // 
+            // tbDateGarantieMatériel
+            // 
+            this.tbDateGarantieMatériel.CustomFormat = "yyyy-MM-dd";
+            this.tbDateGarantieMatériel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateGarantieMatériel.Location = new System.Drawing.Point(9, 168);
+            this.tbDateGarantieMatériel.Name = "tbDateGarantieMatériel";
+            this.tbDateGarantieMatériel.Size = new System.Drawing.Size(311, 20);
+            this.tbDateGarantieMatériel.TabIndex = 23;
+            // 
+            // tbIdMatérielSupprimer
+            // 
+            this.tbIdMatérielSupprimer.Location = new System.Drawing.Point(667, 441);
+            this.tbIdMatérielSupprimer.Name = "tbIdMatérielSupprimer";
+            this.tbIdMatérielSupprimer.Size = new System.Drawing.Size(79, 20);
+            this.tbIdMatérielSupprimer.TabIndex = 11;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(583, 444);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(78, 13);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "ID du matériel :";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(33, 443);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(78, 13);
+            this.label28.TabIndex = 24;
+            this.label28.Text = "ID du matériel :";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(207, 443);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(88, 13);
+            this.label29.TabIndex = 25;
+            this.label29.Text = "ID du personnel :";
+            // 
+            // tbIdMatérielAffecter
+            // 
+            this.tbIdMatérielAffecter.Location = new System.Drawing.Point(36, 459);
+            this.tbIdMatérielAffecter.Name = "tbIdMatérielAffecter";
+            this.tbIdMatérielAffecter.Size = new System.Drawing.Size(85, 20);
+            this.tbIdMatérielAffecter.TabIndex = 26;
+            // 
+            // tbIdPersonnelMatérielAffecter
+            // 
+            this.tbIdPersonnelMatérielAffecter.Location = new System.Drawing.Point(210, 459);
+            this.tbIdPersonnelMatérielAffecter.Name = "tbIdPersonnelMatérielAffecter";
+            this.tbIdPersonnelMatérielAffecter.Size = new System.Drawing.Size(85, 20);
+            this.tbIdPersonnelMatérielAffecter.TabIndex = 27;
+            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2567,7 +2566,7 @@
         private System.Windows.Forms.Label nbVisiteurMédical;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbNomMatériel;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label19;
@@ -2578,13 +2577,7 @@
         private System.Windows.Forms.TextBox tbAvantagesVisiteur;
         private System.Windows.Forms.TextBox tbPrimeVisiteur;
         private System.Windows.Forms.TextBox tbObjectifVisiteur;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbFournisseurMatériel;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
@@ -2593,12 +2586,7 @@
         private System.Windows.Forms.TextBox tbNiveauInterventionTechnicien;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btAffecterMatériel;
         private System.Windows.Forms.Button btSupprimerMatériel;
@@ -2612,7 +2600,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label nbMatériel;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -2751,6 +2738,17 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.DateTimePicker tbDateEmbauchePersonnel;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox tbIdMatérielModifier;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DateTimePicker tbDateGarantieMatériel;
+        private System.Windows.Forms.DateTimePicker tbDatePossessionMatériel;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox tbIdMatérielSupprimer;
+        private System.Windows.Forms.TextBox tbIdPersonnelMatérielAffecter;
+        private System.Windows.Forms.TextBox tbIdMatérielAffecter;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
     }
 }
 

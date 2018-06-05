@@ -126,12 +126,56 @@ namespace GSB
 
         }
 
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         // ******************************************************* //
 
         private void Interface_Load(object sender, EventArgs e)
         {
             BDD = new BDD();
             actualiserListePersonnel();
+            actualiserListeMatériel();
+        }
+
+        private void actualiserListeMatériel()
+        {
+            // Compteur du matériel
+            int Matériel = 0;
+            int MatérielAffecté = 0;
+
+            listeMatériel.Items.Clear();
+            listeMatériel2.Items.Clear();
+
+            string requete = "SELECT * FROM materiel;";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listeMatériel.Items.Add(rdr.GetInt32(0) + " : " + rdr.GetString(1) + " - Date d'achat ou de location : " + rdr.GetValue(2) + " - Garantie jusqu'au : " + rdr.GetValue(3) + " - Fournisseur : " + rdr.GetString(4) + " - Affecté à : " + rdr.GetValue(5));
+                listeMatériel2.Items.Add(rdr.GetInt32(0) + " : " + rdr.GetString(1) + " - Date d'achat ou de location : " + rdr.GetValue(2) + " - Garantie jusqu'au : " + rdr.GetValue(3) + " - Fournisseur : " + rdr.GetString(4) + " - Affecté à : " + rdr.GetValue(5));
+
+                Matériel++;
+
+                // Si l'affection à un personnel est NULL
+                if (!rdr.IsDBNull(5))
+                {
+                    MatérielAffecté++;
+                }
+            }
+
+            rdr.Close();
+
+            nbMatériel.Text = Matériel.ToString();
+            nbMatérielAffecté.Text = MatérielAffecté.ToString();
         }
 
         private void actualiserListePersonnel()
@@ -414,6 +458,68 @@ namespace GSB
             else
             {
                 MessageBox.Show("Le personnel n°" + tbIDPersonnelSupprimer.Text + " n'existe pas ou a déjà été supprimé");
+            }
+        }
+
+        private void btAjouterMatériel_Click(object sender, EventArgs e)
+        {
+            string requete = "INSERT INTO materiel (nom, date_possession, garantie, fournisseur)" +
+                    " VALUES ('" +tbNomMatériel.Text + "', '" + tbDatePossessionMatériel.Text + "', '" + tbDateGarantieMatériel.Text + "', '" + tbFournisseurMatériel.Text + "');";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            cmd.ExecuteNonQuery();
+
+            actualiserListeMatériel();
+        }
+
+        private void btModifierMatériel_Click(object sender, EventArgs e)
+        {
+            string requete = "UPDATE materiel SET nom = '" + tbNomMatériel.Text + "', date_possession = '" + tbDatePossessionMatériel.Text + "', garantie = '" + tbDateGarantieMatériel.Text + "', fournisseur = '" + tbFournisseurMatériel.Text +
+                    "' WHERE materiel.id_materiel = " + Convert.ToInt32(tbIdMatérielModifier.Text) + ";";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeMatériel();
+                MessageBox.Show("Le matériel n°" + tbIDPersonnelSupprimer.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Le matériel n°" + tbIDPersonnelSupprimer.Text + " n'existe pas ou a déjà été modifié");
+            }
+        }
+
+        private void btSupprimerMatériel_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("DELETE FROM materiel WHERE id_materiel = " + Convert.ToInt32(tbIdMatérielSupprimer.Text));
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeMatériel();
+                MessageBox.Show("Le matériel n°" + tbIdMatérielSupprimer.Text + " a bien été supprimé");
+            }
+            else
+            {
+                MessageBox.Show("Le matériel n°" + tbIdMatérielSupprimer.Text + " n'existe pas ou a déjà été supprimé");
+            }
+        }
+
+        private void btAffecterMatériel_Click(object sender, EventArgs e)
+        {
+            string requete = "UPDATE materiel SET id_personnel = " + Convert.ToInt32(tbIdPersonnelMatérielAffecter.Text) +
+                    " WHERE materiel.id_materiel = " + Convert.ToInt32(tbIdMatérielAffecter.Text) + ";";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeMatériel();
+                MessageBox.Show("Le matériel n°" + tbIdMatérielAffecter.Text + " a bien été affecté au personnel n°" + tbIdPersonnelMatérielAffecter.Text);
+            }
+            else
+            {
+                MessageBox.Show("Le matériel n°" + tbIdMatérielAffecter.Text + " ou le personnel n°" + tbIdPersonnelMatérielAffecter.Text + " n'existe pas ou a déjà été supprimé");
             }
         }
     }
