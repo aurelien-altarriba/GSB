@@ -50,6 +50,7 @@
             this.btSupprimerPersonnel = new System.Windows.Forms.Button();
             this.listePersonnel = new System.Windows.Forms.ListBox();
             this.groupBoxAjouterPersonnel = new System.Windows.Forms.GroupBox();
+            this.tbDateEmbauchePersonnel = new System.Windows.Forms.DateTimePicker();
             this.label61 = new System.Windows.Forms.Label();
             this.tbIDPersonnelModifier = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -254,7 +255,6 @@
             this.textBox50 = new System.Windows.Forms.TextBox();
             this.textBox51 = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
-            this.tbDateEmbauchePersonnel = new System.Windows.Forms.DateTimePicker();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -526,6 +526,16 @@
             this.groupBoxAjouterPersonnel.TabStop = false;
             this.groupBoxAjouterPersonnel.Text = "Ajouter/Modifier le personnel";
             this.groupBoxAjouterPersonnel.Enter += new System.EventHandler(this.groupBoxAjouterPersonnel_Enter);
+            // 
+            // tbDateEmbauchePersonnel
+            // 
+            this.tbDateEmbauchePersonnel.CustomFormat = "yyyy-MM-dd";
+            this.tbDateEmbauchePersonnel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateEmbauchePersonnel.Location = new System.Drawing.Point(103, 72);
+            this.tbDateEmbauchePersonnel.Name = "tbDateEmbauchePersonnel";
+            this.tbDateEmbauchePersonnel.Size = new System.Drawing.Size(241, 20);
+            this.tbDateEmbauchePersonnel.TabIndex = 2;
+            this.tbDateEmbauchePersonnel.ValueChanged += new System.EventHandler(this.tbDateEmbauchePersonnel_ValueChanged);
             // 
             // label61
             // 
@@ -2456,16 +2466,6 @@
             this.textBox52.Name = "textBox52";
             this.textBox52.Size = new System.Drawing.Size(215, 20);
             this.textBox52.TabIndex = 0;
-            // 
-            // tbDateEmbauchePersonnel
-            // 
-            this.tbDateEmbauchePersonnel.CustomFormat = "yyyy-MM-dd";
-            this.tbDateEmbauchePersonnel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tbDateEmbauchePersonnel.Location = new System.Drawing.Point(103, 72);
-            this.tbDateEmbauchePersonnel.Name = "tbDateEmbauchePersonnel";
-            this.tbDateEmbauchePersonnel.Size = new System.Drawing.Size(241, 20);
-            this.tbDateEmbauchePersonnel.TabIndex = 2;
-            this.tbDateEmbauchePersonnel.ValueChanged += new System.EventHandler(this.tbDateEmbauchePersonnel_ValueChanged);
             // 
             // Interface
             // 

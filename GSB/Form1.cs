@@ -131,10 +131,10 @@ namespace GSB
         private void Interface_Load(object sender, EventArgs e)
         {
             BDD = new BDD();
-            actualiserListePersonnelOngletPersonnel();
+            actualiserListePersonnel();
         }
 
-        private void actualiserListePersonnelOngletPersonnel()
+        private void actualiserListePersonnel()
         {
             // Compteur du personnel pour chaque rôle
             int VisiteurMédical = 0;
@@ -146,6 +146,7 @@ namespace GSB
 
             // On efface la liste du personnel
             listePersonnel.Items.Clear();
+            listePersonnelMatériel.Items.Clear();
 
             // AUTRE
             // On créer et exécute la requête
@@ -158,6 +159,7 @@ namespace GSB
             {
                 // On ajoute cette chaîne dans la liste du personnel 
                 listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4));
+                listePersonnelMatériel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4));
                 
                 // On incrémente de 1 le nombre de personnel de ce rôle
                 Autre++;
@@ -175,6 +177,8 @@ namespace GSB
             while (rdr.Read())
             {
                 listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4));
+                listePersonnelMatériel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4));
+
                 ResponsableRégion++;
             }
 
@@ -189,6 +193,8 @@ namespace GSB
             while (rdr.Read())
             {
                 listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
+                listePersonnelMatériel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
+
                 VisiteurMédical++;
             }
 
@@ -203,6 +209,8 @@ namespace GSB
             while (rdr.Read())
             {
                 listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
+                listePersonnelMatériel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
+
                 DéléguéRégional++;
             }
 
@@ -217,6 +225,8 @@ namespace GSB
             while (rdr.Read())
             {
                 listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Niveau de compétence : " + rdr.GetInt32(8) + " - Compétences : " + rdr.GetString(10) + " - Formation : " + rdr.GetString(9));
+                listePersonnelMatériel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Niveau de compétence : " + rdr.GetInt32(8) + " - Compétences : " + rdr.GetString(10) + " - Formation : " + rdr.GetString(9));
+
                 Technicien++;
             }
 
@@ -231,12 +241,12 @@ namespace GSB
             while (rdr.Read())
             {
                 listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Niveau de compétence : " + rdr.GetInt32(8) + " - Compétences : " + rdr.GetString(10) + " - Formation : " + rdr.GetString(9));
+                listePersonnelMatériel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Niveau de compétence : " + rdr.GetInt32(8) + " - Compétences : " + rdr.GetString(10) + " - Formation : " + rdr.GetString(9));
+
                 TechnicienSupérieur++;
             }
 
             rdr.Close();
-
-
 
             nbVisiteurMédical.Text = VisiteurMédical.ToString();
             nbDéléguéRégional.Text = DéléguéRégional.ToString();
@@ -321,158 +331,90 @@ namespace GSB
                 cmd.ExecuteNonQuery();
             }
 
-            actualiserListePersonnelOngletPersonnel();
+            actualiserListePersonnel();
         }
 
         private void btModifierPersonnel_Click(object sender, EventArgs e)
         {
-            /*bool trouvé = false;
+            bool trouvé = false;
+            string role = "";
 
-            foreach (Personnel Per in lesPersonnels)
+            // On récupère le rôle du personnel recherché
+            string requete = "SELECT role FROM personnel P WHERE P.id_personnel = " + Convert.ToInt32(tbIDPersonnelModifier.Text);
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read()) { role = rdr.GetString(0); }
+
+            rdr.Close();
+
+            // Si le personnel est un visiteur ou délégué
+            if (role == "Visiteur médical" || role == "Délégué régional")
             {
-                // Si l'ID correspond à celui trouvé dans la liste lesPersonnels
-                if (Per.Id_personnel == Convert.ToInt16(tbIDPersonnelModifier.Text))
-                {
-                    Per.Nom = tbNomPersonnel.Text;
-                    Per.Prenom = tbPrénomPersonnel.Text;
-                    Per.Date_embauche = tbDateEmbauchePersonnel.Text;
-                    if (Per.Region_carriere != tbRégionPersonnel.Text)
-                    {
-                        Per.Region_carriere = Per.Region_carriere + " - " + tbRégionPersonnel.Text;
-                    }
-                    Per.Mail = tbMailPersonnel.Text + "@swiss-galaxy.com";
+                requete = "UPDATE personnel SET nom = '" + tbNomPersonnel.Text + "', prenom = '" + tbPrénomPersonnel.Text + "', date_embauche = '" + tbDateEmbauchePersonnel.Text + "', region_carriere = '" + tbRégionPersonnel.Text + "', mail = '" + tbMailPersonnel.Text + "@swiss-galaxy.com'" +
+                    " WHERE personnel.id_personnel = " + Convert.ToInt32(tbIDPersonnelModifier.Text) + ";";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
 
-                    trouvé = true;
-                }
+                requete = "UPDATE visiteur SET objectif = '" + tbObjectifVisiteur.Text + "', prime = " + Convert.ToInt32(tbPrimeVisiteur.Text) + ", avantages = '" + tbAvantagesVisiteur.Text + "', budget = " + Convert.ToInt32(tbBudgetVisiteur.Text) +
+                    " WHERE visiteur.id_personnel = " + Convert.ToInt32(tbIDPersonnelModifier.Text) + ";";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                trouvé = true;
             }
 
-            if (trouvé == false)
+            else if (role == "Technicien" || role == "Technicien supérieur")
             {
-                foreach (Visiteur Vis in lesVisiteurs)
-                {
-                    if (Vis.Id_personnel == Convert.ToInt16(tbIDPersonnelModifier.Text))
-                    {
-                        Vis.Nom = tbNomPersonnel.Text;
-                        Vis.Prenom = tbPrénomPersonnel.Text;
-                        Vis.Date_embauche = tbDateEmbauchePersonnel.Text;
-                        if (Vis.Region_carriere != tbRégionPersonnel.Text)
-                        {
-                            Vis.Region_carriere = Vis.Region_carriere + " - " + tbRégionPersonnel.Text;
-                        }
-                        Vis.Mail = tbMailPersonnel.Text + "@swiss-galaxy.com";
-                        Vis.Objectif = tbObjectifVisiteur.Text;
-                        Vis.Prime = Convert.ToInt32(tbPrimeVisiteur.Text);
-                        Vis.Avantages = tbAvantagesVisiteur.Text;
-                        Vis.Budget = Convert.ToInt32(tbBudgetVisiteur.Text);
+                requete = "UPDATE personnel SET nom = '" + tbNomPersonnel.Text + "', prenom = '" + tbPrénomPersonnel.Text + "', date_embauche = '" + tbDateEmbauchePersonnel.Text + "', region_carriere = '" + tbRégionPersonnel.Text + "', mail = '" + tbMailPersonnel.Text + "@swiss-galaxy.com'" +
+                    " WHERE personnel.id_personnel = " + Convert.ToInt32(tbIDPersonnelModifier.Text) + ";";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
 
-                        trouvé = true;
-                    }
-                }
+                requete = "UPDATE technicien SET niveau_intervention = " + Convert.ToInt32(tbNiveauInterventionTechnicien.Text) + ", formation = '" + tbFormationTechnicien.Text + "', competences = '" + tbCompetencesTechnicien.Text +
+                    "' WHERE technicien.id_personnel = " + Convert.ToInt32(tbIDPersonnelModifier.Text) + ";";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                trouvé = true;
             }
 
-            if (trouvé == false)
-            {
-                foreach (Technicien Tec in lesTechniciens)
-                {
-                    if (Tec.Id_personnel == Convert.ToInt16(tbIDPersonnelModifier.Text))
-                    {
-                        Tec.Nom = tbNomPersonnel.Text;
-                        Tec.Prenom = tbPrénomPersonnel.Text;
-                        Tec.Date_embauche = tbDateEmbauchePersonnel.Text;
-                        if (Tec.Region_carriere != tbRégionPersonnel.Text)
-                        {
-                            Tec.Region_carriere =Tec.Region_carriere + " - " + tbRégionPersonnel.Text;
-                        }
-                        Tec.Mail = tbMailPersonnel.Text + "@swiss-galaxy.com";
-                        Tec.Niveau_intervention = Convert.ToInt32(tbNiveauInterventionTechnicien.Text);
-                        Tec.Formation = tbFormationTechnicien.Text;
-                        Tec.Competences = tbCompetencesTechnicien.Text;
-
-                        trouvé = true;
-                    }
-                }
-            }
-
-            if (trouvé == false)
-            {
-                MessageBox.Show("Aucun personnel avec l'ID " + tbIDPersonnelModifier.Text + " n'a été trouvé");
-            }
             else
             {
-                actualiserListePersonnelOngletPersonnel();
-                majStatsPersonnel();
+                requete = "UPDATE personnel SET nom = '" + tbNomPersonnel.Text + "', prenom = '" + tbPrénomPersonnel.Text + "', date_embauche = '" + tbDateEmbauchePersonnel.Text + "', region_carriere = '" + tbRégionPersonnel.Text + "', mail = '" + tbMailPersonnel.Text + "@swiss-galaxy.com'" +
+                    " WHERE personnel.id_personnel = " + Convert.ToInt32(tbIDPersonnelModifier.Text) + ";";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Personnel " + tbIDPersonnelModifier.Text + " modifié avec succés");
-            }*/
-        }
-
-        private void btSupprimerPersonnel_Click(object sender, EventArgs e)
-        {
-            /*bool trouvé = false;
-            Personnel PersonnelSupprimer = null;
-            Visiteur VisiteurSupprimer = null;
-            Technicien TechnicienSupprimer = null;
-
-            foreach (Personnel Per in lesPersonnels)
-            {
-                // Si l'ID correspond à celui trouvé dans la liste lesPersonnels
-                if (Per.Id_personnel == Convert.ToInt16(tbIDPersonnelSupprimer.Text))
-                {
-                    PersonnelSupprimer = Per;
-
-                    trouvé = true;
-                }
+                trouvé = true;
             }
 
             if (trouvé)
             {
-                lesPersonnels.Remove(PersonnelSupprimer);
+                actualiserListePersonnel();
+                MessageBox.Show("Le personnel n°" + tbIDPersonnelModifier.Text + " a bien été modifié");
             }
             else
             {
-                foreach (Visiteur Vis in lesVisiteurs)
-                {
-                    if (Vis.Id_personnel == Convert.ToInt16(tbIDPersonnelSupprimer.Text))
-                    {
-                        VisiteurSupprimer = Vis;
-
-                        trouvé = true;
-                    }
-                }
-
-                if (trouvé)
-                {
-                    lesVisiteurs.Remove(VisiteurSupprimer);
-                }
-                else
-                {
-                    foreach (Technicien Tec in lesTechniciens)
-                    {
-                        if (Tec.Id_personnel == Convert.ToInt16(tbIDPersonnelSupprimer.Text))
-                        {
-                            TechnicienSupprimer = Tec;
-
-                            trouvé = true;
-                        }
-                    }
-
-                    if (trouvé)
-                    {
-                        lesTechniciens.Remove(TechnicienSupprimer);
-                    }
-                }
+                MessageBox.Show("Impossible de trouver le personnel n°" + tbIDPersonnelModifier.Text);
             }
+        }
 
-            if (trouvé == false)
+        private void btSupprimerPersonnel_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("DELETE FROM personnel WHERE id_personnel = " + Convert.ToInt32(tbIDPersonnelSupprimer.Text));
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
             {
-                MessageBox.Show("Aucun personnel avec l'ID " + tbIDPersonnelSupprimer.Text + " n'a été trouvé");
+                actualiserListePersonnel();
+                MessageBox.Show("Le personnel n°" + tbIDPersonnelSupprimer.Text + " a bien été supprimé");
             }
             else
             {
-                actualiserListePersonnelOngletPersonnel();
-
-                MessageBox.Show("Personnel " + tbIDPersonnelSupprimer.Text + " supprimé avec succés");
-            }*/
+                MessageBox.Show("Le personnel n°" + tbIDPersonnelSupprimer.Text + " n'existe pas ou a déjà été supprimé");
+            }
         }
     }
 }
