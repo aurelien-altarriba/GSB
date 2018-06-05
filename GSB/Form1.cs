@@ -14,6 +14,7 @@ namespace GSB
     public partial class Interface : System.Windows.Forms.Form
     {
         BDD BDD;
+
         Personnel unPersonnel;
         List<Personnel> lesPersonnels;
         Visiteur unVisiteur;
@@ -126,6 +127,7 @@ namespace GSB
 
         private void Interface_Load(object sender, EventArgs e)
         {
+            BDD = new BDD();
             lesPersonnels = new List<Personnel>();
             lesVisiteurs = new List<Visiteur>();
             lesTechniciens = new List<Technicien>();
@@ -241,15 +243,10 @@ namespace GSB
                 unPersonnel = new Personnel(tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Autre");
                 lesPersonnels.Add(unPersonnel);
 
-                BDD.ouvrirConnexion();
-
                 string requete = "INSERT INTO Personnel (nom, prenom, date_embauche, region_carriere, mail)" +
                     " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "');";
                 MySqlCommand cmd = BDD.executerRequete(requete);
-                cmd.ExecuteNonQuery();
-
-                BDD.fermerConnexion();
-
+                MessageBox.Show(Convert.ToString(cmd.ExecuteNonQuery()));
             }
 
             actualiserListePersonnelOngletPersonnel();
@@ -406,6 +403,16 @@ namespace GSB
 
                 MessageBox.Show("Personnel " + tbIDPersonnelSupprimer.Text + " supprimé avec succés");
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbDateEmbauchePersonnel_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

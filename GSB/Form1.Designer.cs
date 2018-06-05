@@ -30,6 +30,9 @@
         {
             this.menu = new System.Windows.Forms.TabControl();
             this.personnel = new System.Windows.Forms.TabPage();
+            this.tbIDPersonnelSupprimer = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.nbAutre = new System.Windows.Forms.Label();
             this.nbTechnicienSupérieur = new System.Windows.Forms.Label();
@@ -47,6 +50,8 @@
             this.btSupprimerPersonnel = new System.Windows.Forms.Button();
             this.listePersonnel = new System.Windows.Forms.ListBox();
             this.groupBoxAjouterPersonnel = new System.Windows.Forms.GroupBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.tbIDPersonnelModifier = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -80,7 +85,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbMailPersonnel = new System.Windows.Forms.TextBox();
             this.tbRégionPersonnel = new System.Windows.Forms.TextBox();
-            this.tbDateEmbauchePersonnel = new System.Windows.Forms.TextBox();
             this.tbPrénomPersonnel = new System.Windows.Forms.TextBox();
             this.tbNomPersonnel = new System.Windows.Forms.TextBox();
             this.materiel = new System.Windows.Forms.TabPage();
@@ -250,11 +254,7 @@
             this.textBox50 = new System.Windows.Forms.TextBox();
             this.textBox51 = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
-            this.tbIDPersonnelModifier = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.tbIDPersonnelSupprimer = new System.Windows.Forms.TextBox();
+            this.tbDateEmbauchePersonnel = new System.Windows.Forms.DateTimePicker();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -326,6 +326,31 @@
             this.personnel.Text = "Personnel";
             this.personnel.UseVisualStyleBackColor = true;
             this.personnel.Click += new System.EventHandler(this.personnel_Click);
+            // 
+            // tbIDPersonnelSupprimer
+            // 
+            this.tbIDPersonnelSupprimer.Location = new System.Drawing.Point(685, 383);
+            this.tbIDPersonnelSupprimer.Name = "tbIDPersonnelSupprimer";
+            this.tbIDPersonnelSupprimer.Size = new System.Drawing.Size(37, 20);
+            this.tbIDPersonnelSupprimer.TabIndex = 21;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(661, 386);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(18, 13);
+            this.label63.TabIndex = 18;
+            this.label63.Text = "ID";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(803, 374);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(18, 13);
+            this.label62.TabIndex = 17;
+            this.label62.Text = "ID";
             // 
             // label15
             // 
@@ -453,7 +478,7 @@
             this.btSupprimerPersonnel.Location = new System.Drawing.Point(399, 381);
             this.btSupprimerPersonnel.Name = "btSupprimerPersonnel";
             this.btSupprimerPersonnel.Size = new System.Drawing.Size(244, 23);
-            this.btSupprimerPersonnel.TabIndex = 2;
+            this.btSupprimerPersonnel.TabIndex = 22;
             this.btSupprimerPersonnel.Text = "Supprimer le personnel correspondant à l\'ID";
             this.btSupprimerPersonnel.UseVisualStyleBackColor = true;
             this.btSupprimerPersonnel.Click += new System.EventHandler(this.btSupprimerPersonnel_Click);
@@ -470,6 +495,7 @@
             // 
             // groupBoxAjouterPersonnel
             // 
+            this.groupBoxAjouterPersonnel.Controls.Add(this.tbDateEmbauchePersonnel);
             this.groupBoxAjouterPersonnel.Controls.Add(this.label61);
             this.groupBoxAjouterPersonnel.Controls.Add(this.tbIDPersonnelModifier);
             this.groupBoxAjouterPersonnel.Controls.Add(this.groupBox3);
@@ -491,7 +517,6 @@
             this.groupBoxAjouterPersonnel.Controls.Add(this.label1);
             this.groupBoxAjouterPersonnel.Controls.Add(this.tbMailPersonnel);
             this.groupBoxAjouterPersonnel.Controls.Add(this.tbRégionPersonnel);
-            this.groupBoxAjouterPersonnel.Controls.Add(this.tbDateEmbauchePersonnel);
             this.groupBoxAjouterPersonnel.Controls.Add(this.tbPrénomPersonnel);
             this.groupBoxAjouterPersonnel.Controls.Add(this.tbNomPersonnel);
             this.groupBoxAjouterPersonnel.Location = new System.Drawing.Point(7, 7);
@@ -501,6 +526,22 @@
             this.groupBoxAjouterPersonnel.TabStop = false;
             this.groupBoxAjouterPersonnel.Text = "Ajouter/Modifier le personnel";
             this.groupBoxAjouterPersonnel.Enter += new System.EventHandler(this.groupBoxAjouterPersonnel_Enter);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(274, 463);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(18, 13);
+            this.label61.TabIndex = 23;
+            this.label61.Text = "ID";
+            // 
+            // tbIDPersonnelModifier
+            // 
+            this.tbIDPersonnelModifier.Location = new System.Drawing.Point(298, 459);
+            this.tbIDPersonnelModifier.Name = "tbIDPersonnelModifier";
+            this.tbIDPersonnelModifier.Size = new System.Drawing.Size(37, 20);
+            this.tbIDPersonnelModifier.TabIndex = 19;
             // 
             // groupBox3
             // 
@@ -549,7 +590,7 @@
             this.tbCompetencesTechnicien.Location = new System.Drawing.Point(6, 129);
             this.tbCompetencesTechnicien.Name = "tbCompetencesTechnicien";
             this.tbCompetencesTechnicien.Size = new System.Drawing.Size(148, 20);
-            this.tbCompetencesTechnicien.TabIndex = 2;
+            this.tbCompetencesTechnicien.TabIndex = 17;
             this.tbCompetencesTechnicien.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
             // 
             // tbFormationTechnicien
@@ -557,21 +598,21 @@
             this.tbFormationTechnicien.Location = new System.Drawing.Point(6, 81);
             this.tbFormationTechnicien.Name = "tbFormationTechnicien";
             this.tbFormationTechnicien.Size = new System.Drawing.Size(148, 20);
-            this.tbFormationTechnicien.TabIndex = 1;
+            this.tbFormationTechnicien.TabIndex = 16;
             // 
             // tbNiveauInterventionTechnicien
             // 
             this.tbNiveauInterventionTechnicien.Location = new System.Drawing.Point(6, 37);
             this.tbNiveauInterventionTechnicien.Name = "tbNiveauInterventionTechnicien";
             this.tbNiveauInterventionTechnicien.Size = new System.Drawing.Size(148, 20);
-            this.tbNiveauInterventionTechnicien.TabIndex = 0;
+            this.tbNiveauInterventionTechnicien.TabIndex = 15;
             // 
             // btModifierPersonnel
             // 
             this.btModifierPersonnel.Location = new System.Drawing.Point(32, 448);
             this.btModifierPersonnel.Name = "btModifierPersonnel";
             this.btModifierPersonnel.Size = new System.Drawing.Size(234, 42);
-            this.btModifierPersonnel.TabIndex = 21;
+            this.btModifierPersonnel.TabIndex = 20;
             this.btModifierPersonnel.Text = "Modifier le personnel correspondant à l\'ID avec les informations ci-dessus\r\n";
             this.btModifierPersonnel.UseVisualStyleBackColor = true;
             this.btModifierPersonnel.Click += new System.EventHandler(this.btModifierPersonnel_Click);
@@ -592,6 +633,7 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "* Visiteur / Délégué";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label19
             // 
@@ -634,28 +676,28 @@
             this.tbBudgetVisiteur.Location = new System.Drawing.Point(48, 133);
             this.tbBudgetVisiteur.Name = "tbBudgetVisiteur";
             this.tbBudgetVisiteur.Size = new System.Drawing.Size(106, 20);
-            this.tbBudgetVisiteur.TabIndex = 3;
+            this.tbBudgetVisiteur.TabIndex = 14;
             // 
             // tbPrimeVisiteur
             // 
             this.tbPrimeVisiteur.Location = new System.Drawing.Point(48, 107);
             this.tbPrimeVisiteur.Name = "tbPrimeVisiteur";
             this.tbPrimeVisiteur.Size = new System.Drawing.Size(106, 20);
-            this.tbPrimeVisiteur.TabIndex = 1;
+            this.tbPrimeVisiteur.TabIndex = 13;
             // 
             // tbAvantagesVisiteur
             // 
             this.tbAvantagesVisiteur.Location = new System.Drawing.Point(6, 81);
             this.tbAvantagesVisiteur.Name = "tbAvantagesVisiteur";
             this.tbAvantagesVisiteur.Size = new System.Drawing.Size(148, 20);
-            this.tbAvantagesVisiteur.TabIndex = 2;
+            this.tbAvantagesVisiteur.TabIndex = 12;
             // 
             // tbObjectifVisiteur
             // 
             this.tbObjectifVisiteur.Location = new System.Drawing.Point(6, 37);
             this.tbObjectifVisiteur.Name = "tbObjectifVisiteur";
             this.tbObjectifVisiteur.Size = new System.Drawing.Size(148, 20);
-            this.tbObjectifVisiteur.TabIndex = 0;
+            this.tbObjectifVisiteur.TabIndex = 11;
             // 
             // btAjouterPersonnel
             // 
@@ -674,7 +716,7 @@
             this.rbAutre.Location = new System.Drawing.Point(186, 231);
             this.rbAutre.Name = "rbAutre";
             this.rbAutre.Size = new System.Drawing.Size(50, 17);
-            this.rbAutre.TabIndex = 17;
+            this.rbAutre.TabIndex = 10;
             this.rbAutre.TabStop = true;
             this.rbAutre.Text = "Autre";
             this.rbAutre.UseVisualStyleBackColor = true;
@@ -685,7 +727,7 @@
             this.rbTechnicienSupérieur.Location = new System.Drawing.Point(186, 207);
             this.rbTechnicienSupérieur.Name = "rbTechnicienSupérieur";
             this.rbTechnicienSupérieur.Size = new System.Drawing.Size(135, 17);
-            this.rbTechnicienSupérieur.TabIndex = 16;
+            this.rbTechnicienSupérieur.TabIndex = 9;
             this.rbTechnicienSupérieur.Text = "Technicien supérieur **";
             this.rbTechnicienSupérieur.UseVisualStyleBackColor = true;
             // 
@@ -704,7 +746,7 @@
             this.rbTechnicien.Location = new System.Drawing.Point(186, 183);
             this.rbTechnicien.Name = "rbTechnicien";
             this.rbTechnicien.Size = new System.Drawing.Size(89, 17);
-            this.rbTechnicien.TabIndex = 14;
+            this.rbTechnicien.TabIndex = 8;
             this.rbTechnicien.Text = "Technicien **";
             this.rbTechnicien.UseVisualStyleBackColor = true;
             // 
@@ -714,7 +756,7 @@
             this.rbResponsableRégion.Location = new System.Drawing.Point(32, 231);
             this.rbResponsableRégion.Name = "rbResponsableRégion";
             this.rbResponsableRégion.Size = new System.Drawing.Size(119, 17);
-            this.rbResponsableRégion.TabIndex = 13;
+            this.rbResponsableRégion.TabIndex = 7;
             this.rbResponsableRégion.Text = "Responsable région";
             this.rbResponsableRégion.UseVisualStyleBackColor = true;
             // 
@@ -724,7 +766,7 @@
             this.rbDéléguéRégional.Location = new System.Drawing.Point(32, 207);
             this.rbDéléguéRégional.Name = "rbDéléguéRégional";
             this.rbDéléguéRégional.Size = new System.Drawing.Size(112, 17);
-            this.rbDéléguéRégional.TabIndex = 12;
+            this.rbDéléguéRégional.TabIndex = 6;
             this.rbDéléguéRégional.Text = "Délégué régional *";
             this.rbDéléguéRégional.UseVisualStyleBackColor = true;
             // 
@@ -743,7 +785,7 @@
             this.rbVisiteur.Location = new System.Drawing.Point(32, 183);
             this.rbVisiteur.Name = "rbVisiteur";
             this.rbVisiteur.Size = new System.Drawing.Size(105, 17);
-            this.rbVisiteur.TabIndex = 10;
+            this.rbVisiteur.TabIndex = 5;
             this.rbVisiteur.Text = "Visiteur médical *";
             this.rbVisiteur.UseVisualStyleBackColor = true;
             this.rbVisiteur.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
@@ -808,13 +850,6 @@
             this.tbRégionPersonnel.Name = "tbRégionPersonnel";
             this.tbRégionPersonnel.Size = new System.Drawing.Size(241, 20);
             this.tbRégionPersonnel.TabIndex = 3;
-            // 
-            // tbDateEmbauchePersonnel
-            // 
-            this.tbDateEmbauchePersonnel.Location = new System.Drawing.Point(103, 73);
-            this.tbDateEmbauchePersonnel.Name = "tbDateEmbauchePersonnel";
-            this.tbDateEmbauchePersonnel.Size = new System.Drawing.Size(241, 20);
-            this.tbDateEmbauchePersonnel.TabIndex = 2;
             // 
             // tbPrénomPersonnel
             // 
@@ -2422,46 +2457,15 @@
             this.textBox52.Size = new System.Drawing.Size(215, 20);
             this.textBox52.TabIndex = 0;
             // 
-            // tbIDPersonnelModifier
+            // tbDateEmbauchePersonnel
             // 
-            this.tbIDPersonnelModifier.Location = new System.Drawing.Point(298, 459);
-            this.tbIDPersonnelModifier.Name = "tbIDPersonnelModifier";
-            this.tbIDPersonnelModifier.Size = new System.Drawing.Size(37, 20);
-            this.tbIDPersonnelModifier.TabIndex = 22;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(274, 463);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(18, 13);
-            this.label61.TabIndex = 23;
-            this.label61.Text = "ID";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(803, 374);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(18, 13);
-            this.label62.TabIndex = 17;
-            this.label62.Text = "ID";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(661, 386);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(18, 13);
-            this.label63.TabIndex = 18;
-            this.label63.Text = "ID";
-            // 
-            // tbIDPersonnelSupprimer
-            // 
-            this.tbIDPersonnelSupprimer.Location = new System.Drawing.Point(685, 383);
-            this.tbIDPersonnelSupprimer.Name = "tbIDPersonnelSupprimer";
-            this.tbIDPersonnelSupprimer.Size = new System.Drawing.Size(37, 20);
-            this.tbIDPersonnelSupprimer.TabIndex = 19;
+            this.tbDateEmbauchePersonnel.CustomFormat = "yyyy-MM-dd";
+            this.tbDateEmbauchePersonnel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateEmbauchePersonnel.Location = new System.Drawing.Point(103, 72);
+            this.tbDateEmbauchePersonnel.Name = "tbDateEmbauchePersonnel";
+            this.tbDateEmbauchePersonnel.Size = new System.Drawing.Size(241, 20);
+            this.tbDateEmbauchePersonnel.TabIndex = 2;
+            this.tbDateEmbauchePersonnel.ValueChanged += new System.EventHandler(this.tbDateEmbauchePersonnel_ValueChanged);
             // 
             // Interface
             // 
@@ -2527,7 +2531,6 @@
         private System.Windows.Forms.TabPage visite;
         private System.Windows.Forms.TabPage ac;
         private System.Windows.Forms.GroupBox groupBoxAjouterPersonnel;
-        private System.Windows.Forms.TextBox tbDateEmbauchePersonnel;
         private System.Windows.Forms.TextBox tbPrénomPersonnel;
         private System.Windows.Forms.TextBox tbNomPersonnel;
         private System.Windows.Forms.Label label5;
@@ -2747,6 +2750,7 @@
         private System.Windows.Forms.TextBox tbIDPersonnelSupprimer;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.DateTimePicker tbDateEmbauchePersonnel;
     }
 }
 
