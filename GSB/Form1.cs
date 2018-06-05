@@ -189,7 +189,7 @@ namespace GSB
             while (rdr.Read())
             {
                 listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
-                ResponsableRégion++;
+                VisiteurMédical++;
             }
 
             rdr.Close();
@@ -203,7 +203,35 @@ namespace GSB
             while (rdr.Read())
             {
                 listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
-                ResponsableRégion++;
+                DéléguéRégional++;
+            }
+
+            rdr.Close();
+
+            // TECHNICIEN
+            requete = "SELECT * FROM personnel P JOIN technicien T ON P.id_personnel = T.id_personnel " +
+                "WHERE P.role = 'Technicien';";
+            cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Niveau de compétence : " + rdr.GetInt32(8) + " - Compétences : " + rdr.GetString(10) + " - Formation : " + rdr.GetString(9));
+                Technicien++;
+            }
+
+            rdr.Close();
+
+            // TECHNICIEN SUPERIEUR
+            requete = "SELECT * FROM personnel P JOIN technicien T ON P.id_personnel = T.id_personnel " +
+                "WHERE P.role = 'Technicien supérieur';";
+            cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Niveau de compétence : " + rdr.GetInt32(8) + " - Compétences : " + rdr.GetString(10) + " - Formation : " + rdr.GetString(9));
+                TechnicienSupérieur++;
             }
 
             rdr.Close();
@@ -242,11 +270,6 @@ namespace GSB
 
                 requete = "INSERT INTO visiteur (objectif, prime, avantages, budget, id_personnel)" +
                     " VALUES ('" + tbObjectifVisiteur.Text + "', " + Convert.ToInt32(tbPrimeVisiteur.Text) + ", '" + tbAvantagesVisiteur.Text + "', " + Convert.ToInt32(tbBudgetVisiteur.Text) + ", LAST_INSERT_ID());";
-                cmd = BDD.executerRequete(requete);
-                cmd.ExecuteNonQuery();
-
-                requete = "INSERT INTO delegue (id_visiteur)" +
-                    " VALUES (LAST_INSERT_ID());";
                 cmd = BDD.executerRequete(requete);
                 cmd.ExecuteNonQuery();
             }
