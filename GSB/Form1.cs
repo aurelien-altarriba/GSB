@@ -14,14 +14,7 @@ namespace GSB
     public partial class Interface : System.Windows.Forms.Form
     {
         BDD BDD;
-
-        Personnel unPersonnel;
-        List<Personnel> lesPersonnels;
-        Visiteur unVisiteur;
-        List<Visiteur> lesVisiteurs;
-        Technicien unTechnicien;
-        List<Technicien> lesTechniciens;
-
+        MySqlDataReader rdr;
 
         public Interface()
         {
@@ -123,38 +116,27 @@ namespace GSB
 
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbDateEmbauchePersonnel_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         // ******************************************************* //
 
         private void Interface_Load(object sender, EventArgs e)
         {
             BDD = new BDD();
-            lesPersonnels = new List<Personnel>();
-            lesVisiteurs = new List<Visiteur>();
-            lesTechniciens = new List<Technicien>();
+            actualiserListePersonnelOngletPersonnel();
         }
 
         private void actualiserListePersonnelOngletPersonnel()
         {
-            listePersonnel.Items.Clear();
-
-            foreach (Personnel Per in lesPersonnels)
-            {
-                listePersonnel.Items.Add(Per.infos());
-            }
-
-            foreach (Visiteur Vis in lesVisiteurs)
-            {
-                listePersonnel.Items.Add(Vis.infos());
-            }
-
-            foreach (Technicien Tec in lesTechniciens)
-            {
-                listePersonnel.Items.Add(Tec.infos());
-            }
-        }
-
-        private void majStatsPersonnel()
-        {
+            // Compteur du personnel pour chaque rôle
             int VisiteurMédical = 0;
             int DéléguéRégional = 0;
             int ResponsableRégion = 0;
@@ -162,100 +144,166 @@ namespace GSB
             int TechnicienSupérieur = 0;
             int Autre = 0;
 
-            foreach (Personnel Per in lesPersonnels)
+            // On efface la liste du personnel
+            listePersonnel.Items.Clear();
+
+            // AUTRE
+            // On créer et exécute la requête
+            string requete = "SELECT * FROM personnel WHERE role = 'Autre'";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            // Pour chaque personnel correspondant à la requête qui a été trouvé en BDD
+            while (rdr.Read())
             {
-                if (Per.Role == "Responsable région")
-                {
-                    ResponsableRégion++;
-                }
-                else
-                {
-                    Autre++;
-                }
+                // On ajoute cette chaîne dans la liste du personnel 
+                listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4));
+                
+                // On incrémente de 1 le nombre de personnel de ce rôle
+                Autre++;
             }
 
-            foreach (Visiteur Vis in lesVisiteurs)
+            // On ferme le reader
+            rdr.Close();
+
+            // RESPONSABLE REGION
+            requete = "SELECT * FROM personnel P JOIN responsable_region RR ON P.id_personnel = RR.id_personnel " +
+                "WHERE P.role = 'Responsable région';";
+            cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
             {
-                if (Vis.Role == "Visiteur médical")
-                {
-                    VisiteurMédical++;
-                }
-                else
-                {
-                    DéléguéRégional++;
-                }
+                listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4));
+                ResponsableRégion++;
             }
 
-            foreach (Technicien Tec in lesTechniciens)
+            rdr.Close();
+
+            // VISITEUR MEDICAL
+            requete = "SELECT * FROM personnel P JOIN visiteur V ON P.id_personnel = V.id_personnel " +
+                "WHERE P.role = 'Visiteur médical';";
+            cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
             {
-                if (Tec.Role == "Technicien")
-                {
-                    Technicien++;
-                }
-                else
-                {
-                    TechnicienSupérieur++;
-                }
+                listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
+                ResponsableRégion++;
             }
+
+            rdr.Close();
+
+            // DELEGUE REGIONAL
+            requete = "SELECT * FROM personnel P JOIN visiteur V ON P.id_personnel = V.id_personnel " +
+                "WHERE P.role = 'Délégué régional';";
+            cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listePersonnel.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
+                ResponsableRégion++;
+            }
+
+            rdr.Close();
+
+
 
             nbVisiteurMédical.Text = VisiteurMédical.ToString();
             nbDéléguéRégional.Text = DéléguéRégional.ToString();
             nbResponsableRégion.Text = ResponsableRégion.ToString();
             nbTechnicien.Text = Technicien.ToString();
             nbTechnicienSupérieur.Text = TechnicienSupérieur.ToString();
-            nbAutre.Text = Autre.ToString();  
+            nbAutre.Text = Autre.ToString();
         }
 
         private void btAjouterPersonnel_Click(object sender, EventArgs e)
         {
             if (rbVisiteur.Checked)
             {
-                unVisiteur = new Visiteur(tbObjectifVisiteur.Text, Convert.ToInt32(tbPrimeVisiteur.Text), tbAvantagesVisiteur.Text, Convert.ToInt32(tbBudgetVisiteur.Text), tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Visiteur médical");
-                lesVisiteurs.Add(unVisiteur);
+                string requete = "INSERT INTO personnel (nom, prenom, date_embauche, region_carriere, mail, role)" +
+                    " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "@swiss-galaxy.com', 'Visiteur médical');";
+                MySqlCommand cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                requete = "INSERT INTO visiteur (objectif, prime, avantages, budget, id_personnel)" +
+                    " VALUES ('" + tbObjectifVisiteur.Text + "', " + Convert.ToInt32(tbPrimeVisiteur.Text) + ", '" + tbAvantagesVisiteur.Text + "', " + Convert.ToInt32(tbBudgetVisiteur.Text) + ", LAST_INSERT_ID());";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
             }
 
             else if (rbDéléguéRégional.Checked)
             {
-                unVisiteur = new Visiteur(tbObjectifVisiteur.Text, Convert.ToInt32(tbPrimeVisiteur.Text), tbAvantagesVisiteur.Text, Convert.ToInt32(tbBudgetVisiteur.Text), tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Délégué régional");
-                lesVisiteurs.Add(unVisiteur);
+                string requete = "INSERT INTO personnel (nom, prenom, date_embauche, region_carriere, mail, role)" +
+                    " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "@swiss-galaxy.com', 'Délégué régional');";
+                MySqlCommand cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                requete = "INSERT INTO visiteur (objectif, prime, avantages, budget, id_personnel)" +
+                    " VALUES ('" + tbObjectifVisiteur.Text + "', " + Convert.ToInt32(tbPrimeVisiteur.Text) + ", '" + tbAvantagesVisiteur.Text + "', " + Convert.ToInt32(tbBudgetVisiteur.Text) + ", LAST_INSERT_ID());";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                requete = "INSERT INTO delegue (id_visiteur)" +
+                    " VALUES (LAST_INSERT_ID());";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
             }
 
             else if (rbTechnicien.Checked)
             {
-                unTechnicien = new Technicien(Convert.ToInt32(tbNiveauInterventionTechnicien.Text), tbFormationTechnicien.Text, tbCompetencesTechnicien.Text, tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Technicien");
-                lesTechniciens.Add(unTechnicien);
+                string requete = "INSERT INTO personnel (nom, prenom, date_embauche, region_carriere, mail, role)" +
+                    " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "@swiss-galaxy.com', 'Technicien');";
+                MySqlCommand cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                requete = "INSERT INTO technicien (niveau_intervention, formation, competences, id_personnel)" +
+                    " VALUES (" + Convert.ToInt32(tbNiveauInterventionTechnicien.Text) + ", '" + tbFormationTechnicien.Text + "', '" + tbCompetencesTechnicien.Text + "', LAST_INSERT_ID());";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
             }
 
             else if (rbTechnicienSupérieur.Checked)
             {
-                unTechnicien = new Technicien(Convert.ToInt32(tbNiveauInterventionTechnicien.Text), tbFormationTechnicien.Text, tbCompetencesTechnicien.Text, tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Technicien supérieur");
-                lesTechniciens.Add(unTechnicien);
+                string requete = "INSERT INTO personnel (nom, prenom, date_embauche, region_carriere, mail, role)" +
+                    " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "@swiss-galaxy.com', 'Technicien supérieur');";
+                MySqlCommand cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                requete = "INSERT INTO technicien (niveau_intervention, formation, competences, id_personnel)" +
+                    " VALUES (" + Convert.ToInt32(tbNiveauInterventionTechnicien.Text) + ", '" + tbFormationTechnicien.Text + "', '" + tbCompetencesTechnicien.Text + "', LAST_INSERT_ID());";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
             }
 
             else if (rbResponsableRégion.Checked)
             {
-                unPersonnel = new Personnel(tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Responsable région");
-                lesPersonnels.Add(unPersonnel);
+                string requete = "INSERT INTO personnel (nom, prenom, date_embauche, region_carriere, mail, role)" +
+                    " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "@swiss-galaxy.com', 'Responsable région');";
+                MySqlCommand cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
+
+                requete = "INSERT INTO responsable_region (id_personnel)" +
+                    " VALUES (LAST_INSERT_ID());";
+                cmd = BDD.executerRequete(requete);
+                cmd.ExecuteNonQuery();
             }
 
             else
             {
-                unPersonnel = new Personnel(tbNomPersonnel.Text, tbPrénomPersonnel.Text, tbDateEmbauchePersonnel.Text, tbRégionPersonnel.Text, tbMailPersonnel.Text, "Autre");
-                lesPersonnels.Add(unPersonnel);
-
-                string requete = "INSERT INTO Personnel (nom, prenom, date_embauche, region_carriere, mail)" +
-                    " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "');";
+                string requete = "INSERT INTO personnel (nom, prenom, date_embauche, region_carriere, mail, role)" +
+                    " VALUES ('" + tbNomPersonnel.Text + "', '" + tbPrénomPersonnel.Text + "', '" + tbDateEmbauchePersonnel.Text + "', '" + tbRégionPersonnel.Text + "', '" + tbMailPersonnel.Text + "@swiss-galaxy.com', 'Autre');";
                 MySqlCommand cmd = BDD.executerRequete(requete);
-                MessageBox.Show(Convert.ToString(cmd.ExecuteNonQuery()));
+                cmd.ExecuteNonQuery();
             }
 
             actualiserListePersonnelOngletPersonnel();
-            majStatsPersonnel();
         }
 
         private void btModifierPersonnel_Click(object sender, EventArgs e)
         {
-            bool trouvé = false;
+            /*bool trouvé = false;
 
             foreach (Personnel Per in lesPersonnels)
             {
@@ -332,12 +380,12 @@ namespace GSB
                 majStatsPersonnel();
 
                 MessageBox.Show("Personnel " + tbIDPersonnelModifier.Text + " modifié avec succés");
-            }
+            }*/
         }
 
         private void btSupprimerPersonnel_Click(object sender, EventArgs e)
         {
-            bool trouvé = false;
+            /*bool trouvé = false;
             Personnel PersonnelSupprimer = null;
             Visiteur VisiteurSupprimer = null;
             Technicien TechnicienSupprimer = null;
@@ -399,20 +447,9 @@ namespace GSB
             else
             {
                 actualiserListePersonnelOngletPersonnel();
-                majStatsPersonnel();
 
                 MessageBox.Show("Personnel " + tbIDPersonnelSupprimer.Text + " supprimé avec succés");
-            }
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbDateEmbauchePersonnel_ValueChanged(object sender, EventArgs e)
-        {
-
+            }*/
         }
     }
 }
