@@ -89,18 +89,29 @@
             this.tbPrénomPersonnel = new System.Windows.Forms.TextBox();
             this.tbNomPersonnel = new System.Windows.Forms.TextBox();
             this.materiel = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tbIdMatérielSupprimer = new System.Windows.Forms.TextBox();
             this.nbMatérielAffecté = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.nbMatériel = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.btAffecterMatériel = new System.Windows.Forms.Button();
             this.btSupprimerMatériel = new System.Windows.Forms.Button();
             this.listePersonnelMatériel = new System.Windows.Forms.ListBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.listeMatériel = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbIdPersonnelMatérielAffecter = new System.Windows.Forms.TextBox();
+            this.tbIdMatérielAffecter = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.tbDateGarantieMatériel = new System.Windows.Forms.DateTimePicker();
+            this.tbDatePossessionMatériel = new System.Windows.Forms.DateTimePicker();
+            this.tbIdMatérielModifier = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.btModifierMatériel = new System.Windows.Forms.Button();
+            this.btAffecterMatériel = new System.Windows.Forms.Button();
             this.btAjouterMatériel = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.tbFournisseurMatériel = new System.Windows.Forms.TextBox();
@@ -211,49 +222,46 @@
             this.label88 = new System.Windows.Forms.Label();
             this.listePraticiens3 = new System.Windows.Forms.ListBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btPraticienSupprimer = new System.Windows.Forms.Button();
+            this.btPraticienModifier = new System.Windows.Forms.Button();
+            this.btPraticienAjouter = new System.Windows.Forms.Button();
             this.label87 = new System.Windows.Forms.Label();
-            this.textBox46 = new System.Windows.Forms.TextBox();
-            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.tbLibellePraticien = new System.Windows.Forms.TextBox();
+            this.tbNomPraticien = new System.Windows.Forms.TextBox();
             this.label86 = new System.Windows.Forms.Label();
             this.produit = new System.Windows.Forms.TabPage();
             this.label90 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
+            this.nbProduit = new System.Windows.Forms.Label();
             this.label93 = new System.Windows.Forms.Label();
             this.listeProduits = new System.Windows.Forms.ListBox();
             this.label94 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.tbIdProduitSupprimer = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.tbIdProduitModifier = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.btSupprimerProduit = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btModifierProduit = new System.Windows.Forms.Button();
+            this.btAjouterProduit = new System.Windows.Forms.Button();
             this.label95 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.label98 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
-            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.tbCompositionProduit = new System.Windows.Forms.TextBox();
             this.label101 = new System.Windows.Forms.Label();
-            this.textBox53 = new System.Windows.Forms.TextBox();
+            this.tbCoutProduit = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
-            this.textBox47 = new System.Windows.Forms.TextBox();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.tbIdMatérielModifier = new System.Windows.Forms.TextBox();
-            this.tbDatePossessionMatériel = new System.Windows.Forms.DateTimePicker();
-            this.tbDateGarantieMatériel = new System.Windows.Forms.DateTimePicker();
-            this.tbIdMatérielSupprimer = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tbIdMatérielAffecter = new System.Windows.Forms.TextBox();
-            this.tbIdPersonnelMatérielAffecter = new System.Windows.Forms.TextBox();
+            this.tbPosologieProduit = new System.Windows.Forms.TextBox();
+            this.tbFamilleProduit = new System.Windows.Forms.TextBox();
+            this.tbContreIndicationProduit = new System.Windows.Forms.TextBox();
+            this.tbEffetTheraProduit = new System.Windows.Forms.TextBox();
+            this.tbNomProduit = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.tbIdPraticienModifier = new System.Windows.Forms.TextBox();
+            this.tbIdPraticienSupprimer = new System.Windows.Forms.TextBox();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -896,6 +904,22 @@
             this.materiel.Text = "Matériel";
             this.materiel.UseVisualStyleBackColor = true;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(583, 444);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(78, 13);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "ID du matériel :";
+            // 
+            // tbIdMatérielSupprimer
+            // 
+            this.tbIdMatérielSupprimer.Location = new System.Drawing.Point(667, 441);
+            this.tbIdMatérielSupprimer.Name = "tbIdMatérielSupprimer";
+            this.tbIdMatérielSupprimer.Size = new System.Drawing.Size(79, 20);
+            this.tbIdMatérielSupprimer.TabIndex = 11;
+            // 
             // nbMatérielAffecté
             // 
             this.nbMatérielAffecté.AutoSize = true;
@@ -929,16 +953,6 @@
             this.label35.Size = new System.Drawing.Size(104, 13);
             this.label35.TabIndex = 7;
             this.label35.Text = "Nombre de matériel :";
-            // 
-            // btAffecterMatériel
-            // 
-            this.btAffecterMatériel.Location = new System.Drawing.Point(36, 412);
-            this.btAffecterMatériel.Name = "btAffecterMatériel";
-            this.btAffecterMatériel.Size = new System.Drawing.Size(259, 23);
-            this.btAffecterMatériel.TabIndex = 6;
-            this.btAffecterMatériel.Text = "Affecter le matériel au personnel";
-            this.btAffecterMatériel.UseVisualStyleBackColor = true;
-            this.btAffecterMatériel.Click += new System.EventHandler(this.btAffecterMatériel_Click);
             // 
             // btSupprimerMatériel
             // 
@@ -1015,6 +1029,82 @@
             this.groupBox1.Text = "Ajouter/Modifier un matériel";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // tbIdPersonnelMatérielAffecter
+            // 
+            this.tbIdPersonnelMatérielAffecter.Location = new System.Drawing.Point(210, 459);
+            this.tbIdPersonnelMatérielAffecter.Name = "tbIdPersonnelMatérielAffecter";
+            this.tbIdPersonnelMatérielAffecter.Size = new System.Drawing.Size(85, 20);
+            this.tbIdPersonnelMatérielAffecter.TabIndex = 27;
+            // 
+            // tbIdMatérielAffecter
+            // 
+            this.tbIdMatérielAffecter.Location = new System.Drawing.Point(36, 459);
+            this.tbIdMatérielAffecter.Name = "tbIdMatérielAffecter";
+            this.tbIdMatérielAffecter.Size = new System.Drawing.Size(85, 20);
+            this.tbIdMatérielAffecter.TabIndex = 26;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(207, 443);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(88, 13);
+            this.label29.TabIndex = 25;
+            this.label29.Text = "ID du personnel :";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(33, 443);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(78, 13);
+            this.label28.TabIndex = 24;
+            this.label28.Text = "ID du matériel :";
+            // 
+            // tbDateGarantieMatériel
+            // 
+            this.tbDateGarantieMatériel.CustomFormat = "yyyy-MM-dd";
+            this.tbDateGarantieMatériel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateGarantieMatériel.Location = new System.Drawing.Point(9, 168);
+            this.tbDateGarantieMatériel.Name = "tbDateGarantieMatériel";
+            this.tbDateGarantieMatériel.Size = new System.Drawing.Size(311, 20);
+            this.tbDateGarantieMatériel.TabIndex = 23;
+            // 
+            // tbDatePossessionMatériel
+            // 
+            this.tbDatePossessionMatériel.CustomFormat = "yyyy-MM-dd";
+            this.tbDatePossessionMatériel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDatePossessionMatériel.Location = new System.Drawing.Point(9, 113);
+            this.tbDatePossessionMatériel.Name = "tbDatePossessionMatériel";
+            this.tbDatePossessionMatériel.Size = new System.Drawing.Size(311, 20);
+            this.tbDatePossessionMatériel.TabIndex = 22;
+            // 
+            // tbIdMatérielModifier
+            // 
+            this.tbIdMatérielModifier.Location = new System.Drawing.Point(177, 353);
+            this.tbIdMatérielModifier.Name = "tbIdMatérielModifier";
+            this.tbIdMatérielModifier.Size = new System.Drawing.Size(48, 20);
+            this.tbIdMatérielModifier.TabIndex = 21;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(93, 356);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(78, 13);
+            this.label25.TabIndex = 20;
+            this.label25.Text = "ID du matériel :";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(6, 39);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(241, 13);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "Processeur, disque, mémoire ou logiciel à préciser";
+            // 
             // btModifierMatériel
             // 
             this.btModifierMatériel.Location = new System.Drawing.Point(36, 299);
@@ -1024,6 +1114,16 @@
             this.btModifierMatériel.Text = "Modifier le matériel correspondant à l\'ID avec les  informations ci-dessus";
             this.btModifierMatériel.UseVisualStyleBackColor = true;
             this.btModifierMatériel.Click += new System.EventHandler(this.btModifierMatériel_Click);
+            // 
+            // btAffecterMatériel
+            // 
+            this.btAffecterMatériel.Location = new System.Drawing.Point(36, 412);
+            this.btAffecterMatériel.Name = "btAffecterMatériel";
+            this.btAffecterMatériel.Size = new System.Drawing.Size(259, 23);
+            this.btAffecterMatériel.TabIndex = 6;
+            this.btAffecterMatériel.Text = "Affecter le matériel au personnel";
+            this.btAffecterMatériel.UseVisualStyleBackColor = true;
+            this.btAffecterMatériel.Click += new System.EventHandler(this.btAffecterMatériel_Click);
             // 
             // btAjouterMatériel
             // 
@@ -1167,6 +1267,7 @@
             // listeTechnicien
             // 
             this.listeTechnicien.FormattingEnabled = true;
+            this.listeTechnicien.HorizontalScrollbar = true;
             this.listeTechnicien.Location = new System.Drawing.Point(450, 387);
             this.listeTechnicien.Name = "listeTechnicien";
             this.listeTechnicien.Size = new System.Drawing.Size(289, 121);
@@ -1382,6 +1483,7 @@
             // listeIncidentCloturé
             // 
             this.listeIncidentCloturé.FormattingEnabled = true;
+            this.listeIncidentCloturé.HorizontalScrollbar = true;
             this.listeIncidentCloturé.Location = new System.Drawing.Point(497, 198);
             this.listeIncidentCloturé.Name = "listeIncidentCloturé";
             this.listeIncidentCloturé.Size = new System.Drawing.Size(242, 160);
@@ -1390,6 +1492,7 @@
             // listeIncidentEnCours
             // 
             this.listeIncidentEnCours.FormattingEnabled = true;
+            this.listeIncidentEnCours.HorizontalScrollbar = true;
             this.listeIncidentEnCours.Location = new System.Drawing.Point(251, 198);
             this.listeIncidentEnCours.Name = "listeIncidentEnCours";
             this.listeIncidentEnCours.Size = new System.Drawing.Size(240, 160);
@@ -1407,6 +1510,7 @@
             // listeMatériel2
             // 
             this.listeMatériel2.FormattingEnabled = true;
+            this.listeMatériel2.HorizontalScrollbar = true;
             this.listeMatériel2.Location = new System.Drawing.Point(305, 19);
             this.listeMatériel2.Name = "listeMatériel2";
             this.listeMatériel2.Size = new System.Drawing.Size(434, 160);
@@ -1518,6 +1622,7 @@
             // listeVisites
             // 
             this.listeVisites.FormattingEnabled = true;
+            this.listeVisites.HorizontalScrollbar = true;
             this.listeVisites.Location = new System.Drawing.Point(293, 303);
             this.listeVisites.Name = "listeVisites";
             this.listeVisites.Size = new System.Drawing.Size(446, 186);
@@ -1544,6 +1649,7 @@
             // listeProduits2
             // 
             this.listeProduits2.FormattingEnabled = true;
+            this.listeProduits2.HorizontalScrollbar = true;
             this.listeProduits2.Location = new System.Drawing.Point(3, 303);
             this.listeProduits2.Name = "listeProduits2";
             this.listeProduits2.Size = new System.Drawing.Size(284, 199);
@@ -1561,6 +1667,7 @@
             // listePraticiens
             // 
             this.listePraticiens.FormattingEnabled = true;
+            this.listePraticiens.HorizontalScrollbar = true;
             this.listePraticiens.Location = new System.Drawing.Point(519, 19);
             this.listePraticiens.Name = "listePraticiens";
             this.listePraticiens.Size = new System.Drawing.Size(220, 264);
@@ -1578,6 +1685,7 @@
             // listeVisiteursMédicaux
             // 
             this.listeVisiteursMédicaux.FormattingEnabled = true;
+            this.listeVisiteursMédicaux.HorizontalScrollbar = true;
             this.listeVisiteursMédicaux.Location = new System.Drawing.Point(293, 19);
             this.listeVisiteursMédicaux.Name = "listeVisiteursMédicaux";
             this.listeVisiteursMédicaux.Size = new System.Drawing.Size(220, 264);
@@ -1741,6 +1849,7 @@
             // listeResponsableRégion
             // 
             this.listeResponsableRégion.FormattingEnabled = true;
+            this.listeResponsableRégion.HorizontalScrollbar = true;
             this.listeResponsableRégion.Location = new System.Drawing.Point(3, 276);
             this.listeResponsableRégion.Name = "listeResponsableRégion";
             this.listeResponsableRégion.Size = new System.Drawing.Size(235, 225);
@@ -1801,6 +1910,7 @@
             // listeDemandeAC
             // 
             this.listeDemandeAC.FormattingEnabled = true;
+            this.listeDemandeAC.HorizontalScrollbar = true;
             this.listeDemandeAC.Location = new System.Drawing.Point(494, 276);
             this.listeDemandeAC.Name = "listeDemandeAC";
             this.listeDemandeAC.Size = new System.Drawing.Size(255, 225);
@@ -1869,6 +1979,7 @@
             // listePraticiens2
             // 
             this.listePraticiens2.FormattingEnabled = true;
+            this.listePraticiens2.HorizontalScrollbar = true;
             this.listePraticiens2.Location = new System.Drawing.Point(494, 19);
             this.listePraticiens2.Name = "listePraticiens2";
             this.listePraticiens2.Size = new System.Drawing.Size(255, 238);
@@ -2004,6 +2115,7 @@
             // listeVisiteurs2
             // 
             this.listeVisiteurs2.FormattingEnabled = true;
+            this.listeVisiteurs2.HorizontalScrollbar = true;
             this.listeVisiteurs2.Location = new System.Drawing.Point(3, 16);
             this.listeVisiteurs2.Name = "listeVisiteurs2";
             this.listeVisiteurs2.Size = new System.Drawing.Size(235, 238);
@@ -2035,7 +2147,7 @@
             // nbPraticiens
             // 
             this.nbPraticiens.AutoSize = true;
-            this.nbPraticiens.Location = new System.Drawing.Point(501, 260);
+            this.nbPraticiens.Location = new System.Drawing.Point(501, 312);
             this.nbPraticiens.Name = "nbPraticiens";
             this.nbPraticiens.Size = new System.Drawing.Size(0, 13);
             this.nbPraticiens.TabIndex = 4;
@@ -2043,7 +2155,7 @@
             // label89
             // 
             this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(382, 260);
+            this.label89.Location = new System.Drawing.Point(382, 312);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(113, 13);
             this.label89.TabIndex = 3;
@@ -2061,53 +2173,61 @@
             // listePraticiens3
             // 
             this.listePraticiens3.FormattingEnabled = true;
+            this.listePraticiens3.HorizontalScrollbar = true;
             this.listePraticiens3.Location = new System.Drawing.Point(288, 19);
             this.listePraticiens3.Name = "listePraticiens3";
-            this.listePraticiens3.Size = new System.Drawing.Size(309, 238);
+            this.listePraticiens3.Size = new System.Drawing.Size(309, 290);
             this.listePraticiens3.TabIndex = 1;
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.button12);
-            this.groupBox12.Controls.Add(this.button11);
-            this.groupBox12.Controls.Add(this.button10);
+            this.groupBox12.Controls.Add(this.tbIdPraticienSupprimer);
+            this.groupBox12.Controls.Add(this.label66);
+            this.groupBox12.Controls.Add(this.tbIdPraticienModifier);
+            this.groupBox12.Controls.Add(this.label65);
+            this.groupBox12.Controls.Add(this.btPraticienSupprimer);
+            this.groupBox12.Controls.Add(this.btPraticienModifier);
+            this.groupBox12.Controls.Add(this.btPraticienAjouter);
             this.groupBox12.Controls.Add(this.label87);
-            this.groupBox12.Controls.Add(this.textBox46);
-            this.groupBox12.Controls.Add(this.textBox45);
+            this.groupBox12.Controls.Add(this.tbLibellePraticien);
+            this.groupBox12.Controls.Add(this.tbNomPraticien);
             this.groupBox12.Controls.Add(this.label86);
             this.groupBox12.Location = new System.Drawing.Point(3, 3);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(267, 254);
+            this.groupBox12.Size = new System.Drawing.Size(267, 319);
             this.groupBox12.TabIndex = 0;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Ajouter/modifier un praticien";
             // 
-            // button12
+            // btPraticienSupprimer
             // 
-            this.button12.Location = new System.Drawing.Point(36, 220);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(184, 23);
-            this.button12.TabIndex = 6;
-            this.button12.Text = "Supprimer le praticien sélectionné";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btPraticienSupprimer.Location = new System.Drawing.Point(9, 257);
+            this.btPraticienSupprimer.Name = "btPraticienSupprimer";
+            this.btPraticienSupprimer.Size = new System.Drawing.Size(255, 23);
+            this.btPraticienSupprimer.TabIndex = 6;
+            this.btPraticienSupprimer.Text = "Supprimer le praticien correspondant à l\'ID";
+            this.btPraticienSupprimer.UseVisualStyleBackColor = true;
+            this.btPraticienSupprimer.Click += new System.EventHandler(this.btPraticienSupprimer_Click);
             // 
-            // button11
+            // btPraticienModifier
             // 
-            this.button11.Location = new System.Drawing.Point(7, 172);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(252, 41);
-            this.button11.TabIndex = 5;
-            this.button11.Text = "Modifier le praticien sélectionné avec les informations ci-dessus";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btPraticienModifier.Location = new System.Drawing.Point(6, 181);
+            this.btPraticienModifier.Name = "btPraticienModifier";
+            this.btPraticienModifier.Size = new System.Drawing.Size(255, 23);
+            this.btPraticienModifier.TabIndex = 5;
+            this.btPraticienModifier.Text = "Modifier le praticien correspondant à l\'ID";
+            this.btPraticienModifier.UseVisualStyleBackColor = true;
+            this.btPraticienModifier.Click += new System.EventHandler(this.btPraticienModifier_Click);
             // 
-            // button10
+            // btPraticienAjouter
             // 
-            this.button10.Location = new System.Drawing.Point(60, 143);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(140, 23);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "Ajouter un praticien";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btPraticienAjouter.Location = new System.Drawing.Point(9, 143);
+            this.btPraticienAjouter.Name = "btPraticienAjouter";
+            this.btPraticienAjouter.Size = new System.Drawing.Size(252, 23);
+            this.btPraticienAjouter.TabIndex = 4;
+            this.btPraticienAjouter.Text = "Ajouter un praticien";
+            this.btPraticienAjouter.UseVisualStyleBackColor = true;
+            this.btPraticienAjouter.Click += new System.EventHandler(this.button10_Click);
             // 
             // label87
             // 
@@ -2118,20 +2238,20 @@
             this.label87.TabIndex = 3;
             this.label87.Text = "Libellé :";
             // 
-            // textBox46
+            // tbLibellePraticien
             // 
-            this.textBox46.Location = new System.Drawing.Point(6, 66);
-            this.textBox46.Multiline = true;
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(255, 58);
-            this.textBox46.TabIndex = 2;
+            this.tbLibellePraticien.Location = new System.Drawing.Point(6, 66);
+            this.tbLibellePraticien.Multiline = true;
+            this.tbLibellePraticien.Name = "tbLibellePraticien";
+            this.tbLibellePraticien.Size = new System.Drawing.Size(255, 58);
+            this.tbLibellePraticien.TabIndex = 2;
             // 
-            // textBox45
+            // tbNomPraticien
             // 
-            this.textBox45.Location = new System.Drawing.Point(49, 19);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(212, 20);
-            this.textBox45.TabIndex = 1;
+            this.tbNomPraticien.Location = new System.Drawing.Point(49, 19);
+            this.tbNomPraticien.Name = "tbNomPraticien";
+            this.tbNomPraticien.Size = new System.Drawing.Size(212, 20);
+            this.tbNomPraticien.TabIndex = 1;
             // 
             // label86
             // 
@@ -2145,7 +2265,7 @@
             // produit
             // 
             this.produit.Controls.Add(this.label90);
-            this.produit.Controls.Add(this.label92);
+            this.produit.Controls.Add(this.nbProduit);
             this.produit.Controls.Add(this.label93);
             this.produit.Controls.Add(this.listeProduits);
             this.produit.Controls.Add(this.label94);
@@ -2165,18 +2285,18 @@
             this.label90.Size = new System.Drawing.Size(0, 13);
             this.label90.TabIndex = 18;
             // 
-            // label92
+            // nbProduit
             // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(598, 302);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(0, 13);
-            this.label92.TabIndex = 16;
+            this.nbProduit.AutoSize = true;
+            this.nbProduit.Location = new System.Drawing.Point(582, 364);
+            this.nbProduit.Name = "nbProduit";
+            this.nbProduit.Size = new System.Drawing.Size(0, 13);
+            this.nbProduit.TabIndex = 16;
             // 
             // label93
             // 
             this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(487, 302);
+            this.label93.Location = new System.Drawing.Point(471, 364);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(105, 13);
             this.label93.TabIndex = 15;
@@ -2185,9 +2305,10 @@
             // listeProduits
             // 
             this.listeProduits.FormattingEnabled = true;
+            this.listeProduits.HorizontalScrollbar = true;
             this.listeProduits.Location = new System.Drawing.Point(340, 22);
             this.listeProduits.Name = "listeProduits";
-            this.listeProduits.Size = new System.Drawing.Size(399, 277);
+            this.listeProduits.Size = new System.Drawing.Size(399, 342);
             this.listeProduits.TabIndex = 14;
             // 
             // label94
@@ -2201,57 +2322,96 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.tbIdProduitSupprimer);
+            this.groupBox13.Controls.Add(this.label64);
+            this.groupBox13.Controls.Add(this.tbIdProduitModifier);
+            this.groupBox13.Controls.Add(this.label34);
             this.groupBox13.Controls.Add(this.btSupprimerProduit);
-            this.groupBox13.Controls.Add(this.button13);
-            this.groupBox13.Controls.Add(this.button14);
+            this.groupBox13.Controls.Add(this.btModifierProduit);
+            this.groupBox13.Controls.Add(this.btAjouterProduit);
             this.groupBox13.Controls.Add(this.label95);
             this.groupBox13.Controls.Add(this.label96);
             this.groupBox13.Controls.Add(this.label98);
             this.groupBox13.Controls.Add(this.label97);
             this.groupBox13.Controls.Add(this.label99);
             this.groupBox13.Controls.Add(this.label100);
-            this.groupBox13.Controls.Add(this.textBox48);
+            this.groupBox13.Controls.Add(this.tbCompositionProduit);
             this.groupBox13.Controls.Add(this.label101);
-            this.groupBox13.Controls.Add(this.textBox53);
+            this.groupBox13.Controls.Add(this.tbCoutProduit);
             this.groupBox13.Controls.Add(this.label102);
-            this.groupBox13.Controls.Add(this.textBox47);
-            this.groupBox13.Controls.Add(this.textBox49);
-            this.groupBox13.Controls.Add(this.textBox50);
-            this.groupBox13.Controls.Add(this.textBox51);
-            this.groupBox13.Controls.Add(this.textBox52);
+            this.groupBox13.Controls.Add(this.tbPosologieProduit);
+            this.groupBox13.Controls.Add(this.tbFamilleProduit);
+            this.groupBox13.Controls.Add(this.tbContreIndicationProduit);
+            this.groupBox13.Controls.Add(this.tbEffetTheraProduit);
+            this.groupBox13.Controls.Add(this.tbNomProduit);
             this.groupBox13.Location = new System.Drawing.Point(3, 3);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(331, 296);
+            this.groupBox13.Size = new System.Drawing.Size(331, 374);
             this.groupBox13.TabIndex = 12;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Ajouter/modifier un produit";
             // 
+            // tbIdProduitSupprimer
+            // 
+            this.tbIdProduitSupprimer.Location = new System.Drawing.Point(237, 330);
+            this.tbIdProduitSupprimer.Name = "tbIdProduitSupprimer";
+            this.tbIdProduitSupprimer.Size = new System.Drawing.Size(69, 20);
+            this.tbIdProduitSupprimer.TabIndex = 10;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(213, 333);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(18, 13);
+            this.label64.TabIndex = 21;
+            this.label64.Text = "ID";
+            // 
+            // tbIdProduitModifier
+            // 
+            this.tbIdProduitModifier.Location = new System.Drawing.Point(237, 283);
+            this.tbIdProduitModifier.Name = "tbIdProduitModifier";
+            this.tbIdProduitModifier.Size = new System.Drawing.Size(69, 20);
+            this.tbIdProduitModifier.TabIndex = 8;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(213, 286);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(18, 13);
+            this.label34.TabIndex = 19;
+            this.label34.Text = "ID";
+            // 
             // btSupprimerProduit
             // 
-            this.btSupprimerProduit.Location = new System.Drawing.Point(67, 259);
+            this.btSupprimerProduit.Location = new System.Drawing.Point(20, 327);
             this.btSupprimerProduit.Name = "btSupprimerProduit";
             this.btSupprimerProduit.Size = new System.Drawing.Size(187, 23);
-            this.btSupprimerProduit.TabIndex = 18;
+            this.btSupprimerProduit.TabIndex = 11;
             this.btSupprimerProduit.Text = "Supprimer le produit sélectionné";
             this.btSupprimerProduit.UseVisualStyleBackColor = true;
+            this.btSupprimerProduit.Click += new System.EventHandler(this.btSupprimerProduit_Click);
             // 
-            // button13
+            // btModifierProduit
             // 
-            this.button13.Location = new System.Drawing.Point(141, 230);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(183, 23);
-            this.button13.TabIndex = 17;
-            this.button13.Text = "Modifier le produit sélectionné";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btModifierProduit.Location = new System.Drawing.Point(20, 281);
+            this.btModifierProduit.Name = "btModifierProduit";
+            this.btModifierProduit.Size = new System.Drawing.Size(187, 23);
+            this.btModifierProduit.TabIndex = 9;
+            this.btModifierProduit.Text = "Modifier le produit sélectionné";
+            this.btModifierProduit.UseVisualStyleBackColor = true;
+            this.btModifierProduit.Click += new System.EventHandler(this.btModifierProduit_Click);
             // 
-            // button14
+            // btAjouterProduit
             // 
-            this.button14.Location = new System.Drawing.Point(3, 230);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(132, 23);
-            this.button14.TabIndex = 16;
-            this.button14.Text = "Ajouter le produit";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btAjouterProduit.Location = new System.Drawing.Point(38, 237);
+            this.btAjouterProduit.Name = "btAjouterProduit";
+            this.btAjouterProduit.Size = new System.Drawing.Size(250, 23);
+            this.btAjouterProduit.TabIndex = 7;
+            this.btAjouterProduit.Text = "Ajouter le produit";
+            this.btAjouterProduit.UseVisualStyleBackColor = true;
+            this.btAjouterProduit.Click += new System.EventHandler(this.button14_Click);
             // 
             // label95
             // 
@@ -2306,13 +2466,13 @@
             this.label100.TabIndex = 10;
             this.label100.Text = "Contre-indication";
             // 
-            // textBox48
+            // tbCompositionProduit
             // 
-            this.textBox48.Location = new System.Drawing.Point(6, 198);
-            this.textBox48.Multiline = true;
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(318, 20);
-            this.textBox48.TabIndex = 3;
+            this.tbCompositionProduit.Location = new System.Drawing.Point(6, 198);
+            this.tbCompositionProduit.Multiline = true;
+            this.tbCompositionProduit.Name = "tbCompositionProduit";
+            this.tbCompositionProduit.Size = new System.Drawing.Size(318, 20);
+            this.tbCompositionProduit.TabIndex = 6;
             // 
             // label101
             // 
@@ -2323,12 +2483,12 @@
             this.label101.TabIndex = 9;
             this.label101.Text = "Effet thérapeutique";
             // 
-            // textBox53
+            // tbCoutProduit
             // 
-            this.textBox53.Location = new System.Drawing.Point(109, 149);
-            this.textBox53.Name = "textBox53";
-            this.textBox53.Size = new System.Drawing.Size(216, 20);
-            this.textBox53.TabIndex = 4;
+            this.tbCoutProduit.Location = new System.Drawing.Point(109, 149);
+            this.tbCoutProduit.Name = "tbCoutProduit";
+            this.tbCoutProduit.Size = new System.Drawing.Size(216, 20);
+            this.tbCoutProduit.TabIndex = 5;
             // 
             // label102
             // 
@@ -2339,132 +2499,72 @@
             this.label102.TabIndex = 8;
             this.label102.Text = "Nom";
             // 
-            // textBox47
+            // tbPosologieProduit
             // 
-            this.textBox47.Location = new System.Drawing.Point(109, 123);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(216, 20);
-            this.textBox47.TabIndex = 6;
+            this.tbPosologieProduit.Location = new System.Drawing.Point(109, 123);
+            this.tbPosologieProduit.Name = "tbPosologieProduit";
+            this.tbPosologieProduit.Size = new System.Drawing.Size(216, 20);
+            this.tbPosologieProduit.TabIndex = 4;
             // 
-            // textBox49
+            // tbFamilleProduit
             // 
-            this.textBox49.Location = new System.Drawing.Point(109, 97);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(215, 20);
-            this.textBox49.TabIndex = 5;
+            this.tbFamilleProduit.Location = new System.Drawing.Point(109, 97);
+            this.tbFamilleProduit.Name = "tbFamilleProduit";
+            this.tbFamilleProduit.Size = new System.Drawing.Size(215, 20);
+            this.tbFamilleProduit.TabIndex = 3;
             // 
-            // textBox50
+            // tbContreIndicationProduit
             // 
-            this.textBox50.Location = new System.Drawing.Point(109, 71);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(215, 20);
-            this.textBox50.TabIndex = 2;
+            this.tbContreIndicationProduit.Location = new System.Drawing.Point(109, 71);
+            this.tbContreIndicationProduit.Name = "tbContreIndicationProduit";
+            this.tbContreIndicationProduit.Size = new System.Drawing.Size(215, 20);
+            this.tbContreIndicationProduit.TabIndex = 2;
             // 
-            // textBox51
+            // tbEffetTheraProduit
             // 
-            this.textBox51.Location = new System.Drawing.Point(109, 45);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(215, 20);
-            this.textBox51.TabIndex = 1;
+            this.tbEffetTheraProduit.Location = new System.Drawing.Point(109, 45);
+            this.tbEffetTheraProduit.Name = "tbEffetTheraProduit";
+            this.tbEffetTheraProduit.Size = new System.Drawing.Size(215, 20);
+            this.tbEffetTheraProduit.TabIndex = 1;
             // 
-            // textBox52
+            // tbNomProduit
             // 
-            this.textBox52.Location = new System.Drawing.Point(109, 19);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(215, 20);
-            this.textBox52.TabIndex = 0;
+            this.tbNomProduit.Location = new System.Drawing.Point(109, 19);
+            this.tbNomProduit.Name = "tbNomProduit";
+            this.tbNomProduit.Size = new System.Drawing.Size(215, 20);
+            this.tbNomProduit.TabIndex = 0;
             // 
-            // label24
+            // label65
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(6, 39);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(241, 13);
-            this.label24.TabIndex = 19;
-            this.label24.Text = "Processeur, disque, mémoire ou logiciel à préciser";
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(61, 213);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(24, 13);
+            this.label65.TabIndex = 7;
+            this.label65.Text = "ID :";
             // 
-            // label25
+            // label66
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(93, 356);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(78, 13);
-            this.label25.TabIndex = 20;
-            this.label25.Text = "ID du matériel :";
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(61, 289);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(24, 13);
+            this.label66.TabIndex = 5;
+            this.label66.Text = "ID :";
             // 
-            // tbIdMatérielModifier
+            // tbIdPraticienModifier
             // 
-            this.tbIdMatérielModifier.Location = new System.Drawing.Point(177, 353);
-            this.tbIdMatérielModifier.Name = "tbIdMatérielModifier";
-            this.tbIdMatérielModifier.Size = new System.Drawing.Size(48, 20);
-            this.tbIdMatérielModifier.TabIndex = 21;
+            this.tbIdPraticienModifier.Location = new System.Drawing.Point(91, 210);
+            this.tbIdPraticienModifier.Name = "tbIdPraticienModifier";
+            this.tbIdPraticienModifier.Size = new System.Drawing.Size(100, 20);
+            this.tbIdPraticienModifier.TabIndex = 8;
             // 
-            // tbDatePossessionMatériel
+            // tbIdPraticienSupprimer
             // 
-            this.tbDatePossessionMatériel.CustomFormat = "yyyy-MM-dd";
-            this.tbDatePossessionMatériel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tbDatePossessionMatériel.Location = new System.Drawing.Point(9, 113);
-            this.tbDatePossessionMatériel.Name = "tbDatePossessionMatériel";
-            this.tbDatePossessionMatériel.Size = new System.Drawing.Size(311, 20);
-            this.tbDatePossessionMatériel.TabIndex = 22;
-            // 
-            // tbDateGarantieMatériel
-            // 
-            this.tbDateGarantieMatériel.CustomFormat = "yyyy-MM-dd";
-            this.tbDateGarantieMatériel.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tbDateGarantieMatériel.Location = new System.Drawing.Point(9, 168);
-            this.tbDateGarantieMatériel.Name = "tbDateGarantieMatériel";
-            this.tbDateGarantieMatériel.Size = new System.Drawing.Size(311, 20);
-            this.tbDateGarantieMatériel.TabIndex = 23;
-            // 
-            // tbIdMatérielSupprimer
-            // 
-            this.tbIdMatérielSupprimer.Location = new System.Drawing.Point(667, 441);
-            this.tbIdMatérielSupprimer.Name = "tbIdMatérielSupprimer";
-            this.tbIdMatérielSupprimer.Size = new System.Drawing.Size(79, 20);
-            this.tbIdMatérielSupprimer.TabIndex = 11;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(583, 444);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(78, 13);
-            this.label26.TabIndex = 12;
-            this.label26.Text = "ID du matériel :";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(33, 443);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(78, 13);
-            this.label28.TabIndex = 24;
-            this.label28.Text = "ID du matériel :";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(207, 443);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(88, 13);
-            this.label29.TabIndex = 25;
-            this.label29.Text = "ID du personnel :";
-            // 
-            // tbIdMatérielAffecter
-            // 
-            this.tbIdMatérielAffecter.Location = new System.Drawing.Point(36, 459);
-            this.tbIdMatérielAffecter.Name = "tbIdMatérielAffecter";
-            this.tbIdMatérielAffecter.Size = new System.Drawing.Size(85, 20);
-            this.tbIdMatérielAffecter.TabIndex = 26;
-            // 
-            // tbIdPersonnelMatérielAffecter
-            // 
-            this.tbIdPersonnelMatérielAffecter.Location = new System.Drawing.Point(210, 459);
-            this.tbIdPersonnelMatérielAffecter.Name = "tbIdPersonnelMatérielAffecter";
-            this.tbIdPersonnelMatérielAffecter.Size = new System.Drawing.Size(85, 20);
-            this.tbIdPersonnelMatérielAffecter.TabIndex = 27;
+            this.tbIdPraticienSupprimer.Location = new System.Drawing.Point(91, 286);
+            this.tbIdPraticienSupprimer.Name = "tbIdPraticienSupprimer";
+            this.tbIdPraticienSupprimer.Size = new System.Drawing.Size(100, 20);
+            this.tbIdPraticienSupprimer.TabIndex = 6;
             // 
             // Interface
             // 
@@ -2695,38 +2795,38 @@
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.ListBox listePraticiens3;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btPraticienSupprimer;
+        private System.Windows.Forms.Button btPraticienModifier;
+        private System.Windows.Forms.Button btPraticienAjouter;
         private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.TextBox textBox46;
-        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.TextBox tbLibellePraticien;
+        private System.Windows.Forms.TextBox tbNomPraticien;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.TabPage produit;
         private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label nbProduit;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.ListBox listeProduits;
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Button btSupprimerProduit;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btModifierProduit;
+        private System.Windows.Forms.Button btAjouterProduit;
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.TextBox tbCompositionProduit;
         private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.TextBox textBox53;
+        private System.Windows.Forms.TextBox tbCoutProduit;
         private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.TextBox textBox47;
-        private System.Windows.Forms.TextBox textBox49;
-        private System.Windows.Forms.TextBox textBox50;
-        private System.Windows.Forms.TextBox textBox51;
-        private System.Windows.Forms.TextBox textBox52;
+        private System.Windows.Forms.TextBox tbPosologieProduit;
+        private System.Windows.Forms.TextBox tbFamilleProduit;
+        private System.Windows.Forms.TextBox tbContreIndicationProduit;
+        private System.Windows.Forms.TextBox tbEffetTheraProduit;
+        private System.Windows.Forms.TextBox tbNomProduit;
         private System.Windows.Forms.ListBox listeVisites;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label nbVisites;
@@ -2749,6 +2849,14 @@
         private System.Windows.Forms.TextBox tbIdMatérielAffecter;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox tbIdProduitSupprimer;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox tbIdProduitModifier;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox tbIdPraticienSupprimer;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.TextBox tbIdPraticienModifier;
+        private System.Windows.Forms.Label label65;
     }
 }
 

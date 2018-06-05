@@ -141,8 +141,117 @@ namespace GSB
         private void Interface_Load(object sender, EventArgs e)
         {
             BDD = new BDD();
+
             actualiserListePersonnel();
             actualiserListeMatériel();
+            actualiserListeProduit();
+            actualiserListePraticien();
+        }
+
+        private void actualiserListeTechnicien()
+        {
+            listeTechnicien.Items.Clear();
+
+            string requete = "SELECT * FROM personnel P JOIN technicien T ON P.id_personnel = T.id_personnel " +
+                "WHERE P.role = 'Technicien' OR P.role = 'Technicien supérieur';";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listeTechnicien.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Niveau de compétence : " + rdr.GetInt32(8) + " - Compétences : " + rdr.GetString(10) + " - Formation : " + rdr.GetString(9));
+            }
+
+            rdr.Close();
+        }
+
+        private void actualiserListeResponsableRegion()
+        {
+            listeResponsableRégion.Items.Clear();
+
+            string requete = "SELECT * FROM personnel P JOIN responsable_region RR ON P.id_personnel = RR.id_personnel " +
+                "WHERE P.role = 'Responsable région';";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listeResponsableRégion.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4));
+            }
+
+            rdr.Close();
+        }
+
+        private void actualiserListeVisiteursMédicaux()
+        {
+            listeVisiteursMédicaux.Items.Clear();
+            listeVisiteurs2.Items.Clear();
+
+            string requete = "SELECT * FROM personnel P JOIN visiteur V ON P.id_personnel = V.id_personnel " +
+                "WHERE P.role = 'Visiteur médical' OR P.role = 'Délégué régional';";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listeVisiteursMédicaux.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
+                listeVisiteurs2.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " " + rdr.GetString(2) + " - " + rdr.GetString(5) + " : Embauché depuis le " + rdr.GetDateTime(3) + " en tant que " + rdr.GetString(6) + " dans la région " + rdr.GetString(4) + ". Son objectif est '" + rdr.GetString(8) + "' avec un budget de " + rdr.GetInt32(11) + "€. Prime : " + rdr.GetString(9) + "€ - Avantages : " + rdr.GetString(10));
+
+            }
+
+            rdr.Close();
+        }
+
+        private void actualiserListeProduit()
+        {
+            int Produits = 0;
+
+            listeProduits.Items.Clear();
+            listeProduits2.Items.Clear();
+
+            string requete = "SELECT * FROM produit;";
+
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listeProduits.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Effet: " + rdr.GetString(2) + " - Contre-Indication : " + rdr.GetString(3) + " - Composition: " + rdr.GetString(4) + " - Posologie: " + rdr.GetString(5) + " - Famille : " + rdr.GetString(6) + " - Coût: " + rdr.GetDouble(7));
+                listeProduits2.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Effet: " + rdr.GetString(2) + " - Contre-Indication : " + rdr.GetString(3) + " - Composition: " + rdr.GetString(4) + " - Posologie: " + rdr.GetString(5) + " - Famille : " + rdr.GetString(6) + " - Coût: " + rdr.GetDouble(7));
+
+                Produits++;
+            }
+
+            rdr.Close();
+
+            nbProduit.Text = Produits.ToString();
+        }
+
+        private void actualiserListePraticien()
+        {
+            int Praticiens = 0;
+
+            listePraticiens.Items.Clear();
+            listePraticiens2.Items.Clear();
+            listePraticiens3.Items.Clear();
+
+            string requete = "SELECT * FROM praticien;";
+
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listePraticiens.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Libelle: " + rdr.GetString(2));
+                listePraticiens2.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Libelle: " + rdr.GetString(2));
+                listePraticiens3.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Libelle: " + rdr.GetString(2));
+
+                Praticiens++;
+            }
+
+            rdr.Close();
+
+            nbPraticiens.Text = Praticiens.ToString();
         }
 
         private void actualiserListeMatériel()
@@ -291,6 +400,10 @@ namespace GSB
             }
 
             rdr.Close();
+
+            actualiserListeVisiteursMédicaux();
+            actualiserListeTechnicien();
+            actualiserListeResponsableRegion();
 
             nbVisiteurMédical.Text = VisiteurMédical.ToString();
             nbDéléguéRégional.Text = DéléguéRégional.ToString();
@@ -520,6 +633,93 @@ namespace GSB
             else
             {
                 MessageBox.Show("Le matériel n°" + tbIdMatérielAffecter.Text + " ou le personnel n°" + tbIdPersonnelMatérielAffecter.Text + " n'existe pas ou a déjà été supprimé");
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            string requete = "INSERT INTO produit (nom, effet_therapeutique, contre_indication, composition, posologie, famille, cout)" +
+                " VALUES ('" + tbNomProduit.Text + "', '" + tbEffetTheraProduit.Text + "', '" + tbContreIndicationProduit.Text + "', '" + tbCompositionProduit.Text + "' , '" + tbPosologieProduit.Text + "', '" + tbFamilleProduit.Text + "', " + Convert.ToDouble(tbCoutProduit.Text) + ");";
+
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            cmd.ExecuteNonQuery();
+
+            actualiserListeProduit();
+        }
+
+        private void btModifierProduit_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE produit SET nom = '" + tbNomProduit.Text + "', effet_therapeutique = '" + tbEffetTheraProduit.Text + "', contre_indication = '" + tbContreIndicationProduit.Text + "', composition = '" + tbCompositionProduit.Text + "', posologie = '" + tbPosologieProduit.Text + "', famille = '" + tbFamilleProduit.Text + "', cout = " + Convert.ToDouble(tbCoutProduit.Text) +
+                " WHERE id_produit = " + Convert.ToInt32(tbIdProduitModifier.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeProduit();
+                MessageBox.Show("Le produit n°" + tbIdProduitModifier.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le produit n°" + tbIdProduitModifier.Text);
+            }
+        }
+
+        private void btSupprimerProduit_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("DELETE FROM produit WHERE id_produit = " + Convert.ToInt32(tbIdProduitSupprimer.Text));
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeProduit();
+                MessageBox.Show("Le produit n°" + tbIdProduitSupprimer.Text + " a bien été supprimé");
+            }
+            else
+            {
+                MessageBox.Show("Le produit n°" + tbIdProduitSupprimer.Text + " n'existe pas ou a déjà été supprimé");
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string requete = "INSERT INTO praticien (nom, libelle) " + "VALUES ('" + tbNomPraticien.Text + "', '" + tbLibellePraticien.Text + "');";
+
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            cmd.ExecuteNonQuery();
+
+            actualiserListePraticien();
+        }
+
+        private void btPraticienModifier_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE praticien SET nom = '" + tbNomPraticien.Text + "', libelle = '" + tbLibellePraticien.Text +
+                    "' WHERE id_praticien = " + Convert.ToInt32(tbIdPraticienModifier.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListePraticien();
+                MessageBox.Show("Le praticien n°" + tbIdPraticienModifier.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le praticien n°" + tbIdPraticienModifier.Text);
+            }
+        }
+
+        private void btPraticienSupprimer_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("DELETE FROM praticien WHERE id_praticien = " + Convert.ToInt32(tbIdPraticienSupprimer.Text));
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListePraticien();
+                MessageBox.Show("Le praticien n°" + tbIdPraticienSupprimer.Text + " a bien été supprimé");
+            }
+            else
+            {
+                MessageBox.Show("Le praticien n°" + tbIdPraticienSupprimer.Text + " n'existe pas ou a déjà été supprimé");
             }
         }
     }
