@@ -273,6 +273,15 @@
             this.tbIdResponsableRégionAC = new System.Windows.Forms.TextBox();
             this.tbIdDemandeAC = new System.Windows.Forms.TextBox();
             this.label79 = new System.Windows.Forms.Label();
+            this.stats = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label82 = new System.Windows.Forms.Label();
+            this.tbIdVisiteurStats = new System.Windows.Forms.TextBox();
+            this.btStatsDemandeAC = new System.Windows.Forms.Button();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btStatsNbIncidentMatériel = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -294,6 +303,9 @@
             this.groupBox12.SuspendLayout();
             this.produit.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            this.stats.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -308,6 +320,7 @@
             this.menu.Controls.Add(this.ac);
             this.menu.Controls.Add(this.praticien);
             this.menu.Controls.Add(this.produit);
+            this.menu.Controls.Add(this.stats);
             this.menu.Location = new System.Drawing.Point(12, 12);
             this.menu.Name = "menu";
             this.menu.SelectedIndex = 0;
@@ -2683,6 +2696,92 @@
             this.label79.TabIndex = 13;
             this.label79.Text = "ID demande d\'AC :";
             // 
+            // stats
+            // 
+            this.stats.Controls.Add(this.groupBox14);
+            this.stats.Controls.Add(this.groupBox9);
+            this.stats.Location = new System.Drawing.Point(4, 22);
+            this.stats.Name = "stats";
+            this.stats.Size = new System.Drawing.Size(752, 511);
+            this.stats.TabIndex = 7;
+            this.stats.Text = "Statistiques";
+            this.stats.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.btStatsDemandeAC);
+            this.groupBox9.Controls.Add(this.tbIdVisiteurStats);
+            this.groupBox9.Controls.Add(this.label82);
+            this.groupBox9.Location = new System.Drawing.Point(14, 13);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(198, 88);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Nombre de demandes d\'AC";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(6, 27);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(75, 13);
+            this.label82.TabIndex = 0;
+            this.label82.Text = "ID du visiteur :";
+            // 
+            // tbIdVisiteurStats
+            // 
+            this.tbIdVisiteurStats.Location = new System.Drawing.Point(87, 24);
+            this.tbIdVisiteurStats.Name = "tbIdVisiteurStats";
+            this.tbIdVisiteurStats.Size = new System.Drawing.Size(100, 20);
+            this.tbIdVisiteurStats.TabIndex = 1;
+            // 
+            // btStatsDemandeAC
+            // 
+            this.btStatsDemandeAC.Location = new System.Drawing.Point(9, 53);
+            this.btStatsDemandeAC.Name = "btStatsDemandeAC";
+            this.btStatsDemandeAC.Size = new System.Drawing.Size(179, 23);
+            this.btStatsDemandeAC.TabIndex = 2;
+            this.btStatsDemandeAC.Text = "Voir le nombre de demande";
+            this.btStatsDemandeAC.UseVisualStyleBackColor = true;
+            this.btStatsDemandeAC.Click += new System.EventHandler(this.btStatsDemandeAC_Click);
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.btStatsNbIncidentMatériel);
+            this.groupBox14.Controls.Add(this.textBox1);
+            this.groupBox14.Controls.Add(this.label103);
+            this.groupBox14.Location = new System.Drawing.Point(218, 13);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(193, 88);
+            this.groupBox14.TabIndex = 1;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Nombre d\'incidents sur un matériel";
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Location = new System.Drawing.Point(6, 27);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(78, 13);
+            this.label103.TabIndex = 0;
+            this.label103.Text = "ID du matériel :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(90, 24);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(94, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // btStatsNbIncidentMatériel
+            // 
+            this.btStatsNbIncidentMatériel.Location = new System.Drawing.Point(9, 53);
+            this.btStatsNbIncidentMatériel.Name = "btStatsNbIncidentMatériel";
+            this.btStatsNbIncidentMatériel.Size = new System.Drawing.Size(175, 23);
+            this.btStatsNbIncidentMatériel.TabIndex = 2;
+            this.btStatsNbIncidentMatériel.Text = "Voir le nombre d\'incident";
+            this.btStatsNbIncidentMatériel.UseVisualStyleBackColor = true;
+            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2737,6 +2836,11 @@
             this.produit.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
+            this.stats.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2987,6 +3091,15 @@
         private System.Windows.Forms.TextBox tbIdDemandeAC;
         private System.Windows.Forms.TextBox tbIdResponsableRégionAC;
         private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.TabPage stats;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button btStatsDemandeAC;
+        private System.Windows.Forms.TextBox tbIdVisiteurStats;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.Button btStatsNbIncidentMatériel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label103;
     }
 }
 

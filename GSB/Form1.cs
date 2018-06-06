@@ -1024,5 +1024,16 @@ namespace GSB
                 MessageBox.Show("Impossible de trouver la demande d'AC n°" + tbIdDemandeAC.Text);
             }
         }
+
+        private void btStatsDemandeAC_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("SELECT statsDemandeAC(" + Convert.ToInt32(tbIdVisiteurStats.Text) + ");");
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                MessageBox.Show(rdr.GetValue(0).ToString());
+            }
+        }
     }
 }
