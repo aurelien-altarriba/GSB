@@ -129,20 +129,12 @@
             this.listeTechnicien = new System.Windows.Forms.ListBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.tbTravailRéaliséIncident = new System.Windows.Forms.TextBox();
+            this.btTechnicienAffecterIncident = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btPriseEnChargeDéplacementIncident = new System.Windows.Forms.Button();
+            this.btPriseEnChargeTélémaintenanceIncident = new System.Windows.Forms.Button();
+            this.btPriseEnChargeTéléphoneIncident = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btIncidentCloturé = new System.Windows.Forms.Button();
             this.btIncidentRésolu = new System.Windows.Forms.Button();
@@ -154,13 +146,12 @@
             this.label37 = new System.Windows.Forms.Label();
             this.listeMatériel2 = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.btAjouterIncident = new System.Windows.Forms.Button();
+            this.tbNiveauUrgenceIncident = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.tbObjetIncident = new System.Windows.Forms.TextBox();
             this.visite = new System.Windows.Forms.TabPage();
             this.nbVisites = new System.Windows.Forms.Label();
             this.listeVisites = new System.Windows.Forms.ListBox();
@@ -222,6 +213,10 @@
             this.label88 = new System.Windows.Forms.Label();
             this.listePraticiens3 = new System.Windows.Forms.ListBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.tbIdPraticienSupprimer = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.tbIdPraticienModifier = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
             this.btPraticienSupprimer = new System.Windows.Forms.Button();
             this.btPraticienModifier = new System.Windows.Forms.Button();
             this.btPraticienAjouter = new System.Windows.Forms.Button();
@@ -258,10 +253,19 @@
             this.tbContreIndicationProduit = new System.Windows.Forms.TextBox();
             this.tbEffetTheraProduit = new System.Windows.Forms.TextBox();
             this.tbNomProduit = new System.Windows.Forms.TextBox();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.tbIdPraticienModifier = new System.Windows.Forms.TextBox();
-            this.tbIdPraticienSupprimer = new System.Windows.Forms.TextBox();
+            this.tbDateIncident = new System.Windows.Forms.DateTimePicker();
+            this.label67 = new System.Windows.Forms.Label();
+            this.tbIdMatérielAjouterIncident = new System.Windows.Forms.TextBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.tbIdTicketIncidentModifier = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.tbIdTechnicienAffectationIncident = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.tbIdIncidentAffectationTechnicien = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.tbDateDébutPriseEnCharge = new System.Windows.Forms.DateTimePicker();
+            this.label47 = new System.Windows.Forms.Label();
+            this.tbDateFinPriseEnCharge = new System.Windows.Forms.DateTimePicker();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -1196,7 +1200,6 @@
             this.incident.Controls.Add(this.label43);
             this.incident.Controls.Add(this.listeTechnicien);
             this.incident.Controls.Add(this.groupBox7);
-            this.incident.Controls.Add(this.groupBox6);
             this.incident.Controls.Add(this.groupBox5);
             this.incident.Controls.Add(this.label42);
             this.incident.Controls.Add(this.label41);
@@ -1211,6 +1214,7 @@
             this.incident.TabIndex = 2;
             this.incident.Text = "Incident";
             this.incident.UseVisualStyleBackColor = true;
+            this.incident.Click += new System.EventHandler(this.incident_Click);
             // 
             // nbTicketCloturé
             // 
@@ -1275,17 +1279,17 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.label48);
-            this.groupBox7.Controls.Add(this.textBox28);
-            this.groupBox7.Controls.Add(this.textBox27);
-            this.groupBox7.Controls.Add(this.textBox26);
+            this.groupBox7.Controls.Add(this.tbDateFinPriseEnCharge);
             this.groupBox7.Controls.Add(this.label47);
+            this.groupBox7.Controls.Add(this.tbDateDébutPriseEnCharge);
             this.groupBox7.Controls.Add(this.label46);
+            this.groupBox7.Controls.Add(this.tbIdIncidentAffectationTechnicien);
             this.groupBox7.Controls.Add(this.label45);
+            this.groupBox7.Controls.Add(this.tbIdTechnicienAffectationIncident);
             this.groupBox7.Controls.Add(this.label44);
-            this.groupBox7.Controls.Add(this.textBox25);
-            this.groupBox7.Controls.Add(this.textBox24);
-            this.groupBox7.Controls.Add(this.button5);
+            this.groupBox7.Controls.Add(this.label48);
+            this.groupBox7.Controls.Add(this.tbTravailRéaliséIncident);
+            this.groupBox7.Controls.Add(this.btTechnicienAffecterIncident);
             this.groupBox7.Location = new System.Drawing.Point(3, 395);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(438, 113);
@@ -1302,138 +1306,80 @@
             this.label48.TabIndex = 11;
             this.label48.Text = "Travail réalisé :";
             // 
-            // textBox28
+            // tbTravailRéaliséIncident
             // 
-            this.textBox28.Location = new System.Drawing.Point(303, 35);
-            this.textBox28.Multiline = true;
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(129, 70);
-            this.textBox28.TabIndex = 9;
+            this.tbTravailRéaliséIncident.Location = new System.Drawing.Point(303, 35);
+            this.tbTravailRéaliséIncident.Multiline = true;
+            this.tbTravailRéaliséIncident.Name = "tbTravailRéaliséIncident";
+            this.tbTravailRéaliséIncident.Size = new System.Drawing.Size(129, 70);
+            this.tbTravailRéaliséIncident.TabIndex = 9;
             // 
-            // textBox27
+            // btTechnicienAffecterIncident
             // 
-            this.textBox27.Location = new System.Drawing.Point(220, 45);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(70, 20);
-            this.textBox27.TabIndex = 8;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Location = new System.Drawing.Point(220, 19);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(70, 20);
-            this.textBox26.TabIndex = 7;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(164, 48);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(50, 13);
-            this.label47.TabIndex = 6;
-            this.label47.Text = "Heure fin";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(148, 22);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(66, 13);
-            this.label46.TabIndex = 5;
-            this.label46.Text = "Heure début";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(16, 48);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(44, 13);
-            this.label45.TabIndex = 4;
-            this.label45.Text = "Date fin";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(0, 22);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(60, 13);
-            this.label44.TabIndex = 3;
-            this.label44.Text = "Date début";
-            // 
-            // textBox25
-            // 
-            this.textBox25.Location = new System.Drawing.Point(66, 45);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(70, 20);
-            this.textBox25.TabIndex = 2;
-            // 
-            // textBox24
-            // 
-            this.textBox24.Location = new System.Drawing.Point(66, 19);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(70, 20);
-            this.textBox24.TabIndex = 1;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(11, 71);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(285, 34);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Affecter le technicien sélectionné dans la liste à l\'incident en cours sélectionn" +
-    "é dans la liste au dessus";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btTechnicienAffecterIncident.Location = new System.Drawing.Point(13, 91);
+            this.btTechnicienAffecterIncident.Name = "btTechnicienAffecterIncident";
+            this.btTechnicienAffecterIncident.Size = new System.Drawing.Size(285, 22);
+            this.btTechnicienAffecterIncident.TabIndex = 0;
+            this.btTechnicienAffecterIncident.Text = "Affecter le technicien à l\'incident";
+            this.btTechnicienAffecterIncident.UseVisualStyleBackColor = true;
+            this.btTechnicienAffecterIncident.Click += new System.EventHandler(this.btTechnicienAffecterIncident_Click);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Controls.Add(this.button3);
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Location = new System.Drawing.Point(3, 281);
+            this.groupBox6.Controls.Add(this.btPriseEnChargeDéplacementIncident);
+            this.groupBox6.Controls.Add(this.btPriseEnChargeTélémaintenanceIncident);
+            this.groupBox6.Controls.Add(this.btPriseEnChargeTéléphoneIncident);
+            this.groupBox6.Location = new System.Drawing.Point(9, 93);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(242, 108);
+            this.groupBox6.Size = new System.Drawing.Size(227, 108);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Type de prise en charge du ticket sélectionné";
+            this.groupBox6.Text = "Type de prise en charge du ticket";
             // 
-            // button4
+            // btPriseEnChargeDéplacementIncident
             // 
-            this.button4.Location = new System.Drawing.Point(6, 77);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(224, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Déplacement sur site";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btPriseEnChargeDéplacementIncident.Location = new System.Drawing.Point(6, 77);
+            this.btPriseEnChargeDéplacementIncident.Name = "btPriseEnChargeDéplacementIncident";
+            this.btPriseEnChargeDéplacementIncident.Size = new System.Drawing.Size(215, 23);
+            this.btPriseEnChargeDéplacementIncident.TabIndex = 2;
+            this.btPriseEnChargeDéplacementIncident.Text = "Déplacement sur site";
+            this.btPriseEnChargeDéplacementIncident.UseVisualStyleBackColor = true;
+            this.btPriseEnChargeDéplacementIncident.Click += new System.EventHandler(this.btPriseEnChargeDéplacementIncident_Click);
             // 
-            // button3
+            // btPriseEnChargeTélémaintenanceIncident
             // 
-            this.button3.Location = new System.Drawing.Point(6, 48);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(224, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Technicien en télémaintenance";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btPriseEnChargeTélémaintenanceIncident.Location = new System.Drawing.Point(6, 48);
+            this.btPriseEnChargeTélémaintenanceIncident.Name = "btPriseEnChargeTélémaintenanceIncident";
+            this.btPriseEnChargeTélémaintenanceIncident.Size = new System.Drawing.Size(215, 23);
+            this.btPriseEnChargeTélémaintenanceIncident.TabIndex = 1;
+            this.btPriseEnChargeTélémaintenanceIncident.Text = "Technicien en télémaintenance";
+            this.btPriseEnChargeTélémaintenanceIncident.UseVisualStyleBackColor = true;
+            this.btPriseEnChargeTélémaintenanceIncident.Click += new System.EventHandler(this.btPriseEnChargeTélémaintenanceIncident_Click);
             // 
-            // button2
+            // btPriseEnChargeTéléphoneIncident
             // 
-            this.button2.Location = new System.Drawing.Point(6, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(224, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Technicien au téléphone";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btPriseEnChargeTéléphoneIncident.Location = new System.Drawing.Point(6, 19);
+            this.btPriseEnChargeTéléphoneIncident.Name = "btPriseEnChargeTéléphoneIncident";
+            this.btPriseEnChargeTéléphoneIncident.Size = new System.Drawing.Size(215, 23);
+            this.btPriseEnChargeTéléphoneIncident.TabIndex = 0;
+            this.btPriseEnChargeTéléphoneIncident.Text = "Technicien au téléphone";
+            this.btPriseEnChargeTéléphoneIncident.UseVisualStyleBackColor = true;
+            this.btPriseEnChargeTéléphoneIncident.Click += new System.EventHandler(this.btPriseEnChargeTéléphoneIncident_Click);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.tbIdTicketIncidentModifier);
+            this.groupBox5.Controls.Add(this.label69);
+            this.groupBox5.Controls.Add(this.btIncidentTraitement);
             this.groupBox5.Controls.Add(this.btIncidentCloturé);
             this.groupBox5.Controls.Add(this.btIncidentRésolu);
-            this.groupBox5.Controls.Add(this.btIncidentTraitement);
+            this.groupBox5.Controls.Add(this.groupBox6);
             this.groupBox5.Location = new System.Drawing.Point(3, 185);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(242, 89);
+            this.groupBox5.Size = new System.Drawing.Size(242, 207);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Modifier l\'état du ticket sélectionné";
+            this.groupBox5.Text = "Modifier l\'état du ticket";
             // 
             // btIncidentCloturé
             // 
@@ -1443,6 +1389,7 @@
             this.btIncidentCloturé.TabIndex = 2;
             this.btIncidentCloturé.Text = "Clôturé";
             this.btIncidentCloturé.UseVisualStyleBackColor = true;
+            this.btIncidentCloturé.Click += new System.EventHandler(this.btIncidentCloturé_Click);
             // 
             // btIncidentRésolu
             // 
@@ -1452,15 +1399,17 @@
             this.btIncidentRésolu.TabIndex = 1;
             this.btIncidentRésolu.Text = "Résolu";
             this.btIncidentRésolu.UseVisualStyleBackColor = true;
+            this.btIncidentRésolu.Click += new System.EventHandler(this.btIncidentRésolu_Click);
             // 
             // btIncidentTraitement
             // 
-            this.btIncidentTraitement.Location = new System.Drawing.Point(16, 29);
+            this.btIncidentTraitement.Location = new System.Drawing.Point(90, 29);
             this.btIncidentTraitement.Name = "btIncidentTraitement";
-            this.btIncidentTraitement.Size = new System.Drawing.Size(202, 23);
+            this.btIncidentTraitement.Size = new System.Drawing.Size(128, 23);
             this.btIncidentTraitement.TabIndex = 0;
             this.btIncidentTraitement.Text = "En cours de traitement";
             this.btIncidentTraitement.UseVisualStyleBackColor = true;
+            this.btIncidentTraitement.Click += new System.EventHandler(this.btIncidentTraitement_Click);
             // 
             // label42
             // 
@@ -1518,13 +1467,15 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.textBox23);
+            this.groupBox4.Controls.Add(this.tbIdMatérielAjouterIncident);
+            this.groupBox4.Controls.Add(this.label67);
+            this.groupBox4.Controls.Add(this.tbDateIncident);
+            this.groupBox4.Controls.Add(this.btAjouterIncident);
+            this.groupBox4.Controls.Add(this.tbNiveauUrgenceIncident);
             this.groupBox4.Controls.Add(this.label40);
-            this.groupBox4.Controls.Add(this.textBox22);
             this.groupBox4.Controls.Add(this.label39);
             this.groupBox4.Controls.Add(this.label38);
-            this.groupBox4.Controls.Add(this.textBox21);
+            this.groupBox4.Controls.Add(this.tbObjetIncident);
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(296, 176);
@@ -1533,21 +1484,22 @@
             this.groupBox4.Text = "Ajouter un ticket d\'incident";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // button1
+            // btAjouterIncident
             // 
-            this.button1.Location = new System.Drawing.Point(23, 122);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Ajouter un ticket d\'incident sur le matériel sélectionné dans la liste";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btAjouterIncident.Location = new System.Drawing.Point(40, 112);
+            this.btAjouterIncident.Name = "btAjouterIncident";
+            this.btAjouterIncident.Size = new System.Drawing.Size(238, 36);
+            this.btAjouterIncident.TabIndex = 6;
+            this.btAjouterIncident.Text = "Ajouter un ticket d\'incident sur le matériel correspondant à l\'ID";
+            this.btAjouterIncident.UseVisualStyleBackColor = true;
+            this.btAjouterIncident.Click += new System.EventHandler(this.btAjouterIncident_Click);
             // 
-            // textBox23
+            // tbNiveauUrgenceIncident
             // 
-            this.textBox23.Location = new System.Drawing.Point(103, 86);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(187, 20);
-            this.textBox23.TabIndex = 5;
+            this.tbNiveauUrgenceIncident.Location = new System.Drawing.Point(103, 86);
+            this.tbNiveauUrgenceIncident.Name = "tbNiveauUrgenceIncident";
+            this.tbNiveauUrgenceIncident.Size = new System.Drawing.Size(187, 20);
+            this.tbNiveauUrgenceIncident.TabIndex = 5;
             // 
             // label40
             // 
@@ -1557,13 +1509,6 @@
             this.label40.Size = new System.Drawing.Size(91, 13);
             this.label40.TabIndex = 4;
             this.label40.Text = "Niveau d\'urgence";
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(103, 60);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(187, 20);
-            this.textBox22.TabIndex = 3;
             // 
             // label39
             // 
@@ -1583,12 +1528,12 @@
             this.label38.TabIndex = 1;
             this.label38.Text = "Objet de la demande :";
             // 
-            // textBox21
+            // tbObjetIncident
             // 
-            this.textBox21.Location = new System.Drawing.Point(6, 32);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(284, 20);
-            this.textBox21.TabIndex = 0;
+            this.tbObjetIncident.Location = new System.Drawing.Point(6, 32);
+            this.tbObjetIncident.Name = "tbObjetIncident";
+            this.tbObjetIncident.Size = new System.Drawing.Size(284, 20);
+            this.tbObjetIncident.TabIndex = 0;
             // 
             // visite
             // 
@@ -2199,6 +2144,38 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Ajouter/modifier un praticien";
             // 
+            // tbIdPraticienSupprimer
+            // 
+            this.tbIdPraticienSupprimer.Location = new System.Drawing.Point(91, 286);
+            this.tbIdPraticienSupprimer.Name = "tbIdPraticienSupprimer";
+            this.tbIdPraticienSupprimer.Size = new System.Drawing.Size(100, 20);
+            this.tbIdPraticienSupprimer.TabIndex = 6;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(61, 289);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(24, 13);
+            this.label66.TabIndex = 5;
+            this.label66.Text = "ID :";
+            // 
+            // tbIdPraticienModifier
+            // 
+            this.tbIdPraticienModifier.Location = new System.Drawing.Point(91, 210);
+            this.tbIdPraticienModifier.Name = "tbIdPraticienModifier";
+            this.tbIdPraticienModifier.Size = new System.Drawing.Size(100, 20);
+            this.tbIdPraticienModifier.TabIndex = 8;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(61, 213);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(24, 13);
+            this.label65.TabIndex = 7;
+            this.label65.Text = "ID :";
+            // 
             // btPraticienSupprimer
             // 
             this.btPraticienSupprimer.Location = new System.Drawing.Point(9, 257);
@@ -2534,37 +2511,115 @@
             this.tbNomProduit.Size = new System.Drawing.Size(215, 20);
             this.tbNomProduit.TabIndex = 0;
             // 
-            // label65
+            // tbDateIncident
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(61, 213);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(24, 13);
-            this.label65.TabIndex = 7;
-            this.label65.Text = "ID :";
+            this.tbDateIncident.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.tbDateIncident.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateIncident.Location = new System.Drawing.Point(103, 60);
+            this.tbDateIncident.Name = "tbDateIncident";
+            this.tbDateIncident.Size = new System.Drawing.Size(187, 20);
+            this.tbDateIncident.TabIndex = 7;
             // 
-            // label66
+            // label67
             // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(61, 289);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(24, 13);
-            this.label66.TabIndex = 5;
-            this.label66.Text = "ID :";
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(83, 153);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(78, 13);
+            this.label67.TabIndex = 8;
+            this.label67.Text = "ID du matériel :";
             // 
-            // tbIdPraticienModifier
+            // tbIdMatérielAjouterIncident
             // 
-            this.tbIdPraticienModifier.Location = new System.Drawing.Point(91, 210);
-            this.tbIdPraticienModifier.Name = "tbIdPraticienModifier";
-            this.tbIdPraticienModifier.Size = new System.Drawing.Size(100, 20);
-            this.tbIdPraticienModifier.TabIndex = 8;
+            this.tbIdMatérielAjouterIncident.Location = new System.Drawing.Point(167, 150);
+            this.tbIdMatérielAjouterIncident.Name = "tbIdMatérielAjouterIncident";
+            this.tbIdMatérielAjouterIncident.Size = new System.Drawing.Size(75, 20);
+            this.tbIdMatérielAjouterIncident.TabIndex = 9;
             // 
-            // tbIdPraticienSupprimer
+            // label69
             // 
-            this.tbIdPraticienSupprimer.Location = new System.Drawing.Point(91, 286);
-            this.tbIdPraticienSupprimer.Name = "tbIdPraticienSupprimer";
-            this.tbIdPraticienSupprimer.Size = new System.Drawing.Size(100, 20);
-            this.tbIdPraticienSupprimer.TabIndex = 6;
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(6, 34);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(24, 13);
+            this.label69.TabIndex = 3;
+            this.label69.Text = "ID :";
+            // 
+            // tbIdTicketIncidentModifier
+            // 
+            this.tbIdTicketIncidentModifier.Location = new System.Drawing.Point(36, 31);
+            this.tbIdTicketIncidentModifier.Name = "tbIdTicketIncidentModifier";
+            this.tbIdTicketIncidentModifier.Size = new System.Drawing.Size(48, 20);
+            this.tbIdTicketIncidentModifier.TabIndex = 4;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 19);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(76, 13);
+            this.label44.TabIndex = 12;
+            this.label44.Text = "ID technicien :";
+            this.label44.Click += new System.EventHandler(this.label44_Click);
+            // 
+            // tbIdTechnicienAffectationIncident
+            // 
+            this.tbIdTechnicienAffectationIncident.Location = new System.Drawing.Point(88, 16);
+            this.tbIdTechnicienAffectationIncident.Name = "tbIdTechnicienAffectationIncident";
+            this.tbIdTechnicienAffectationIncident.Size = new System.Drawing.Size(48, 20);
+            this.tbIdTechnicienAffectationIncident.TabIndex = 13;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(164, 19);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(64, 13);
+            this.label45.TabIndex = 14;
+            this.label45.Text = "ID incident :";
+            // 
+            // tbIdIncidentAffectationTechnicien
+            // 
+            this.tbIdIncidentAffectationTechnicien.Location = new System.Drawing.Point(230, 16);
+            this.tbIdIncidentAffectationTechnicien.Name = "tbIdIncidentAffectationTechnicien";
+            this.tbIdIncidentAffectationTechnicien.Size = new System.Drawing.Size(48, 20);
+            this.tbIdIncidentAffectationTechnicien.TabIndex = 15;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(3, 48);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(142, 13);
+            this.label46.TabIndex = 16;
+            this.label46.Text = "Date début prise en charge :";
+            // 
+            // tbDateDébutPriseEnCharge
+            // 
+            this.tbDateDébutPriseEnCharge.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.tbDateDébutPriseEnCharge.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateDébutPriseEnCharge.Location = new System.Drawing.Point(151, 42);
+            this.tbDateDébutPriseEnCharge.Name = "tbDateDébutPriseEnCharge";
+            this.tbDateDébutPriseEnCharge.Size = new System.Drawing.Size(146, 20);
+            this.tbDateDébutPriseEnCharge.TabIndex = 17;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(19, 73);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(126, 13);
+            this.label47.TabIndex = 18;
+            this.label47.Text = "Date fin prise en charge :";
+            // 
+            // tbDateFinPriseEnCharge
+            // 
+            this.tbDateFinPriseEnCharge.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.tbDateFinPriseEnCharge.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateFinPriseEnCharge.Location = new System.Drawing.Point(151, 67);
+            this.tbDateFinPriseEnCharge.Name = "tbDateFinPriseEnCharge";
+            this.tbDateFinPriseEnCharge.Size = new System.Drawing.Size(146, 20);
+            this.tbDateFinPriseEnCharge.TabIndex = 19;
             // 
             // Interface
             // 
@@ -2599,6 +2654,7 @@
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.visite.ResumeLayout(false);
@@ -2701,9 +2757,9 @@
         private System.Windows.Forms.Label nbMatériel;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btPriseEnChargeDéplacementIncident;
+        private System.Windows.Forms.Button btPriseEnChargeTélémaintenanceIncident;
+        private System.Windows.Forms.Button btPriseEnChargeTéléphoneIncident;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btIncidentCloturé;
         private System.Windows.Forms.Button btIncidentRésolu;
@@ -2715,32 +2771,23 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.ListBox listeMatériel2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Button btAjouterIncident;
+        private System.Windows.Forms.TextBox tbNiveauUrgenceIncident;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox tbObjetIncident;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.ListBox listeTechnicien;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Button btTechnicienAffecterIncident;
         private System.Windows.Forms.Label nbTicketCloturé;
         private System.Windows.Forms.Label nbTicketEnCours;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox tbTravailRéaliséIncident;
         private System.Windows.Forms.ListBox listePraticiens;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.ListBox listeVisiteursMédicaux;
@@ -2857,6 +2904,19 @@
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.TextBox tbIdPraticienModifier;
         private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.DateTimePicker tbDateIncident;
+        private System.Windows.Forms.TextBox tbIdMatérielAjouterIncident;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox tbIdTicketIncidentModifier;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox tbIdTechnicienAffectationIncident;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.DateTimePicker tbDateFinPriseEnCharge;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.DateTimePicker tbDateDébutPriseEnCharge;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox tbIdIncidentAffectationTechnicien;
+        private System.Windows.Forms.Label label45;
     }
 }
 

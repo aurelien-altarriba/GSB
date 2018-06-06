@@ -136,6 +136,16 @@ namespace GSB
 
         }
 
+        private void incident_Click(object sender, EventArgs e)
+        {
+
+        }
+  
+        private void label44_Click(object sender, EventArgs e)
+        {
+
+        }
+
         // ******************************************************* //
 
         private void Interface_Load(object sender, EventArgs e)
@@ -146,6 +156,7 @@ namespace GSB
             actualiserListeMatériel();
             actualiserListeProduit();
             actualiserListePraticien();
+            actualiserListeIncident();
         }
 
         private void actualiserListeTechnicien()
@@ -216,8 +227,8 @@ namespace GSB
 
             while (rdr.Read())
             {
-                listeProduits.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Effet: " + rdr.GetString(2) + " - Contre-Indication : " + rdr.GetString(3) + " - Composition: " + rdr.GetString(4) + " - Posologie: " + rdr.GetString(5) + " - Famille : " + rdr.GetString(6) + " - Coût: " + rdr.GetDouble(7));
-                listeProduits2.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Effet: " + rdr.GetString(2) + " - Contre-Indication : " + rdr.GetString(3) + " - Composition: " + rdr.GetString(4) + " - Posologie: " + rdr.GetString(5) + " - Famille : " + rdr.GetString(6) + " - Coût: " + rdr.GetDouble(7));
+                listeProduits.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Effet: " + rdr.GetString(2) + " - Contre-Indication : " + rdr.GetString(3) + " - Composition: " + rdr.GetString(4) + " - Posologie: " + rdr.GetString(5) + " - Famille : " + rdr.GetString(6) + " - Coût: " + rdr.GetDouble(7) + "€");
+                listeProduits2.Items.Add(rdr.GetInt32(0) + " - " + rdr.GetString(1) + " - Effet: " + rdr.GetString(2) + " - Contre-Indication : " + rdr.GetString(3) + " - Composition: " + rdr.GetString(4) + " - Posologie: " + rdr.GetString(5) + " - Famille : " + rdr.GetString(6) + " - Coût: " + rdr.GetDouble(7) + "€");
 
                 Produits++;
             }
@@ -252,6 +263,38 @@ namespace GSB
             rdr.Close();
 
             nbPraticiens.Text = Praticiens.ToString();
+        }
+
+        private void actualiserListeIncident()
+        {
+            int IncidentsEnCours = 0;
+            int IncidentsCloturés = 0;
+
+            listeIncidentEnCours.Items.Clear();
+            listeIncidentCloturé.Items.Clear();
+
+            string requete = "SELECT * FROM ticket_incident;";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                if (rdr.GetString(3) == "Clôturé")
+                {
+                    listeIncidentCloturé.Items.Add(rdr.GetInt32(0) + " : Urgence => " + rdr.GetInt32(1) + "/9 sur le matériel n°" + rdr.GetInt32(9) + " - Etat : " + rdr.GetString(3) + " - Objet : " + rdr.GetString(2) + " - Déposé le : " + rdr.GetValue(4) + ". Début prise en charge : " + rdr.GetValue(5) + " - Fin prise en charge : " + rdr.GetValue(6) + " - Travail réalisé : " + rdr.GetValue(7) + " - Type de prise en charge : " + rdr.GetValue(8) + " par le technicien n°" + rdr.GetValue(10));
+                    IncidentsCloturés++;
+                }
+                else
+                {
+                    listeIncidentEnCours.Items.Add(rdr.GetInt32(0) + " : Urgence => " + rdr.GetInt32(1) + "/9 sur le matériel n°" + rdr.GetInt32(9) + " - Etat : " + rdr.GetString(3) + " - Objet : " + rdr.GetString(2) + " - Déposé le : " + rdr.GetValue(4) + ". Début prise en charge : " + rdr.GetValue(5) + " - Fin prise en charge : " + rdr.GetValue(6) + " - Travail réalisé : " + rdr.GetValue(7) + " - Type de prise en charge : " + rdr.GetValue(8) + " par le technicien n°" + rdr.GetValue(10));
+                    IncidentsEnCours++;
+                }
+            }
+
+            rdr.Close();
+
+            nbTicketEnCours.Text = IncidentsEnCours.ToString();
+            nbTicketCloturé.Text = IncidentsCloturés.ToString();  
         }
 
         private void actualiserListeMatériel()
@@ -720,6 +763,138 @@ namespace GSB
             else
             {
                 MessageBox.Show("Le praticien n°" + tbIdPraticienSupprimer.Text + " n'existe pas ou a déjà été supprimé");
+            }
+        }
+
+        private void btAjouterIncident_Click(object sender, EventArgs e)
+        {
+
+
+            string requete = "INSERT INTO ticket_incident (niveau_urgence, objet, etat, date, id_materiel)" +
+               " VALUES (" + Convert.ToInt32(tbNiveauUrgenceIncident.Text) + ", '" + tbObjetIncident.Text + "', 'Enregistrée', '" + tbDateIncident.Text + "', " + Convert.ToInt32(tbIdMatérielAjouterIncident.Text) + ");";
+
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            cmd.ExecuteNonQuery();
+
+            actualiserListeIncident();
+        }
+
+        private void btIncidentTraitement_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE ticket_incident SET etat = 'En cours de traitement'"+
+                " WHERE id_ticket_incident = " + Convert.ToInt32(tbIdTicketIncidentModifier.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeIncident();
+                MessageBox.Show("L'état du ticket d'incident n°" + tbIdTicketIncidentModifier.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le ticket d'incident n°" + tbIdTicketIncidentModifier.Text);
+            }
+        }
+
+        private void btIncidentRésolu_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE ticket_incident SET etat = 'Résolu'" +
+                " WHERE id_ticket_incident = " + Convert.ToInt32(tbIdTicketIncidentModifier.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeIncident();
+                MessageBox.Show("L'état du ticket d'incident n°" + tbIdTicketIncidentModifier.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le ticket d'incident n°" + tbIdTicketIncidentModifier.Text);
+            }
+        }
+
+        private void btIncidentCloturé_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE ticket_incident SET etat = 'Clôturé'" +
+                " WHERE id_ticket_incident = " + Convert.ToInt32(tbIdTicketIncidentModifier.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeIncident();
+                MessageBox.Show("L'état du ticket d'incident n°" + tbIdTicketIncidentModifier.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le ticket d'incident n°" + tbIdTicketIncidentModifier.Text);
+            }
+        }
+
+        private void btPriseEnChargeTéléphoneIncident_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE ticket_incident SET type_prise_en_charge = 'Technicien au téléphone'" +
+                " WHERE id_ticket_incident = " + Convert.ToInt32(tbIdTicketIncidentModifier.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeIncident();
+                MessageBox.Show("Le type de prise en charge du ticket d'incident n°" + tbIdTicketIncidentModifier.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le ticket d'incident n°" + tbIdTicketIncidentModifier.Text);
+            }
+        }
+
+        private void btPriseEnChargeTélémaintenanceIncident_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE ticket_incident SET type_prise_en_charge = 'Technicien en télémaintenance'" +
+                " WHERE id_ticket_incident = " + Convert.ToInt32(tbIdTicketIncidentModifier.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeIncident();
+                MessageBox.Show("Le type de prise en charge du ticket d'incident n°" + tbIdTicketIncidentModifier.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le ticket d'incident n°" + tbIdTicketIncidentModifier.Text);
+            }
+        }
+
+        private void btPriseEnChargeDéplacementIncident_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE ticket_incident SET type_prise_en_charge = 'Déplacement sur site'" +
+                " WHERE id_ticket_incident = " + Convert.ToInt32(tbIdTicketIncidentModifier.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeIncident();
+                MessageBox.Show("Le type de prise en charge du ticket d'incident n°" + tbIdTicketIncidentModifier.Text + " a bien été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le ticket d'incident n°" + tbIdTicketIncidentModifier.Text);
+            }
+        }
+
+        private void btTechnicienAffecterIncident_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE ticket_incident SET date_debut_travail = '" + tbDateDébutPriseEnCharge.Text + "', date_fin_travail = '" + tbDateFinPriseEnCharge.Text + "', travail_realise = '" + tbTravailRéaliséIncident.Text + "', id_technicien = " + Convert.ToInt32(tbIdTechnicienAffectationIncident.Text) +
+                " WHERE id_ticket_incident = " + Convert.ToInt32(tbIdIncidentAffectationTechnicien.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeIncident();
+                MessageBox.Show("Le technicien a bien été affecté sur le ticket d'incident n°" + tbIdTechnicienAffectationIncident.Text);
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver le ticket d'incident n°" + tbIdTechnicienAffectationIncident.Text + " ou le technicien n°" + tbIdTechnicienAffectationIncident.Text);
             }
         }
     }
