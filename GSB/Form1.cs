@@ -157,6 +157,7 @@ namespace GSB
             actualiserListeProduit();
             actualiserListePraticien();
             actualiserListeIncident();
+            actualiserListeVisite();
         }
 
         private void actualiserListeTechnicien()
@@ -236,6 +237,29 @@ namespace GSB
             rdr.Close();
 
             nbProduit.Text = Produits.ToString();
+        }
+
+        private void actualiserListeVisite()
+        {
+            int Visites = 0;
+
+            listeVisites.Items.Clear();
+
+            string requete = "SELECT * FROM activite A JOIN visite V ON A.id_activite = V.id_activite;";
+
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                listeVisites.Items.Add(rdr.GetInt32(3) + " - AC par le visiteur n°" + rdr.GetUInt32(2) + " le " + rdr.GetValue(4) + " : " + rdr.GetString(5) + " pour un côut de " + rdr.GetInt32(8) + "€ - Médicament offert en échantillon => " + rdr.GetValue(7) + " x le n°" + rdr.GetValue(6));
+
+                Visites++;
+            }
+
+            rdr.Close();
+
+            nbVisites.Text = Visites.ToString();
         }
 
         private void actualiserListePraticien()
@@ -768,8 +792,6 @@ namespace GSB
 
         private void btAjouterIncident_Click(object sender, EventArgs e)
         {
-
-
             string requete = "INSERT INTO ticket_incident (niveau_urgence, objet, etat, date, id_materiel)" +
                " VALUES (" + Convert.ToInt32(tbNiveauUrgenceIncident.Text) + ", '" + tbObjetIncident.Text + "', 'Enregistrée', '" + tbDateIncident.Text + "', " + Convert.ToInt32(tbIdMatérielAjouterIncident.Text) + ");";
 
@@ -896,6 +918,28 @@ namespace GSB
             {
                 MessageBox.Show("Impossible de trouver le ticket d'incident n°" + tbIdTechnicienAffectationIncident.Text + " ou le technicien n°" + tbIdTechnicienAffectationIncident.Text);
             }
+        }
+
+        private void btAjouterVisite_Click(object sender, EventArgs e)
+        {
+            string requete = "INSERT INTO activite (bilan, id_visiteur)" +
+              " VALUES ('" + tbBilanVisite.Text + "', " + Convert.ToInt32(tbIdVisiteurAjoutVisite.Text) + ");";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            cmd.ExecuteNonQuery();
+
+            requete = "INSERT INTO visite (date, motif, nb_echantillons_offerts, cout, id_activite)" +
+              " VALUES ('" + tbDateVisite.Text + "', '" + tbMotifVisite.Text + "', " + tbNbEchantillonVisite.Text + ", " + tbCoutVisite.Text + ", LAST_INSERT_ID());";
+            cmd = BDD.executerRequete(requete);
+            cmd.ExecuteNonQuery();
+
+            if (tbIdProduitAjoutVisite.Text != "")
+            {
+                cmd = BDD.executerRequete("UPDATE visite SET medicament = " + tbIdProduitAjoutVisite.Text +
+                " WHERE id_visite = LAST_INSERT_ID();");
+                cmd.ExecuteNonQuery();
+            }
+
+            actualiserListeVisite();
         }
     }
 }

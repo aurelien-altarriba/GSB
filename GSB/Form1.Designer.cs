@@ -164,17 +164,15 @@
             this.listeVisiteursMédicaux = new System.Windows.Forms.ListBox();
             this.label52 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.tbBilanVisite = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btAjouterVisite = new System.Windows.Forms.Button();
             this.label57 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.tbNbEchantillonVisite = new System.Windows.Forms.TextBox();
+            this.tbCoutVisite = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
-            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.tbMotifVisite = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
             this.ac = new System.Windows.Forms.TabPage();
             this.listeResponsableRégion = new System.Windows.Forms.ListBox();
@@ -266,6 +264,13 @@
             this.tbDateDébutPriseEnCharge = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.tbDateFinPriseEnCharge = new System.Windows.Forms.DateTimePicker();
+            this.tbDateVisite = new System.Windows.Forms.DateTimePicker();
+            this.tbIdVisiteurAjoutVisite = new System.Windows.Forms.TextBox();
+            this.tbIdPraticienAjoutVisite = new System.Windows.Forms.TextBox();
+            this.tbIdProduitAjoutVisite = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -1647,17 +1652,22 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.textBox33);
-            this.groupBox8.Controls.Add(this.label59);
+            this.groupBox8.Controls.Add(this.label92);
+            this.groupBox8.Controls.Add(this.label91);
+            this.groupBox8.Controls.Add(this.tbIdProduitAjoutVisite);
             this.groupBox8.Controls.Add(this.label58);
-            this.groupBox8.Controls.Add(this.button6);
+            this.groupBox8.Controls.Add(this.tbIdPraticienAjoutVisite);
+            this.groupBox8.Controls.Add(this.tbIdVisiteurAjoutVisite);
+            this.groupBox8.Controls.Add(this.tbDateVisite);
+            this.groupBox8.Controls.Add(this.tbBilanVisite);
+            this.groupBox8.Controls.Add(this.label59);
+            this.groupBox8.Controls.Add(this.btAjouterVisite);
             this.groupBox8.Controls.Add(this.label57);
             this.groupBox8.Controls.Add(this.label56);
-            this.groupBox8.Controls.Add(this.textBox32);
-            this.groupBox8.Controls.Add(this.textBox31);
-            this.groupBox8.Controls.Add(this.textBox30);
+            this.groupBox8.Controls.Add(this.tbNbEchantillonVisite);
+            this.groupBox8.Controls.Add(this.tbCoutVisite);
             this.groupBox8.Controls.Add(this.label55);
-            this.groupBox8.Controls.Add(this.textBox29);
+            this.groupBox8.Controls.Add(this.tbMotifVisite);
             this.groupBox8.Controls.Add(this.label54);
             this.groupBox8.Location = new System.Drawing.Point(3, 3);
             this.groupBox8.Name = "groupBox8";
@@ -1666,47 +1676,36 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Ajouter une visite";
             // 
-            // textBox33
+            // tbBilanVisite
             // 
-            this.textBox33.Location = new System.Drawing.Point(10, 87);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(268, 20);
-            this.textBox33.TabIndex = 13;
+            this.tbBilanVisite.Location = new System.Drawing.Point(10, 78);
+            this.tbBilanVisite.Name = "tbBilanVisite";
+            this.tbBilanVisite.Size = new System.Drawing.Size(268, 20);
+            this.tbBilanVisite.TabIndex = 13;
             // 
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(7, 71);
+            this.label59.Location = new System.Drawing.Point(7, 62);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(36, 13);
             this.label59.TabIndex = 12;
             this.label59.Text = "Bilan :";
             // 
-            // label58
+            // btAjouterVisite
             // 
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label58.Location = new System.Drawing.Point(6, 197);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(272, 45);
-            this.label58.TabIndex = 11;
-            this.label58.Text = "Sélectionnez un visiteur et un praticien dans les listes à droite, et éventuellem" +
-    "ent un produit qui a été donné en échantillon dans la liste des produits";
-            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(89, 251);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(106, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Ajouter une visite";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btAjouterVisite.Location = new System.Drawing.Point(89, 251);
+            this.btAjouterVisite.Name = "btAjouterVisite";
+            this.btAjouterVisite.Size = new System.Drawing.Size(106, 23);
+            this.btAjouterVisite.TabIndex = 10;
+            this.btAjouterVisite.Text = "Ajouter une visite";
+            this.btAjouterVisite.UseVisualStyleBackColor = true;
+            this.btAjouterVisite.Click += new System.EventHandler(this.btAjouterVisite_Click);
             // 
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(6, 168);
+            this.label57.Location = new System.Drawing.Point(6, 158);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(143, 13);
             this.label57.TabIndex = 9;
@@ -1715,48 +1714,41 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(119, 142);
+            this.label56.Location = new System.Drawing.Point(119, 132);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(29, 13);
             this.label56.TabIndex = 8;
             this.label56.Text = "Coût";
             // 
-            // textBox32
+            // tbNbEchantillonVisite
             // 
-            this.textBox32.Location = new System.Drawing.Point(155, 165);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(123, 20);
-            this.textBox32.TabIndex = 6;
+            this.tbNbEchantillonVisite.Location = new System.Drawing.Point(155, 155);
+            this.tbNbEchantillonVisite.Name = "tbNbEchantillonVisite";
+            this.tbNbEchantillonVisite.Size = new System.Drawing.Size(123, 20);
+            this.tbNbEchantillonVisite.TabIndex = 6;
             // 
-            // textBox31
+            // tbCoutVisite
             // 
-            this.textBox31.Location = new System.Drawing.Point(155, 139);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(123, 20);
-            this.textBox31.TabIndex = 5;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Location = new System.Drawing.Point(155, 113);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(123, 20);
-            this.textBox30.TabIndex = 4;
+            this.tbCoutVisite.Location = new System.Drawing.Point(155, 129);
+            this.tbCoutVisite.Name = "tbCoutVisite";
+            this.tbCoutVisite.Size = new System.Drawing.Size(123, 20);
+            this.tbCoutVisite.TabIndex = 5;
             // 
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(119, 116);
+            this.label55.Location = new System.Drawing.Point(55, 106);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(30, 13);
             this.label55.TabIndex = 3;
             this.label55.Text = "Date";
             // 
-            // textBox29
+            // tbMotifVisite
             // 
-            this.textBox29.Location = new System.Drawing.Point(10, 38);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(268, 20);
-            this.textBox29.TabIndex = 2;
+            this.tbMotifVisite.Location = new System.Drawing.Point(10, 38);
+            this.tbMotifVisite.Name = "tbMotifVisite";
+            this.tbMotifVisite.Size = new System.Drawing.Size(268, 20);
+            this.tbMotifVisite.TabIndex = 2;
             // 
             // label54
             // 
@@ -2621,6 +2613,63 @@
             this.tbDateFinPriseEnCharge.Size = new System.Drawing.Size(146, 20);
             this.tbDateFinPriseEnCharge.TabIndex = 19;
             // 
+            // tbDateVisite
+            // 
+            this.tbDateVisite.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.tbDateVisite.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateVisite.Location = new System.Drawing.Point(91, 103);
+            this.tbDateVisite.Name = "tbDateVisite";
+            this.tbDateVisite.Size = new System.Drawing.Size(187, 20);
+            this.tbDateVisite.TabIndex = 14;
+            // 
+            // tbIdVisiteurAjoutVisite
+            // 
+            this.tbIdVisiteurAjoutVisite.Location = new System.Drawing.Point(73, 194);
+            this.tbIdVisiteurAjoutVisite.Name = "tbIdVisiteurAjoutVisite";
+            this.tbIdVisiteurAjoutVisite.Size = new System.Drawing.Size(58, 20);
+            this.tbIdVisiteurAjoutVisite.TabIndex = 15;
+            // 
+            // tbIdPraticienAjoutVisite
+            // 
+            this.tbIdPraticienAjoutVisite.Location = new System.Drawing.Point(220, 194);
+            this.tbIdPraticienAjoutVisite.Name = "tbIdPraticienAjoutVisite";
+            this.tbIdPraticienAjoutVisite.Size = new System.Drawing.Size(58, 20);
+            this.tbIdPraticienAjoutVisite.TabIndex = 16;
+            // 
+            // tbIdProduitAjoutVisite
+            // 
+            this.tbIdProduitAjoutVisite.Location = new System.Drawing.Point(155, 225);
+            this.tbIdProduitAjoutVisite.Name = "tbIdProduitAjoutVisite";
+            this.tbIdProduitAjoutVisite.Size = new System.Drawing.Size(58, 20);
+            this.tbIdProduitAjoutVisite.TabIndex = 17;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(7, 197);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(60, 13);
+            this.label58.TabIndex = 18;
+            this.label58.Text = "ID visiteur :";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(147, 197);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(67, 13);
+            this.label91.TabIndex = 19;
+            this.label91.Text = "ID praticien :";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(41, 228);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(108, 13);
+            this.label92.TabIndex = 20;
+            this.label92.Text = "(facultatif) ID produit :";
+            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2793,17 +2842,15 @@
         private System.Windows.Forms.ListBox listeVisiteursMédicaux;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btAjouterVisite;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox tbNbEchantillonVisite;
+        private System.Windows.Forms.TextBox tbCoutVisite;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox tbMotifVisite;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox tbBilanVisite;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.ListBox listeProduits2;
         private System.Windows.Forms.Label label68;
@@ -2917,6 +2964,13 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox tbIdIncidentAffectationTechnicien;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.DateTimePicker tbDateVisite;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TextBox tbIdProduitAjoutVisite;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox tbIdPraticienAjoutVisite;
+        private System.Windows.Forms.TextBox tbIdVisiteurAjoutVisite;
     }
 }
 
