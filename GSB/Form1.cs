@@ -106,11 +106,6 @@ namespace GSB
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void visite_Click(object sender, EventArgs e)
         {
 
@@ -146,6 +141,11 @@ namespace GSB
 
         }
 
+        private void tbIdVisteurACAjout_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         // ******************************************************* //
 
         private void Interface_Load(object sender, EventArgs e)
@@ -158,6 +158,7 @@ namespace GSB
             actualiserListePraticien();
             actualiserListeIncident();
             actualiserListeVisite();
+            actualiserListeActivitéComplémentaire();
         }
 
         private void actualiserListeTechnicien()
@@ -319,6 +320,40 @@ namespace GSB
 
             nbTicketEnCours.Text = IncidentsEnCours.ToString();
             nbTicketCloturé.Text = IncidentsCloturés.ToString();  
+        }
+
+        private void actualiserListeActivitéComplémentaire()
+        {
+            int ACAccordée = 0;
+            int ACRefusée = 0;
+
+            listeDemandeAC.Items.Clear();
+
+            string requete = "SELECT * FROM activite A JOIN activite_complementaire AC ON A.id_activite = AC.id_activite";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                if (rdr.IsDBNull(8))
+                {
+                    listeDemandeAC.Items.Add(rdr.GetInt32(3) + " - Demande d'AC du visiteur n°" + rdr.GetInt32(2) + " : " + rdr.GetString(6) + " en salle n°" + rdr.GetInt32(4) + " pour un budget de " + rdr.GetInt32(5) + "€ avec pour participants : " + rdr.GetString(7));
+                }
+
+                else if (rdr.GetBoolean(8) == true)
+                {
+                    ACAccordée++;
+                }
+                else
+                {
+                    ACRefusée++;
+                }
+            }
+
+            rdr.Close();
+
+            nbACAccordé.Text = ACAccordée.ToString();
+            nbACRefusé.Text = ACRefusée.ToString();
         }
 
         private void actualiserListeMatériel()
@@ -940,6 +975,54 @@ namespace GSB
             }
 
             actualiserListeVisite();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string requete = "INSERT INTO activite (id_visiteur) VALUES (" + Convert.ToInt32(tbIdVisteurACAjout.Text) + ");";
+            MySqlCommand cmd = BDD.executerRequete(requete);
+            cmd.ExecuteNonQuery();
+
+            requete = "INSERT INTO activite_complementaire (num_salle, budget_max, commentaire, id_activite, praticiens)" +
+                " VALUES (" + Convert.ToInt32(tbNoSalleAC.Text) + ", " + Convert.ToInt32(tbBudgetMaxAC.Text) + ", '" + tbCommentaireAC.Text + "', LAST_INSERT_ID(),  '" + tbPraticiensAC.Text + "');";
+            cmd = BDD.executerRequete(requete);
+            cmd.ExecuteNonQuery();
+
+            actualiserListeActivitéComplémentaire();
+        }
+
+        private void btDonnerAccordAC_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE activite_complementaire SET accorde = true" +
+                " WHERE id_activite_complementaire = " + Convert.ToInt32(tbIdDemandeAC.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeActivitéComplémentaire();
+                MessageBox.Show("La demande d'AC n°" + tbIdDemandeAC.Text + " a bien été accordée");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver la demande d'AC n°" + tbIdDemandeAC.Text);
+            }
+        }
+
+        private void btDonnerRefusAC_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = BDD.executerRequete("UPDATE activite_complementaire SET accorde = false" +
+                " WHERE id_activite_complementaire = " + Convert.ToInt32(tbIdDemandeAC.Text) + ";");
+            int resultat = cmd.ExecuteNonQuery();
+
+            if (resultat == 1)
+            {
+                actualiserListeActivitéComplémentaire();
+                MessageBox.Show("La demande d'AC n°" + tbIdDemandeAC.Text + " a bien été refusée");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de trouver la demande d'AC n°" + tbIdDemandeAC.Text);
+            }
         }
     }
 }

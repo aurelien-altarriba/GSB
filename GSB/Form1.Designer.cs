@@ -128,17 +128,27 @@
             this.label43 = new System.Windows.Forms.Label();
             this.listeTechnicien = new System.Windows.Forms.ListBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tbDateFinPriseEnCharge = new System.Windows.Forms.DateTimePicker();
+            this.label47 = new System.Windows.Forms.Label();
+            this.tbDateDébutPriseEnCharge = new System.Windows.Forms.DateTimePicker();
+            this.label46 = new System.Windows.Forms.Label();
+            this.tbIdIncidentAffectationTechnicien = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.tbIdTechnicienAffectationIncident = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.tbTravailRéaliséIncident = new System.Windows.Forms.TextBox();
             this.btTechnicienAffecterIncident = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tbIdTicketIncidentModifier = new System.Windows.Forms.TextBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.btIncidentTraitement = new System.Windows.Forms.Button();
+            this.btIncidentCloturé = new System.Windows.Forms.Button();
+            this.btIncidentRésolu = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btPriseEnChargeDéplacementIncident = new System.Windows.Forms.Button();
             this.btPriseEnChargeTélémaintenanceIncident = new System.Windows.Forms.Button();
             this.btPriseEnChargeTéléphoneIncident = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btIncidentCloturé = new System.Windows.Forms.Button();
-            this.btIncidentRésolu = new System.Windows.Forms.Button();
-            this.btIncidentTraitement = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.listeIncidentCloturé = new System.Windows.Forms.ListBox();
@@ -146,6 +156,9 @@
             this.label37 = new System.Windows.Forms.Label();
             this.listeMatériel2 = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tbIdMatérielAjouterIncident = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.tbDateIncident = new System.Windows.Forms.DateTimePicker();
             this.btAjouterIncident = new System.Windows.Forms.Button();
             this.tbNiveauUrgenceIncident = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -164,6 +177,13 @@
             this.listeVisiteursMédicaux = new System.Windows.Forms.ListBox();
             this.label52 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.tbIdProduitAjoutVisite = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.tbIdPraticienAjoutVisite = new System.Windows.Forms.TextBox();
+            this.tbIdVisiteurAjoutVisite = new System.Windows.Forms.TextBox();
+            this.tbDateVisite = new System.Windows.Forms.DateTimePicker();
             this.tbBilanVisite = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
             this.btAjouterVisite = new System.Windows.Forms.Button();
@@ -185,24 +205,18 @@
             this.listeDemandeAC = new System.Windows.Forms.ListBox();
             this.label81 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label82 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label79 = new System.Windows.Forms.Label();
+            this.btDonnerRefusAC = new System.Windows.Forms.Button();
+            this.btDonnerAccordAC = new System.Windows.Forms.Button();
             this.listePraticiens2 = new System.Windows.Forms.ListBox();
             this.label78 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label77 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.label76 = new System.Windows.Forms.Label();
-            this.textBox44 = new System.Windows.Forms.TextBox();
+            this.tbCommentaireAC = new System.Windows.Forms.TextBox();
             this.label75 = new System.Windows.Forms.Label();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.label73 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
-            this.textBox43 = new System.Windows.Forms.TextBox();
-            this.textBox42 = new System.Windows.Forms.TextBox();
-            this.label72 = new System.Windows.Forms.Label();
+            this.tbBudgetMaxAC = new System.Windows.Forms.TextBox();
+            this.tbNoSalleAC = new System.Windows.Forms.TextBox();
             this.listeVisiteurs2 = new System.Windows.Forms.ListBox();
             this.label71 = new System.Windows.Forms.Label();
             this.praticien = new System.Windows.Forms.TabPage();
@@ -251,26 +265,14 @@
             this.tbContreIndicationProduit = new System.Windows.Forms.TextBox();
             this.tbEffetTheraProduit = new System.Windows.Forms.TextBox();
             this.tbNomProduit = new System.Windows.Forms.TextBox();
-            this.tbDateIncident = new System.Windows.Forms.DateTimePicker();
-            this.label67 = new System.Windows.Forms.Label();
-            this.tbIdMatérielAjouterIncident = new System.Windows.Forms.TextBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.tbIdTicketIncidentModifier = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.tbIdTechnicienAffectationIncident = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.tbIdIncidentAffectationTechnicien = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.tbDateDébutPriseEnCharge = new System.Windows.Forms.DateTimePicker();
-            this.label47 = new System.Windows.Forms.Label();
-            this.tbDateFinPriseEnCharge = new System.Windows.Forms.DateTimePicker();
-            this.tbDateVisite = new System.Windows.Forms.DateTimePicker();
-            this.tbIdVisiteurAjoutVisite = new System.Windows.Forms.TextBox();
-            this.tbIdPraticienAjoutVisite = new System.Windows.Forms.TextBox();
-            this.tbIdProduitAjoutVisite = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.tbIdVisteurACAjout = new System.Windows.Forms.TextBox();
+            this.tbPraticiensAC = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.tbIdResponsableRégionAC = new System.Windows.Forms.TextBox();
+            this.tbIdDemandeAC = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.personnel.SuspendLayout();
             this.groupBoxAjouterPersonnel.SuspendLayout();
@@ -280,8 +282,8 @@
             this.groupBox1.SuspendLayout();
             this.incident.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.visite.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -1302,6 +1304,75 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Affectation technicien";
             // 
+            // tbDateFinPriseEnCharge
+            // 
+            this.tbDateFinPriseEnCharge.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.tbDateFinPriseEnCharge.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateFinPriseEnCharge.Location = new System.Drawing.Point(151, 67);
+            this.tbDateFinPriseEnCharge.Name = "tbDateFinPriseEnCharge";
+            this.tbDateFinPriseEnCharge.Size = new System.Drawing.Size(146, 20);
+            this.tbDateFinPriseEnCharge.TabIndex = 19;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(19, 73);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(126, 13);
+            this.label47.TabIndex = 18;
+            this.label47.Text = "Date fin prise en charge :";
+            // 
+            // tbDateDébutPriseEnCharge
+            // 
+            this.tbDateDébutPriseEnCharge.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.tbDateDébutPriseEnCharge.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateDébutPriseEnCharge.Location = new System.Drawing.Point(151, 42);
+            this.tbDateDébutPriseEnCharge.Name = "tbDateDébutPriseEnCharge";
+            this.tbDateDébutPriseEnCharge.Size = new System.Drawing.Size(146, 20);
+            this.tbDateDébutPriseEnCharge.TabIndex = 17;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(3, 48);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(142, 13);
+            this.label46.TabIndex = 16;
+            this.label46.Text = "Date début prise en charge :";
+            // 
+            // tbIdIncidentAffectationTechnicien
+            // 
+            this.tbIdIncidentAffectationTechnicien.Location = new System.Drawing.Point(230, 16);
+            this.tbIdIncidentAffectationTechnicien.Name = "tbIdIncidentAffectationTechnicien";
+            this.tbIdIncidentAffectationTechnicien.Size = new System.Drawing.Size(48, 20);
+            this.tbIdIncidentAffectationTechnicien.TabIndex = 15;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(164, 19);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(64, 13);
+            this.label45.TabIndex = 14;
+            this.label45.Text = "ID incident :";
+            // 
+            // tbIdTechnicienAffectationIncident
+            // 
+            this.tbIdTechnicienAffectationIncident.Location = new System.Drawing.Point(88, 16);
+            this.tbIdTechnicienAffectationIncident.Name = "tbIdTechnicienAffectationIncident";
+            this.tbIdTechnicienAffectationIncident.Size = new System.Drawing.Size(48, 20);
+            this.tbIdTechnicienAffectationIncident.TabIndex = 13;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 19);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(76, 13);
+            this.label44.TabIndex = 12;
+            this.label44.Text = "ID technicien :";
+            this.label44.Click += new System.EventHandler(this.label44_Click);
+            // 
             // label48
             // 
             this.label48.AutoSize = true;
@@ -1328,6 +1399,67 @@
             this.btTechnicienAffecterIncident.Text = "Affecter le technicien à l\'incident";
             this.btTechnicienAffecterIncident.UseVisualStyleBackColor = true;
             this.btTechnicienAffecterIncident.Click += new System.EventHandler(this.btTechnicienAffecterIncident_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tbIdTicketIncidentModifier);
+            this.groupBox5.Controls.Add(this.label69);
+            this.groupBox5.Controls.Add(this.btIncidentTraitement);
+            this.groupBox5.Controls.Add(this.btIncidentCloturé);
+            this.groupBox5.Controls.Add(this.btIncidentRésolu);
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Location = new System.Drawing.Point(3, 185);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(242, 207);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Modifier l\'état du ticket";
+            // 
+            // tbIdTicketIncidentModifier
+            // 
+            this.tbIdTicketIncidentModifier.Location = new System.Drawing.Point(36, 31);
+            this.tbIdTicketIncidentModifier.Name = "tbIdTicketIncidentModifier";
+            this.tbIdTicketIncidentModifier.Size = new System.Drawing.Size(48, 20);
+            this.tbIdTicketIncidentModifier.TabIndex = 4;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(6, 34);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(24, 13);
+            this.label69.TabIndex = 3;
+            this.label69.Text = "ID :";
+            // 
+            // btIncidentTraitement
+            // 
+            this.btIncidentTraitement.Location = new System.Drawing.Point(90, 29);
+            this.btIncidentTraitement.Name = "btIncidentTraitement";
+            this.btIncidentTraitement.Size = new System.Drawing.Size(128, 23);
+            this.btIncidentTraitement.TabIndex = 0;
+            this.btIncidentTraitement.Text = "En cours de traitement";
+            this.btIncidentTraitement.UseVisualStyleBackColor = true;
+            this.btIncidentTraitement.Click += new System.EventHandler(this.btIncidentTraitement_Click);
+            // 
+            // btIncidentCloturé
+            // 
+            this.btIncidentCloturé.Location = new System.Drawing.Point(117, 58);
+            this.btIncidentCloturé.Name = "btIncidentCloturé";
+            this.btIncidentCloturé.Size = new System.Drawing.Size(101, 23);
+            this.btIncidentCloturé.TabIndex = 2;
+            this.btIncidentCloturé.Text = "Clôturé";
+            this.btIncidentCloturé.UseVisualStyleBackColor = true;
+            this.btIncidentCloturé.Click += new System.EventHandler(this.btIncidentCloturé_Click);
+            // 
+            // btIncidentRésolu
+            // 
+            this.btIncidentRésolu.Location = new System.Drawing.Point(16, 58);
+            this.btIncidentRésolu.Name = "btIncidentRésolu";
+            this.btIncidentRésolu.Size = new System.Drawing.Size(95, 23);
+            this.btIncidentRésolu.TabIndex = 1;
+            this.btIncidentRésolu.Text = "Résolu";
+            this.btIncidentRésolu.UseVisualStyleBackColor = true;
+            this.btIncidentRésolu.Click += new System.EventHandler(this.btIncidentRésolu_Click);
             // 
             // groupBox6
             // 
@@ -1370,51 +1502,6 @@
             this.btPriseEnChargeTéléphoneIncident.Text = "Technicien au téléphone";
             this.btPriseEnChargeTéléphoneIncident.UseVisualStyleBackColor = true;
             this.btPriseEnChargeTéléphoneIncident.Click += new System.EventHandler(this.btPriseEnChargeTéléphoneIncident_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.tbIdTicketIncidentModifier);
-            this.groupBox5.Controls.Add(this.label69);
-            this.groupBox5.Controls.Add(this.btIncidentTraitement);
-            this.groupBox5.Controls.Add(this.btIncidentCloturé);
-            this.groupBox5.Controls.Add(this.btIncidentRésolu);
-            this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Location = new System.Drawing.Point(3, 185);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(242, 207);
-            this.groupBox5.TabIndex = 7;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Modifier l\'état du ticket";
-            // 
-            // btIncidentCloturé
-            // 
-            this.btIncidentCloturé.Location = new System.Drawing.Point(117, 58);
-            this.btIncidentCloturé.Name = "btIncidentCloturé";
-            this.btIncidentCloturé.Size = new System.Drawing.Size(101, 23);
-            this.btIncidentCloturé.TabIndex = 2;
-            this.btIncidentCloturé.Text = "Clôturé";
-            this.btIncidentCloturé.UseVisualStyleBackColor = true;
-            this.btIncidentCloturé.Click += new System.EventHandler(this.btIncidentCloturé_Click);
-            // 
-            // btIncidentRésolu
-            // 
-            this.btIncidentRésolu.Location = new System.Drawing.Point(16, 58);
-            this.btIncidentRésolu.Name = "btIncidentRésolu";
-            this.btIncidentRésolu.Size = new System.Drawing.Size(95, 23);
-            this.btIncidentRésolu.TabIndex = 1;
-            this.btIncidentRésolu.Text = "Résolu";
-            this.btIncidentRésolu.UseVisualStyleBackColor = true;
-            this.btIncidentRésolu.Click += new System.EventHandler(this.btIncidentRésolu_Click);
-            // 
-            // btIncidentTraitement
-            // 
-            this.btIncidentTraitement.Location = new System.Drawing.Point(90, 29);
-            this.btIncidentTraitement.Name = "btIncidentTraitement";
-            this.btIncidentTraitement.Size = new System.Drawing.Size(128, 23);
-            this.btIncidentTraitement.TabIndex = 0;
-            this.btIncidentTraitement.Text = "En cours de traitement";
-            this.btIncidentTraitement.UseVisualStyleBackColor = true;
-            this.btIncidentTraitement.Click += new System.EventHandler(this.btIncidentTraitement_Click);
             // 
             // label42
             // 
@@ -1488,6 +1575,31 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ajouter un ticket d\'incident";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // tbIdMatérielAjouterIncident
+            // 
+            this.tbIdMatérielAjouterIncident.Location = new System.Drawing.Point(167, 150);
+            this.tbIdMatérielAjouterIncident.Name = "tbIdMatérielAjouterIncident";
+            this.tbIdMatérielAjouterIncident.Size = new System.Drawing.Size(75, 20);
+            this.tbIdMatérielAjouterIncident.TabIndex = 9;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(83, 153);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(78, 13);
+            this.label67.TabIndex = 8;
+            this.label67.Text = "ID du matériel :";
+            // 
+            // tbDateIncident
+            // 
+            this.tbDateIncident.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.tbDateIncident.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateIncident.Location = new System.Drawing.Point(103, 60);
+            this.tbDateIncident.Name = "tbDateIncident";
+            this.tbDateIncident.Size = new System.Drawing.Size(187, 20);
+            this.tbDateIncident.TabIndex = 7;
             // 
             // btAjouterIncident
             // 
@@ -1675,6 +1787,63 @@
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Ajouter une visite";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(41, 228);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(108, 13);
+            this.label92.TabIndex = 20;
+            this.label92.Text = "(facultatif) ID produit :";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(147, 197);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(67, 13);
+            this.label91.TabIndex = 19;
+            this.label91.Text = "ID praticien :";
+            // 
+            // tbIdProduitAjoutVisite
+            // 
+            this.tbIdProduitAjoutVisite.Location = new System.Drawing.Point(155, 225);
+            this.tbIdProduitAjoutVisite.Name = "tbIdProduitAjoutVisite";
+            this.tbIdProduitAjoutVisite.Size = new System.Drawing.Size(58, 20);
+            this.tbIdProduitAjoutVisite.TabIndex = 17;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(7, 197);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(60, 13);
+            this.label58.TabIndex = 18;
+            this.label58.Text = "ID visiteur :";
+            // 
+            // tbIdPraticienAjoutVisite
+            // 
+            this.tbIdPraticienAjoutVisite.Location = new System.Drawing.Point(220, 194);
+            this.tbIdPraticienAjoutVisite.Name = "tbIdPraticienAjoutVisite";
+            this.tbIdPraticienAjoutVisite.Size = new System.Drawing.Size(58, 20);
+            this.tbIdPraticienAjoutVisite.TabIndex = 16;
+            // 
+            // tbIdVisiteurAjoutVisite
+            // 
+            this.tbIdVisiteurAjoutVisite.Location = new System.Drawing.Point(73, 194);
+            this.tbIdVisiteurAjoutVisite.Name = "tbIdVisiteurAjoutVisite";
+            this.tbIdVisiteurAjoutVisite.Size = new System.Drawing.Size(58, 20);
+            this.tbIdVisiteurAjoutVisite.TabIndex = 15;
+            // 
+            // tbDateVisite
+            // 
+            this.tbDateVisite.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.tbDateVisite.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tbDateVisite.Location = new System.Drawing.Point(91, 103);
+            this.tbDateVisite.Name = "tbDateVisite";
+            this.tbDateVisite.Size = new System.Drawing.Size(187, 20);
+            this.tbDateVisite.TabIndex = 14;
             // 
             // tbBilanVisite
             // 
@@ -1864,10 +2033,12 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.label82);
-            this.groupBox11.Controls.Add(this.button9);
-            this.groupBox11.Controls.Add(this.button8);
             this.groupBox11.Controls.Add(this.label79);
+            this.groupBox11.Controls.Add(this.tbIdDemandeAC);
+            this.groupBox11.Controls.Add(this.tbIdResponsableRégionAC);
+            this.groupBox11.Controls.Add(this.label73);
+            this.groupBox11.Controls.Add(this.btDonnerRefusAC);
+            this.groupBox11.Controls.Add(this.btDonnerAccordAC);
             this.groupBox11.Location = new System.Drawing.Point(244, 276);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(244, 181);
@@ -1875,43 +2046,25 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Accord pour l\'activité complémentaire";
             // 
-            // label82
+            // btDonnerRefusAC
             // 
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(6, 63);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(232, 28);
-            this.label82.TabIndex = 9;
-            this.label82.Text = "Sélectionnez l\'activité complémentaire concernée dans la liste des demandes d\'AC";
-            this.label82.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btDonnerRefusAC.Location = new System.Drawing.Point(6, 139);
+            this.btDonnerRefusAC.Name = "btDonnerRefusAC";
+            this.btDonnerRefusAC.Size = new System.Drawing.Size(232, 35);
+            this.btDonnerRefusAC.TabIndex = 8;
+            this.btDonnerRefusAC.Text = "Donner un refus pour l\'activité complémentaire sélectionnée";
+            this.btDonnerRefusAC.UseVisualStyleBackColor = true;
+            this.btDonnerRefusAC.Click += new System.EventHandler(this.btDonnerRefusAC_Click);
             // 
-            // button9
+            // btDonnerAccordAC
             // 
-            this.button9.Location = new System.Drawing.Point(6, 139);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(232, 35);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "Donner un refus pour l\'activité complémentaire sélectionnée";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(6, 98);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(232, 35);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Donner un accord pour l\'activité complémentaire sélectionnée";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // label79
-            // 
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(6, 25);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(232, 28);
-            this.label79.TabIndex = 6;
-            this.label79.Text = "Sélectionnez votre identité dans la liste des responsables de région";
-            this.label79.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btDonnerAccordAC.Location = new System.Drawing.Point(6, 98);
+            this.btDonnerAccordAC.Name = "btDonnerAccordAC";
+            this.btDonnerAccordAC.Size = new System.Drawing.Size(232, 35);
+            this.btDonnerAccordAC.TabIndex = 7;
+            this.btDonnerAccordAC.Text = "Donner un accord pour l\'activité complémentaire sélectionnée";
+            this.btDonnerAccordAC.UseVisualStyleBackColor = true;
+            this.btDonnerAccordAC.Click += new System.EventHandler(this.btDonnerAccordAC_Click);
             // 
             // listePraticiens2
             // 
@@ -1934,16 +2087,16 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.label77);
+            this.groupBox10.Controls.Add(this.tbPraticiensAC);
+            this.groupBox10.Controls.Add(this.tbIdVisteurACAjout);
+            this.groupBox10.Controls.Add(this.label72);
             this.groupBox10.Controls.Add(this.button7);
             this.groupBox10.Controls.Add(this.label76);
-            this.groupBox10.Controls.Add(this.textBox44);
+            this.groupBox10.Controls.Add(this.tbCommentaireAC);
             this.groupBox10.Controls.Add(this.label75);
-            this.groupBox10.Controls.Add(this.textBox41);
-            this.groupBox10.Controls.Add(this.label73);
             this.groupBox10.Controls.Add(this.label74);
-            this.groupBox10.Controls.Add(this.textBox43);
-            this.groupBox10.Controls.Add(this.textBox42);
-            this.groupBox10.Controls.Add(this.label72);
+            this.groupBox10.Controls.Add(this.tbBudgetMaxAC);
+            this.groupBox10.Controls.Add(this.tbNoSalleAC);
             this.groupBox10.Location = new System.Drawing.Point(244, 3);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(244, 254);
@@ -1951,23 +2104,12 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Demander une activité complémentaire";
             // 
-            // label77
-            // 
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(6, 190);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(232, 30);
-            this.label77.TabIndex = 10;
-            this.label77.Text = "Sélectionnez les praticiens conviés à cette activité complémentaire dans la liste" +
-    " à droite";
-            this.label77.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(54, 225);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 23);
-            this.button7.TabIndex = 9;
+            this.button7.TabIndex = 5;
             this.button7.Text = "Faire la demande";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -1975,20 +2117,20 @@
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(3, 147);
+            this.label76.Location = new System.Drawing.Point(3, 111);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(74, 13);
             this.label76.TabIndex = 8;
             this.label76.Text = "Commentaire :";
             this.label76.Click += new System.EventHandler(this.label76_Click);
             // 
-            // textBox44
+            // tbCommentaireAC
             // 
-            this.textBox44.Location = new System.Drawing.Point(6, 163);
-            this.textBox44.Multiline = true;
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(232, 20);
-            this.textBox44.TabIndex = 7;
+            this.tbCommentaireAC.Location = new System.Drawing.Point(6, 127);
+            this.tbCommentaireAC.Multiline = true;
+            this.tbCommentaireAC.Name = "tbCommentaireAC";
+            this.tbCommentaireAC.Size = new System.Drawing.Size(232, 20);
+            this.tbCommentaireAC.TabIndex = 3;
             // 
             // label75
             // 
@@ -1999,23 +2141,6 @@
             this.label75.TabIndex = 6;
             this.label75.Text = "Budget maximum";
             // 
-            // textBox41
-            // 
-            this.textBox41.Location = new System.Drawing.Point(6, 124);
-            this.textBox41.Multiline = true;
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(232, 20);
-            this.textBox41.TabIndex = 2;
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(6, 108);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(36, 13);
-            this.label73.TabIndex = 1;
-            this.label73.Text = "Bilan :";
-            // 
             // label74
             // 
             this.label74.AutoSize = true;
@@ -2025,29 +2150,19 @@
             this.label74.TabIndex = 5;
             this.label74.Text = "N° de la salle";
             // 
-            // textBox43
+            // tbBudgetMaxAC
             // 
-            this.textBox43.Location = new System.Drawing.Point(99, 78);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(139, 20);
-            this.textBox43.TabIndex = 4;
+            this.tbBudgetMaxAC.Location = new System.Drawing.Point(99, 78);
+            this.tbBudgetMaxAC.Name = "tbBudgetMaxAC";
+            this.tbBudgetMaxAC.Size = new System.Drawing.Size(139, 20);
+            this.tbBudgetMaxAC.TabIndex = 2;
             // 
-            // textBox42
+            // tbNoSalleAC
             // 
-            this.textBox42.Location = new System.Drawing.Point(99, 52);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(139, 20);
-            this.textBox42.TabIndex = 3;
-            // 
-            // label72
-            // 
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.Location = new System.Drawing.Point(6, 16);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(232, 28);
-            this.label72.TabIndex = 0;
-            this.label72.Text = "Sélectionnez votre identité dans la liste des visiteurs médicaux à gauche";
-            this.label72.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tbNoSalleAC.Location = new System.Drawing.Point(99, 52);
+            this.tbNoSalleAC.Name = "tbNoSalleAC";
+            this.tbNoSalleAC.Size = new System.Drawing.Size(139, 20);
+            this.tbNoSalleAC.TabIndex = 1;
             // 
             // listeVisiteurs2
             // 
@@ -2503,172 +2618,70 @@
             this.tbNomProduit.Size = new System.Drawing.Size(215, 20);
             this.tbNomProduit.TabIndex = 0;
             // 
-            // tbDateIncident
+            // label72
             // 
-            this.tbDateIncident.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.tbDateIncident.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tbDateIncident.Location = new System.Drawing.Point(103, 60);
-            this.tbDateIncident.Name = "tbDateIncident";
-            this.tbDateIncident.Size = new System.Drawing.Size(187, 20);
-            this.tbDateIncident.TabIndex = 7;
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(67, 28);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(61, 13);
+            this.label72.TabIndex = 10;
+            this.label72.Text = "ID Visiteur :";
             // 
-            // label67
+            // tbIdVisteurACAjout
             // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(83, 153);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(78, 13);
-            this.label67.TabIndex = 8;
-            this.label67.Text = "ID du matériel :";
+            this.tbIdVisteurACAjout.Location = new System.Drawing.Point(134, 25);
+            this.tbIdVisteurACAjout.Name = "tbIdVisteurACAjout";
+            this.tbIdVisteurACAjout.Size = new System.Drawing.Size(50, 20);
+            this.tbIdVisteurACAjout.TabIndex = 0;
+            this.tbIdVisteurACAjout.TextChanged += new System.EventHandler(this.tbIdVisteurACAjout_TextChanged);
             // 
-            // tbIdMatérielAjouterIncident
+            // tbPraticiensAC
             // 
-            this.tbIdMatérielAjouterIncident.Location = new System.Drawing.Point(167, 150);
-            this.tbIdMatérielAjouterIncident.Name = "tbIdMatérielAjouterIncident";
-            this.tbIdMatérielAjouterIncident.Size = new System.Drawing.Size(75, 20);
-            this.tbIdMatérielAjouterIncident.TabIndex = 9;
+            this.tbPraticiensAC.Location = new System.Drawing.Point(6, 187);
+            this.tbPraticiensAC.Name = "tbPraticiensAC";
+            this.tbPraticiensAC.Size = new System.Drawing.Size(232, 20);
+            this.tbPraticiensAC.TabIndex = 4;
             // 
-            // label69
+            // label77
             // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(6, 34);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(24, 13);
-            this.label69.TabIndex = 3;
-            this.label69.Text = "ID :";
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(6, 171);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(59, 13);
+            this.label77.TabIndex = 13;
+            this.label77.Text = "Praticiens :";
             // 
-            // tbIdTicketIncidentModifier
+            // label73
             // 
-            this.tbIdTicketIncidentModifier.Location = new System.Drawing.Point(36, 31);
-            this.tbIdTicketIncidentModifier.Name = "tbIdTicketIncidentModifier";
-            this.tbIdTicketIncidentModifier.Size = new System.Drawing.Size(48, 20);
-            this.tbIdTicketIncidentModifier.TabIndex = 4;
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(39, 27);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(116, 13);
+            this.label73.TabIndex = 10;
+            this.label73.Text = "ID responsable région :";
             // 
-            // label44
+            // tbIdResponsableRégionAC
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 19);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(76, 13);
-            this.label44.TabIndex = 12;
-            this.label44.Text = "ID technicien :";
-            this.label44.Click += new System.EventHandler(this.label44_Click);
+            this.tbIdResponsableRégionAC.Location = new System.Drawing.Point(158, 24);
+            this.tbIdResponsableRégionAC.Name = "tbIdResponsableRégionAC";
+            this.tbIdResponsableRégionAC.Size = new System.Drawing.Size(50, 20);
+            this.tbIdResponsableRégionAC.TabIndex = 11;
             // 
-            // tbIdTechnicienAffectationIncident
+            // tbIdDemandeAC
             // 
-            this.tbIdTechnicienAffectationIncident.Location = new System.Drawing.Point(88, 16);
-            this.tbIdTechnicienAffectationIncident.Name = "tbIdTechnicienAffectationIncident";
-            this.tbIdTechnicienAffectationIncident.Size = new System.Drawing.Size(48, 20);
-            this.tbIdTechnicienAffectationIncident.TabIndex = 13;
+            this.tbIdDemandeAC.Location = new System.Drawing.Point(158, 61);
+            this.tbIdDemandeAC.Name = "tbIdDemandeAC";
+            this.tbIdDemandeAC.Size = new System.Drawing.Size(50, 20);
+            this.tbIdDemandeAC.TabIndex = 12;
             // 
-            // label45
+            // label79
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(164, 19);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(64, 13);
-            this.label45.TabIndex = 14;
-            this.label45.Text = "ID incident :";
-            // 
-            // tbIdIncidentAffectationTechnicien
-            // 
-            this.tbIdIncidentAffectationTechnicien.Location = new System.Drawing.Point(230, 16);
-            this.tbIdIncidentAffectationTechnicien.Name = "tbIdIncidentAffectationTechnicien";
-            this.tbIdIncidentAffectationTechnicien.Size = new System.Drawing.Size(48, 20);
-            this.tbIdIncidentAffectationTechnicien.TabIndex = 15;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(3, 48);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(142, 13);
-            this.label46.TabIndex = 16;
-            this.label46.Text = "Date début prise en charge :";
-            // 
-            // tbDateDébutPriseEnCharge
-            // 
-            this.tbDateDébutPriseEnCharge.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.tbDateDébutPriseEnCharge.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tbDateDébutPriseEnCharge.Location = new System.Drawing.Point(151, 42);
-            this.tbDateDébutPriseEnCharge.Name = "tbDateDébutPriseEnCharge";
-            this.tbDateDébutPriseEnCharge.Size = new System.Drawing.Size(146, 20);
-            this.tbDateDébutPriseEnCharge.TabIndex = 17;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(19, 73);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(126, 13);
-            this.label47.TabIndex = 18;
-            this.label47.Text = "Date fin prise en charge :";
-            // 
-            // tbDateFinPriseEnCharge
-            // 
-            this.tbDateFinPriseEnCharge.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.tbDateFinPriseEnCharge.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tbDateFinPriseEnCharge.Location = new System.Drawing.Point(151, 67);
-            this.tbDateFinPriseEnCharge.Name = "tbDateFinPriseEnCharge";
-            this.tbDateFinPriseEnCharge.Size = new System.Drawing.Size(146, 20);
-            this.tbDateFinPriseEnCharge.TabIndex = 19;
-            // 
-            // tbDateVisite
-            // 
-            this.tbDateVisite.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.tbDateVisite.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tbDateVisite.Location = new System.Drawing.Point(91, 103);
-            this.tbDateVisite.Name = "tbDateVisite";
-            this.tbDateVisite.Size = new System.Drawing.Size(187, 20);
-            this.tbDateVisite.TabIndex = 14;
-            // 
-            // tbIdVisiteurAjoutVisite
-            // 
-            this.tbIdVisiteurAjoutVisite.Location = new System.Drawing.Point(73, 194);
-            this.tbIdVisiteurAjoutVisite.Name = "tbIdVisiteurAjoutVisite";
-            this.tbIdVisiteurAjoutVisite.Size = new System.Drawing.Size(58, 20);
-            this.tbIdVisiteurAjoutVisite.TabIndex = 15;
-            // 
-            // tbIdPraticienAjoutVisite
-            // 
-            this.tbIdPraticienAjoutVisite.Location = new System.Drawing.Point(220, 194);
-            this.tbIdPraticienAjoutVisite.Name = "tbIdPraticienAjoutVisite";
-            this.tbIdPraticienAjoutVisite.Size = new System.Drawing.Size(58, 20);
-            this.tbIdPraticienAjoutVisite.TabIndex = 16;
-            // 
-            // tbIdProduitAjoutVisite
-            // 
-            this.tbIdProduitAjoutVisite.Location = new System.Drawing.Point(155, 225);
-            this.tbIdProduitAjoutVisite.Name = "tbIdProduitAjoutVisite";
-            this.tbIdProduitAjoutVisite.Size = new System.Drawing.Size(58, 20);
-            this.tbIdProduitAjoutVisite.TabIndex = 17;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(7, 197);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(60, 13);
-            this.label58.TabIndex = 18;
-            this.label58.Text = "ID visiteur :";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(147, 197);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(67, 13);
-            this.label91.TabIndex = 19;
-            this.label91.Text = "ID praticien :";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(41, 228);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(108, 13);
-            this.label92.TabIndex = 20;
-            this.label92.Text = "(facultatif) ID produit :";
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(56, 64);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(96, 13);
+            this.label79.TabIndex = 13;
+            this.label79.Text = "ID demande d\'AC :";
             // 
             // Interface
             // 
@@ -2701,9 +2714,9 @@
             this.incident.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.visite.ResumeLayout(false);
@@ -2713,6 +2726,7 @@
             this.ac.ResumeLayout(false);
             this.ac.PerformLayout();
             this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.praticien.ResumeLayout(false);
@@ -2858,16 +2872,12 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.ListBox listeVisiteurs2;
         private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.TextBox textBox41;
-        private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.TextBox textBox44;
+        private System.Windows.Forms.TextBox tbCommentaireAC;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.TextBox textBox43;
-        private System.Windows.Forms.TextBox textBox42;
-        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox tbBudgetMaxAC;
+        private System.Windows.Forms.TextBox tbNoSalleAC;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ListBox listePraticiens2;
         private System.Windows.Forms.Label label78;
@@ -2879,10 +2889,8 @@
         private System.Windows.Forms.ListBox listeDemandeAC;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Button btDonnerRefusAC;
+        private System.Windows.Forms.Button btDonnerAccordAC;
         private System.Windows.Forms.TabPage praticien;
         private System.Windows.Forms.Label nbPraticiens;
         private System.Windows.Forms.Label label89;
@@ -2971,6 +2979,14 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.TextBox tbIdPraticienAjoutVisite;
         private System.Windows.Forms.TextBox tbIdVisiteurAjoutVisite;
+        private System.Windows.Forms.TextBox tbIdVisteurACAjout;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox tbPraticiensAC;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.TextBox tbIdDemandeAC;
+        private System.Windows.Forms.TextBox tbIdResponsableRégionAC;
+        private System.Windows.Forms.Label label73;
     }
 }
 
